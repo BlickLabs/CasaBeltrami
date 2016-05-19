@@ -1,0 +1,348 @@
+/****************************************************** 
+1. GENERAL STYLING
+
+2. Typography
+
+2. NAVIGATION
+
+3. HOMEPAGE
+-  Carousel
+
+4. QUIÉNES SOMOS
+
+5. DISEÑO DE EVENTOS
+
+6. RENTA DE SALONES
+
+7. GALERÍA DE EVENTOS
+
+8. FOOTER  
+
+9. MEDIA QUERIES 
+
+TYPOGRAPHY GUIDE
+Arvo, serif             Navigation, Headings
+Helvetica, sans-serif   Body
+
+*****************************************************/
+
+
+/*************************
+    FONTS 
+*************************/
+
+@font-face {
+    font-family: Montserrat-Bold-2;
+    src: url(../fonts/Montserrat-Bold-2.otf);
+}
+
+@font-face {
+    font-family: Montserrat-Light;
+    src: url(../fonts/Montserrat-Light.otf);
+}
+
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(../fonts/Montserrat-Regular.otf);
+}
+
+@font-face {
+    font-family: TimesLTStd-Italic;
+    src: url(../fonts/TimesLTStd-Italic.otf);
+}
+
+#homepage h2 {
+    font-size: 3.75em;
+}
+
+/*************************
+    GENERAL 
+*************************/
+body {
+    font-size: 16px;
+    font-family: Montserrat-Regular;
+    margin: 0;
+    padding: 0;
+}
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/*************************
+    NAVIGATION 
+*************************/
+#homepage .navbar-wrapper {
+    position: absolute;
+    width: 100%;
+    margin-top: 30px;
+}
+nav .container {
+    height: 20px;
+}
+.navbar-inverse {
+    background-color: rgba(255, 255, 255, .84);
+    border-color: transparent;
+}
+.navbar-nav>li>a {
+    text-transform: uppercase;
+    font-size: .75em;
+    color: #4d4d4d;
+    font-family: Montserrat-Regular;
+}
+.navbar-inverse .navbar-nav>.active>a, 
+.navbar-inverse .navbar-nav>.active>a:active,
+.navbar-inverse .navbar-nav>.active>a:focus,
+.navbar-inverse .navbar-nav>.active>a:hover,
+.navbar-inverse .navbar-nav>li>a:active,
+.navbar-inverse .navbar-nav>li>a:focus,
+.navbar-inverse .navbar-nav>li>a:hover {
+    background-color: #f8dee7;
+    color:  #4d4d4d;
+}
+
+
+/*************************
+    HOMEPAGE 
+*************************/
+.carousel {
+    margin-top: 0;
+}
+
+.carousel,
+.carousel .item,
+.carousel-inner > .item > .slide-img {
+    height: 100vh;
+    width: 100%;
+}
+.carousel-caption {
+    right: 25%;
+    left: 25%;
+    padding-bottom: 30px;
+    top: 30%;
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev,
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+    font-size: 3em;
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    margin-left: -10%;
+}
+img.header-logo {
+    height: 150px;
+    margin-bottom: 40px;
+}
+.slide-img {
+    /*background: ;*/
+}
+.first-slide {
+    background: url("../img/homepage/1.jpg") center center no-repeat rgba(0, 0, 0, .25);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+.second-slide {
+    background: url("../img/homepage/2.jpg") center center no-repeat rgba(0, 0, 0, .25);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+.third-slide {
+    background: url("../img/homepage/3.jpg") center center no-repeat rgba(0, 0, 0, .25);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+.fourth-slide {
+    background: url("../img/homepage/4.jpg") center center no-repeat rgba(0, 0, 0, .25);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+.fifth-slide {
+    background: url("../img/homepage/5.jpg") center center no-repeat rgba(0, 0, 0, .25);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+.sixth-slide {
+    background: url("../img/homepage/6.jpg") center center no-repeat rgba(0, 0, 0, .25);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+.carousel-caption p {
+    font-size: 1.35em;
+    color: #fff;
+}
+.icon-features {
+    font-size: .7em;
+    color: #4d4d4d;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+.icon-features img {
+    height: 50px;
+}
+.homepage-features {
+    height: 70vh;
+    color: #fff;
+}
+.homepage-features .container {
+    margin-top: 5%;
+}
+.homepage-features {
+    text-align: center;
+}
+.homepage-features-left h2,
+.homepage-features-left p {
+    text-align: left;
+}
+.homepage-features-right h2,
+.homepage-features-right p {
+    text-align: right;
+}
+.homepage-features p {
+    font-size: 1.15em;
+    font-family: TimesLTStd-Italic;
+}
+.homepage-features .btn-default {
+    border-radius: 0;
+    background-color: transparent;
+    border-color: #f8dee7;
+    color: #fff;
+    font-size: 1em;
+}
+.homepage-features .btn-default:hover {
+    background-color: #f8dee7;
+    color:  #4d4d4d;
+}
+#homepage .floral {
+    background: url("../img/homepage/2.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+#homepage .renta {
+    background: url("../img/homepage/3.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background-size: cover;
+    background-blend-mode: multiply;
+    overflow-x: hidden;
+}
+#homepage .mesas-de-quesos {
+    background: url("../img/homepage/4.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+#homepage .renta-mobiliario {
+    background: url("../img/homepage/5.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background-size: cover;
+    background-blend-mode: multiply;
+    overflow-x: hidden;
+}
+#homepage .galeria {
+    background: url("../img/homepage/6.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+footer {
+    padding: 70px;
+    background-color: #343434;
+    color: #fff;
+}
+footer .container {
+    margin-left: 20px;
+}
+footer .btn-default {
+    border-radius: 0;
+    background-color: transparent;
+    color: #fff;
+    width: 150px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-color: #808080;
+}
+footer .btn-default:hover {
+    background-color: #f8dee7;
+    color:  #4d4d4d;
+}
+.footer-quote span {
+    color: #808080;;
+}
+.footer-quote p,
+.footer-quote button {
+    font-size: 1em;
+}
+.footer-logo {
+    text-align: center;
+}
+.footer-logo img {
+    height: 80px;
+    margin-bottom: 10px;
+}
+.footer-logo p {
+    color: #808080;
+    font-size: .8em;
+}
+.footer-contact {
+    text-align: right;
+}
+.footer-contact p {
+    font-size: .9em;
+}
+.footer-contact .contact-title {
+    font-size: 1.1em;
+}
+.footer-contact .contact-location {
+    font-size: .7em;
+}
+.footer-contact span {
+    color: #808080;
+}
+.footer-contact .fa-mobile, 
+.footer-contact .fa-home {
+    font-size: 1.5em;
+}
+
+@media screen and (min-width: 995px) {
+    .cupcake-icon {
+        padding-right: 0;
+    }
+    .chair-icon {
+        padding-left: 0;
+    }
+    
+}
+
+@media screen and (max-width: 995px) {
+    footer .footer-quote,
+    footer .footer-logo,
+    footer .footer-contact {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 765px) {
+    footer .footer-contact i {
+        display: none;
+    }
+    #homepage .navbar-wrapper {
+        margin-top: 0;
+    }
+    #homepage .navbar-inverse,
+    .navbar-inverse .navbar-collapse {
+        background-color: #343434;
+    }
+    .carousel-caption {
+        top: 20%;
+    }
+}
+@media screen and (max-width: 475px) {
+    .carousel-caption {
+        top: 10%;
+    }
+    .carousel-caption p {
+        font-size: 1.2em;
+    }
+    #homepage h2 {
+        font-size: 3em;
+    }
+}
+
+    

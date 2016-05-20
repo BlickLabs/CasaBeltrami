@@ -51,7 +51,8 @@ Helvetica, sans-serif   Body
     src: url(../fonts/TimesLTStd-Italic.otf);
 }
 
-#homepage h2 {
+#homepage h2,
+#diseno-de-eventos h2{
     font-size: 3.75em;
 }
 
@@ -245,7 +246,8 @@ img.header-logo {
     background-color: #f8dee7;
     color:  #4d4d4d;
 }
-#homepage .floral {
+#homepage .floral,
+#diseno-de-eventos .floral {
     background: url("../img/homepage/2.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
     background-blend-mode: multiply;
@@ -256,11 +258,13 @@ img.header-logo {
     background-blend-mode: multiply;
     overflow-x: hidden;
 }
+#diseno-de-eventos .mesas-de-quesos,
 #homepage .mesas-de-quesos {
     background: url("../img/homepage/4.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
     background-blend-mode: multiply;
 }
+#diseno-de-eventos .renta-mobiliario,
 #homepage .renta-mobiliario {
     background: url("../img/homepage/5.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
@@ -308,6 +312,14 @@ hr {
 }
 .somos-carousel {
     
+}
+
+/*************************
+    DISENO DE EVENTOS
+*************************/
+
+#diseno-de-eventos .icon-features {
+    padding-left: 0;
 }
 
 /*************************
@@ -458,6 +470,7 @@ footer .btn-default:hover {
     .carousel-caption p {
         font-size: 1.2em;
     }
+    #diseno-de-eventos h2,
     #homepage h2 {
         font-size: 3em;
     }

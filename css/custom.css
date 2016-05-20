@@ -433,6 +433,15 @@ footer .btn-default:hover {
     #homepage .navbar-inverse,
     .navbar-inverse .navbar-collapse {
         background-color: #343434;
+        color: #fff;
+    }
+    #homepage .navbar-nav>li>a {
+        color: #fff;
+    }
+    #homepage .navbar-nav>li>a:active,
+    #homepage .navbar-nav>li>a:hover,
+    #homepage .navbar-nav>li>a:focus {
+        color:  #4d4d4d;
     }
     .carousel-caption {
         top: 20%;

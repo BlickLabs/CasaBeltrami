@@ -78,14 +78,14 @@ body {
     width: 100%;
     margin-top: 30px;
 }
-nav .container {
+#homepage nav .container {
     height: 20px;
 }
-.navbar-inverse {
+#homepage .navbar-inverse {
     background-color: rgba(255, 255, 255, .84);
     border-color: transparent;
 }
-.navbar-nav>li>a {
+#homepage .navbar-nav>li>a {
     text-transform: uppercase;
     font-size: .75em;
     color: #4d4d4d;
@@ -102,6 +102,38 @@ nav .container {
     color:  #4d4d4d;
 }
 
+#homepage .navbar-nav {
+    margin-left: 20%;
+}
+
+
+/* navbar for all other pages besides homepage */
+.navbar-default {
+    background-color: #f8dee7;
+    border: rgba(255, 255, 255, .74);
+    margin-bottom: 0;
+}
+.navbar-default .navbar-nav>li>a {
+    text-transform: uppercase;
+    font-size: .7em;
+    color: #4d4d4d;
+    font-family: Montserrat-Light;
+}
+
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:active,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>li>a:active,
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover {
+    background-color: rgba(255, 255, 255, .74);
+    height: 100%;
+}
+
+.navbar-default .navbar-nav {
+    margin-left: 20%;
+}
 
 /*************************
     HOMEPAGE 
@@ -240,10 +272,53 @@ img.header-logo {
     background-size: cover;
     background-blend-mode: multiply;
 }
+
+/*************************
+    QUIENES SOMOS
+*************************/
+.somos-content {
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+.somos-content h3 {
+    font-family: Montserrat-Bold-2;
+    color: #111;
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
+.somos-content h3 span {
+    font-family: TimesLTStd-Italic;
+    color: #4d4d4d;
+    text-transform: none;
+}
+hr {
+    border-top: 1px solid #ef86b3;
+    width: 30px;
+    margin-left: 0;
+    margin-top: 0;
+}
+.somos-text {
+    margin-left: 20%;
+}    
+
+.somos-text p {
+    font-family: TimesLTStd-Italic;
+    color: #4d4d4d;
+    font-size: 1.1em;
+}
+.somos-carousel {
+    
+}
+
+/*************************
+    FOOTER
+*************************/
+
 footer {
     padding: 70px;
     background-color: #343434;
     color: #fff;
+    overflow-x: hidden;
 }
 footer .container {
     margin-left: 20px;
@@ -299,6 +374,10 @@ footer .btn-default:hover {
     font-size: 1.5em;
 }
 
+/*************************
+    MEDIA QUERIES
+*************************/
+
 @media screen and (min-width: 995px) {
     .cupcake-icon {
         padding-right: 0;
@@ -308,6 +387,12 @@ footer .btn-default:hover {
     }
     
 }
+@media screen and (max-width: 1255px) {
+    #homepage .navbar-nav,
+    .navbar-default .navbar-nav {
+        margin-left: 15%;
+    }
+}
 
 @media screen and (max-width: 995px) {
     footer .footer-quote,
@@ -316,8 +401,28 @@ footer .btn-default:hover {
         text-align: center;
         margin-bottom: 30px;
     }
+    #homepage .navbar-nav,
+    .navbar-default .navbar-nav {
+        margin-left: 5%;
+    }
+    .somos-text {
+        margin-left: 10%;
+    }  
 }
-
+@media screen and (max-width: 875px) {
+    #homepage .navbar-nav,
+    .navbar-default .navbar-nav {
+        margin-left: 1%;
+        overflow-x: hidden !important;
+    }
+    #homepage .navbar-nav>li>a {
+        font-size: .65em;
+    }
+    .somos-text {
+        margin-left: 5%;
+        margin-right: 5%;
+    }  
+}
 @media screen and (max-width: 765px) {
     footer .footer-contact i {
         display: none;
@@ -332,6 +437,10 @@ footer .btn-default:hover {
     .carousel-caption {
         top: 20%;
     }
+    #homepage .navbar-nav,
+    .navbar-default .navbar-nav {
+        margin-left: 0;
+    }
 }
 @media screen and (max-width: 475px) {
     .carousel-caption {
@@ -345,4 +454,3 @@ footer .btn-default:hover {
     }
 }
 
-    

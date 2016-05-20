@@ -476,3 +476,21 @@ footer .btn-default:hover {
     }
 }
 
+/*CAROUSEL ARROWS TO BE CONTINUED...*/
+.owl-next {
+    position: absolute;
+    top: 30%;
+    right: 7%;
+}
+.owl-prev {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+}
+
+/*Change PREV | NEXT to arrows for carousel*/
+img.arrow-right,
+img.arrow-left {
+    height: 50px;
+}
+

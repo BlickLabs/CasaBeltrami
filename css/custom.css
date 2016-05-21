@@ -1,24 +1,23 @@
 /****************************************************** 
-1. GENERAL STYLING
+1. FONTS
 
-2. Typography
+2. GENERAL STYLING
 
-2. NAVIGATION
+3. NAVIGATION
 
-3. HOMEPAGE
--  Carousel
+4. HOMEPAGE
 
-4. QUIÉNES SOMOS
+5. QUIÉNES SOMOS
 
-5. DISEÑO DE EVENTOS
+6. DISEÑO DE EVENTOS
 
-6. RENTA DE SALONES
+7. RENTA DE SALONES
 
-7. GALERÍA DE EVENTOS
+8. GALERÍA DE EVENTOS
 
-8. FOOTER  
+9. FOOTER  
 
-9. MEDIA QUERIES 
+10. MEDIA QUERIES 
 
 TYPOGRAPHY GUIDE
 Arvo, serif             Navigation, Headings
@@ -100,7 +99,7 @@ body {
 .navbar-inverse .navbar-nav>li>a:focus,
 .navbar-inverse .navbar-nav>li>a:hover {
     background-color: #f8dee7;
-    color:  #4d4d4d;
+    color:  #4d4d4d !important;
 }
 
 #homepage .navbar-nav {
@@ -165,9 +164,6 @@ body {
 img.header-logo {
     height: 150px;
     margin-bottom: 40px;
-}
-.slide-img {
-    /*background: ;*/
 }
 .first-slide {
     background: url("../img/homepage/1.jpg") center center no-repeat rgba(0, 0, 0, .25);
@@ -321,6 +317,41 @@ hr {
 #diseno-de-eventos .icon-features {
     padding-left: 0;
 }
+.diseno-icon-row {
+    /*border: 3px solid red;*/
+    position: relative;
+    height: 50px;
+}
+.diseno-icon {
+    height: 200px;
+    position: absolute;
+    top: -240%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.diseno-icon-chair {
+    top: -220%;
+}
+.diseno-de-eventos-content {
+    margin-top: 70px;
+    margin-bottom: 100px
+}
+.diseno-photos-row {
+    padding-left: 13%;
+}
+.diseno-photos-row div {
+    margin-right: 3.5%;
+}
+.diseno-photos-row img {
+    height: 250px;
+}
+.diseno-photos-row p {
+    text-align: center;
+    font-size: 1.25em;
+    color: #4d4d4d;
+    margin-top: 10px;
+}
+
 
 /*************************
     FOOTER
@@ -420,6 +451,15 @@ footer .btn-default:hover {
     .somos-text {
         margin-left: 10%;
     }  
+    .diseno-de-eventos-content {
+        text-align: center;
+    }
+    .diseno-photos-row {
+        padding-left: 15px;
+    }
+    .diseno-photos-row div {
+        margin-bottom: 20px;
+    }
 }
 @media screen and (max-width: 875px) {
     #homepage .navbar-nav,
@@ -461,6 +501,18 @@ footer .btn-default:hover {
     #homepage .navbar-nav,
     .navbar-default .navbar-nav {
         margin-left: 0;
+        width: 100%;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: #fff;
+    }
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #fff;
+    }
+    .navbar-default .navbar-toggle:focus, 
+    .navbar-default .navbar-toggle:hover {
+        background-color: rgba(255, 255, 255, .74);
+        background-color: #343434;
     }
 }
 @media screen and (max-width: 475px) {

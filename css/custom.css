@@ -353,6 +353,148 @@ hr {
     margin-left: 10%;
 }
 
+/*************************
+    RENTA DE SALONES
+*************************/
+.salones-top-row {
+    margin-bottom: 100px;
+}
+#renta-de-salones .somos-text p {
+    padding-right: 5%;
+}
+.salones-img-links {
+    padding-left: 27%;
+    margin-top: 30px;
+    text-align: center;
+    position: relative;
+}
+.salones-img-links .salones-images {
+    width: 200px;
+    height: 200px;
+    margin-right: 30px;
+}
+.salones-img-links .img1 {
+    background: url("../img/RentadeSalones/RentadeSalones_Squares-03.jpg") center center no-repeat;
+    background-size: cover;
+}
+.salones-img-links .img2 {
+    background: url("../img/RentadeSalones/RentadeSalones_Squares-04.jpg") center center no-repeat;
+    background-size: cover;
+}
+.salones-img-links .img3 {
+    background: url("../img/RentadeSalones/RentadeSalones_Squares-05.jpg") center center no-repeat;
+    background-size: cover;
+}
+.salones-img-links h4 {
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    color: #111;
+    font-family: Montserrat-Bold-2;
+    font-size: 1.1em;
+}
+.salones-img-links p {
+    position: absolute;
+    bottom: -55%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    font-size: 1.1em;
+    font-family: TimesLTStd-Italic;
+    color: #4d4d4d;
+}
+.lincanto {
+    background: url("../img/RentadeSalones/Lincanto.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+.farfala {
+    background: url("../img/RentadeSalones/Farfala2.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+.bambinos {
+    background: url("../img/RentadeSalones/Bambinos2.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+.lincanto img,
+.farfala img,
+.bambinos img {
+    height: 100px;
+    margin-left: -50%;
+    margin-bottom: 20px;
+}
+.bambinos img {
+    position: absolute;
+    right: 0;
+}
+.bambinos p {
+    position: absolute;
+    top: 120px;
+}
+.salones-icon-row {
+    position: relative;
+    height: 50px;
+}   
+.salones-icon {
+    height: 200px;
+    position: absolute;
+    top: -230%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.salones-icon-bambinos {
+    top: -210%;
+}
+.lincantoBtn {
+    background-color:  #ab7ca7;
+    border-radius: 0;
+    border-color: transparent;
+    color: #fff;
+}
+.farfalaBtn {
+    background-color:  #fccf8c;
+    border-radius: 0;
+    border-color: transparent;
+    color: #fff;
+}
+.bambinosBtn {
+    background-color:  #718cd1;
+    border-radius: 0;
+    border-color: transparent;
+    color: #fff;
+}
+.salones-buttons {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.lincanto-carousel,
+.farfala-carousel,
+.bambinos-carousel {
+    margin: 70px 0 40px 0;
+}
+.bambinos-carousel {
+    margin-top: 90px;
+}
+.lincanto-carousel .container,
+.farfala-carousel,
+.bambinos-carousel {
+    padding-left: 5%;
+}
+#renta-de-salones .item {
+    width: 80%;
+}
+#renta-de-salones .item p {
+    text-align: center;
+    margin-top: 10px;
+}
+#renta-de-salones img.arrow-right, 
+#renta-de-salones img.arrow-left {
+    background-color: red;
+}
 
 /*************************
     FOOTER
@@ -461,6 +603,9 @@ footer .btn-default:hover {
     .diseno-photos-row div {
         margin-bottom: 20px;
     }
+    .salones-img-links .salones-images {
+        margin-bottom: 130px;
+    }
 }
 @media screen and (max-width: 875px) {
     #homepage .navbar-nav,
@@ -514,6 +659,22 @@ footer .btn-default:hover {
     .navbar-default .navbar-toggle:hover {
         background-color: rgba(255, 255, 255, .74);
         background-color: #343434;
+    }
+}
+@media screen and (max-width: 600px) {
+    #renta-de-salones .item {
+        width: 100%;
+    }
+    /*.lincanto-carousel .container, */
+    .farfala-carousel, 
+    .bambinos-carousel {
+        padding-left: 1%;
+    }
+    .salones-img-links {
+        padding-left: 20%;
+    }
+    .salones-top-row {
+        margin-bottom: 0px;
     }
 }
 @media screen and (max-width: 475px) {

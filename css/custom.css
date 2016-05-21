@@ -51,7 +51,8 @@ Helvetica, sans-serif   Body
 }
 
 #homepage h2,
-#diseno-de-eventos h2{
+#diseno-de-eventos h2,
+#galeria-de-eventos h2 {
     font-size: 3.75em;
 }
 
@@ -431,6 +432,12 @@ hr {
     position: absolute;
     right: 0;
 }
+.farfala img {
+    margin-top: 10px;
+}
+.farfala p {
+    margin-top: -20px;
+}
 .bambinos p {
     position: absolute;
     top: 120px;
@@ -445,6 +452,9 @@ hr {
     top: -230%;
     left: 50%;
     transform: translateX(-50%);
+}
+.salones-icon-farfala {
+    top: -240%;
 }
 .salones-icon-bambinos {
     top: -210%;
@@ -497,6 +507,37 @@ hr {
 }
 
 /*************************
+    GALERÍA DE EVENTOS
+*************************/
+
+.icon-divider {
+    height: 120px;
+    text-align: center;
+    position: relative;
+}
+.icon-divider-first {
+    background-color: #f8dee7;
+}
+.icon-divider img {
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#galeria-de-eventos .homepage-features {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; 
+    background-color: rgba(0, 0, 0, .15);
+    background-blend-mode: multiply;
+    background-image: url("../img/GaleriaDeEventos/GaleriadeEventos_Photos-02.jpg");
+}
+#galeria-de-eventos h2 {
+    width: 150%;
+}
+
+/*************************
     FOOTER
 *************************/
 
@@ -528,6 +569,13 @@ footer .btn-default:hover {
 .footer-quote p,
 .footer-quote button {
     font-size: 1em;
+}
+.footer-quote p {
+    margin-top: 10px;
+}
+.footer-quote .fa {
+    font-size: 1.5em;
+    margin-right: 5px;
 }
 .footer-logo {
     text-align: center;
@@ -660,6 +708,9 @@ footer .btn-default:hover {
         background-color: rgba(255, 255, 255, .74);
         background-color: #343434;
     }
+    #galeria-de-eventos h2 {
+    width: 100%;
+    }
 }
 @media screen and (max-width: 600px) {
     #renta-de-salones .item {
@@ -685,8 +736,14 @@ footer .btn-default:hover {
         font-size: 1.2em;
     }
     #diseno-de-eventos h2,
-    #homepage h2 {
+    #homepage h2,
+    #galeria-de-eventos h2 {
         font-size: 3em;
+    }
+    .footer-quote .fa {
+        display: block;
+        margin-bottom: 10px;
+        margin-top: 10px;
     }
 }
 
@@ -706,5 +763,9 @@ footer .btn-default:hover {
 img.arrow-right,
 img.arrow-left {
     height: 50px;
+}
+
+.right-text-fix {
+    margin-left: -30%;
 }
 

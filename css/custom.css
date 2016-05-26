@@ -54,6 +54,8 @@ Helvetica, sans-serif   Body
 #diseno-de-eventos h2,
 #galeria-de-eventos h2 {
     font-size: 3.75em;
+    line-height: 0.9;
+    margin-bottom: 20px
 }
 
 /*************************
@@ -68,6 +70,10 @@ body {
 .row {
     margin-left: 0;
     margin-right: 0;
+}
+
+.right-text-fix {
+    margin-left: -30%;
 }
 
 
@@ -113,12 +119,23 @@ body {
     background-color: #f8dee7;
     border: rgba(255, 255, 255, .74);
     margin-bottom: 0;
+    height: 60px;
+    padding-top: 5px;
 }
 .navbar-default .navbar-nav>li>a {
     text-transform: uppercase;
     font-size: .7em;
     color: #4d4d4d;
     font-family: Montserrat-Light;
+    /*padding-top: 20px;*/
+    /*padding-left: 25px;*/
+    /*padding-right: 25px;*/
+}
+.navbar-default .navbar-nav>li {
+    font-weight: bold;
+/*    height: 60px;*/
+/*    margin-top: -5px;*/
+    
 }
 
 .navbar-default .navbar-nav>.active>a, 
@@ -161,6 +178,10 @@ body {
 }
 .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
     margin-left: -10%;
+}
+#homepage .glyphicon-chevron-left,
+#homepage .glyphicon-chevron-right {
+    height: 50px;
 }
 img.header-logo {
     height: 150px;
@@ -209,9 +230,10 @@ img.header-logo {
 }
 .icon-features img {
     height: 50px;
+    margin-bottom: 10px;
 }
 .homepage-features {
-    height: 70vh;
+    height: 80vh;
     color: #fff;
 }
 .homepage-features .container {
@@ -238,6 +260,8 @@ img.header-logo {
     border-color: #f8dee7;
     color: #fff;
     font-size: 1em;
+    margin-top: 20px;
+    width: 200px
 }
 .homepage-features .btn-default:hover {
     background-color: #f8dee7;
@@ -266,7 +290,7 @@ img.header-logo {
     background: url("../img/homepage/5.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
     background-blend-mode: multiply;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 #homepage .galeria {
     background: url("../img/homepage/6.jpg") center center no-repeat rgba(0, 0, 0, .15);
@@ -274,12 +298,20 @@ img.header-logo {
     background-blend-mode: multiply;
 }
 
+.homepage-fixed-nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
 /*************************
     QUIENES SOMOS
 *************************/
 .somos-content {
     margin-top: 40px;
     margin-bottom: 50px;
+}
+#quienes-somos .somos-text {
+    margin-top: 30px
 }
 .somos-content h3 {
     font-family: Montserrat-Bold-2;
@@ -309,6 +341,9 @@ hr {
 }
 .somos-carousel {
     
+}
+.icon-features a {
+    color: #4d4d4d;
 }
 
 /*************************
@@ -459,23 +494,22 @@ hr {
 .salones-icon-bambinos {
     top: -210%;
 }
-.lincantoBtn {
-    background-color:  #ab7ca7;
+.lincantoBtn,
+.farfalaBtn, 
+.bambinosBtn {
     border-radius: 0;
     border-color: transparent;
     color: #fff;
+    width: 180px;
+}
+.lincantoBtn {
+    background-color:  #ab7ca7;
 }
 .farfalaBtn {
     background-color:  #fccf8c;
-    border-radius: 0;
-    border-color: transparent;
-    color: #fff;
 }
 .bambinosBtn {
     background-color:  #718cd1;
-    border-radius: 0;
-    border-color: transparent;
-    color: #fff;
 }
 .salones-buttons {
     text-align: center;
@@ -495,20 +529,40 @@ hr {
     padding-left: 5%;
 }
 #renta-de-salones .item {
-    width: 80%;
+    width: 95%;
 }
 #renta-de-salones .item p {
     text-align: center;
     margin-top: 10px;
 }
-#renta-de-salones img.arrow-right, 
+
 #renta-de-salones img.arrow-left {
-    background-color: red;
+    position: absolute;
+    left: -120px;
+}
+#renta-de-salones img.arrow-right {
+    position: absolute;
+    right: -120px;
+}
+
+.video-row {
+    margin-top: 90px;
 }
 
 /*************************
     GALERÍA DE EVENTOS
 *************************/
+.galeria-icons-row-1,
+.galeria-icons-row-2, 
+.galeria-icons-row-3 {
+    margin-bottom: 35px;
+}
+
+.galeria-icons-row-1 img, 
+.galeria-icons-row-2 img, 
+.galeria-icons-row-3 img {
+    margin-bottom: 15px;
+}
 
 .galeria-icons-row-1 {
     padding-left: 20%;
@@ -568,18 +622,24 @@ hr {
     width: 150%;
 }
 
+#galeria-de-eventos .owl-prev,
+#galeria-de-eventos .owl-next {
+    top: 40%;
+}
+
 /*************************
     FOOTER
 *************************/
 
 footer {
-    padding: 70px;
+    padding: 70px 50px;
     background-color: #343434;
     color: #fff;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
 }
 footer .container {
-    margin-left: 20px;
+    /*margin-left: 20px;*/
+    width: 100%;
 }
 footer .btn-default {
     border-radius: 0;
@@ -589,6 +649,7 @@ footer .btn-default {
     margin-bottom: 10px;
     margin-top: 10px;
     border-color: #808080;
+    width: 170px;
 }
 footer .btn-default:hover {
     background-color: #f8dee7;
@@ -605,7 +666,7 @@ footer .btn-default:hover {
     margin-top: 10px;
 }
 .footer-quote .fa {
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-right: 5px;
 }
 .footer-logo {
@@ -627,9 +688,10 @@ footer .btn-default:hover {
 }
 .footer-contact .contact-title {
     font-size: 1.1em;
+    padding-right: 10%;
 }
 .footer-contact .contact-location {
-    font-size: .7em;
+    font-size: .8em;
 }
 .footer-contact span {
     color: #808080;
@@ -638,11 +700,46 @@ footer .btn-default:hover {
 .footer-contact .fa-home {
     font-size: 1.5em;
 }
-
+.footer-logo-container {
+    position: relative;
+    height: 150px;
+    width: 45%;
+}
+.footer-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.footer-contact-img {
+    height: 20px
+}
+.footer-quote {
+    width: 30%;
+}
+.footer-logo-container {
+    width: 35%;
+}
+footer .phone-icon {
+    margin-left: 2%;
+}
+footer .house-icon {
+    margin-left: 1%;
+}
 /*************************
     MEDIA QUERIES
 *************************/
-
+@media screen and (min-width: 1085px) {
+    .navbar-default .navbar-nav>li {
+        height: 60px;
+        margin-top: -5px;
+    }
+    .navbar-default .navbar-nav>li>a {
+        padding-top: 20px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
 @media screen and (min-width: 995px) {
     .cupcake-icon {
         padding-right: 0;
@@ -652,19 +749,58 @@ footer .btn-default:hover {
     }
     
 }
+
+
+
 @media screen and (max-width: 1255px) {
     #homepage .navbar-nav,
     .navbar-default .navbar-nav {
         margin-left: 15%;
     }
 }
+@media screen and (max-width: 1200px) {
+    .diseno-photos-row {
+        padding-left: 8%;
+    }
+    .diseno-photos-row div {
+        margin-right: 7%;
+    }
+    .diseno-photos-row p {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1188px) {
+    .salones-top-row {
+        width: 100%;
+        margin-left: -5%;
+    }
+}
 
+@media screen and (max-width: 1115px) {
+    .homepage-features {
+        height: 90vh;
+    }
+}
+@media screen and (max-width: 1085px) {
+    .navbar-default {
+        height: 50px;
+        padding-top: 0;
+    }
+}
 @media screen and (max-width: 995px) {
     footer .footer-quote,
     footer .footer-logo,
+    .footer-logo-container,
     footer .footer-contact {
         text-align: center;
         margin-bottom: 30px;
+        width: 100%;
+    }
+    .footer-contact-img {
+        display: none;
+    }
+    .footer-contact .col-xs-10 {
+        width: 100%
     }
     #homepage .navbar-nav,
     .navbar-default .navbar-nav {
@@ -675,17 +811,65 @@ footer .btn-default:hover {
     }  
     .diseno-de-eventos-content {
         text-align: center;
+        margin-bottom: 40px;
     }
     .diseno-photos-row {
         padding-left: 15px;
     }
     .diseno-photos-row div {
         margin-bottom: 20px;
+        width: 100%;
+    }
+    .diseno-photos-row p {
+        margin-left: 0;
     }
     .salones-img-links .salones-images {
         margin-bottom: 130px;
     }
+    .salones-top-row {
+        width: 100%;
+        margin-left: 0;
+    }
+    .salones-img-links {
+        padding-left: 10%;
+    }
+    
 }
+@media screen and (max-width: 990px) {
+    .right-text-fix {
+        margin-left: 0;
+    }
+    .salones-img-links {
+        padding-left: 40%;
+        margin-bottom: 0px;
+    }
+    #renta-de-salones .somos-content {
+        margin-bottom: 0;
+    }
+    .salones-top-row {
+        margin-bottom: 50px;
+    }
+    .video-row {
+        margin-bottom: 70px !important;
+    }
+    #galeria-de-eventos h2 {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 925px) {
+    .lincanto-carousel .container, 
+    .farfala-carousel, 
+    .bambinos-carousel {
+        padding-left: 0;
+    }
+    #renta-de-salones img.arrow-right {
+        right: -100px;
+    }
+    #renta-de-salones img.arrow-left {
+        left: -90px;
+    }
+}
+
 @media screen and (max-width: 875px) {
     #homepage .navbar-nav,
     .navbar-default .navbar-nav {
@@ -699,8 +883,26 @@ footer .btn-default:hover {
         margin-left: 5%;
         margin-right: 5%;
     }  
+    #galeria-de-eventos .somos-text,
+    #diseno-de-eventos .somos-text {
+        margin-left: 0;
+        margin-right: 0;
+    }  
+    #renta-de-salones img.arrow-left {
+        left: 0;
+    }
+    #renta-de-salones img.arrow-right {
+        right: 0;
+    }
 }
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 805px) {
+    #renta-de-salones .somos-text {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+}
+@media screen and (max-width: 767px) {
     footer .footer-contact i {
         display: none;
     }
@@ -739,8 +941,19 @@ footer .btn-default:hover {
         background-color: rgba(255, 255, 255, .74);
         background-color: #343434;
     }
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        background-color: #f8dee7;
+    }
     #galeria-de-eventos h2 {
     width: 100%;
+    }
+    .salones-img-links {
+        padding-left: 30%;;
+    }
+}
+@media screen and (max-width: 680px) {
+    .video-row iframe {
+        width: 90vw !important;
     }
 }
 @media screen and (max-width: 600px) {
@@ -753,7 +966,7 @@ footer .btn-default:hover {
         padding-left: 1%;
     }
     .salones-img-links {
-        padding-left: 20%;
+        padding-left: 30%;
     }
     .salones-top-row {
         margin-bottom: 0px;
@@ -765,6 +978,11 @@ footer .btn-default:hover {
     .galeria-icons-row-3 {
         padding-left: 0%;
         padding-right: 0%;
+    }
+}
+@media screen and (max-width: 530px) {
+    .lincanto img, .farfala img, .bambinos img {
+        margin-left: 0;
     }
 }
 @media screen and (max-width: 475px) {
@@ -798,9 +1016,15 @@ footer .btn-default:hover {
     .galeria-icons-row-2 .col-xs-2 {
         margin-left: 3%;
     }
+   
+}
+@media screen and (max-width: 430px) {
+     .salones-img-links {
+        padding-left: 20%;
+    }
 }
 
-/*CAROUSEL ARROWS TO BE CONTINUED...*/
+/*CAROUSEL ARROWS*/
 .owl-next {
     position: absolute;
     top: 30%;
@@ -818,7 +1042,21 @@ img.arrow-left {
     height: 50px;
 }
 
-.right-text-fix {
-    margin-left: -30%;
+.video {
+    max-width: 100%;
+}
+
+@media (orientation: landscape) and (max-device-width: 770px) {
+    .carousel, .carousel .item, .carousel-inner > .item > .slide-img {
+        height: 150vh;
+    }
+        img.header-logo {
+        height: 100px;
+        margin-bottom: 10px;
+        margin-top: -20px;
+    }
+    .homepage-features {
+        height: 120vh;
+    }
 }
 

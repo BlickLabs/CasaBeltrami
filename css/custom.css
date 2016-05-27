@@ -12,7 +12,7 @@
 6. DISEÑO DE EVENTOS
 
 7. RENTA DE SALONES
-
+|
 8. GALERÍA DE EVENTOS
 
 9. FOOTER  
@@ -92,9 +92,16 @@ body {
     background-color: rgba(255, 255, 255, .84);
     border-color: transparent;
 }
+#homepage .navbar-nav>li {
+    display: inline-block;
+    float: none;
+    margin-right: -4px;
+    margin-bottom: -1px;
+}
 #homepage .navbar-nav>li>a {
-    text-transform: uppercase;
-    font-size: .75em;
+    text-transform: lowercase;
+    font-size: 16px;
+    font-variant: small-caps;
     color: #4d4d4d;
     font-family: Montserrat-Regular;
 }
@@ -109,8 +116,14 @@ body {
     color:  #4d4d4d !important;
 }
 
+#homepage #navbar {
+    text-align: center;
+}
+
 #homepage .navbar-nav {
-    margin-left: 20%;
+    /*margin-left: 20%;*/
+    display: inline-block;
+    float: none !important;
 }
 
 
@@ -163,7 +176,7 @@ body {
 .carousel,
 .carousel .item,
 .carousel-inner > .item > .slide-img {
-    height: 100vh;
+    height: 75vh;
     width: 100%;
 }
 .carousel-caption {
@@ -171,7 +184,13 @@ body {
     left: 25%;
     padding-bottom: 30px;
     top: 30%;
+    text-shadow: none;
 }
+
+.carousel-control {
+    width: 7%;
+}
+
 .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev,
 .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
     font-size: 3em;
@@ -184,7 +203,7 @@ body {
     height: 50px;
 }
 img.header-logo {
-    height: 150px;
+    height: 140px;
     margin-bottom: 40px;
 }
 .first-slide {
@@ -732,7 +751,6 @@ footer .house-icon {
 @media screen and (min-width: 1085px) {
     .navbar-default .navbar-nav>li {
         height: 60px;
-        margin-top: -5px;
     }
     .navbar-default .navbar-nav>li>a {
         padding-top: 20px;
@@ -750,14 +768,6 @@ footer .house-icon {
     
 }
 
-
-
-@media screen and (max-width: 1255px) {
-    #homepage .navbar-nav,
-    .navbar-default .navbar-nav {
-        margin-left: 15%;
-    }
-}
 @media screen and (max-width: 1200px) {
     .diseno-photos-row {
         padding-left: 8%;
@@ -801,10 +811,6 @@ footer .house-icon {
     }
     .footer-contact .col-xs-10 {
         width: 100%
-    }
-    #homepage .navbar-nav,
-    .navbar-default .navbar-nav {
-        margin-left: 5%;
     }
     .somos-text {
         margin-left: 10%;
@@ -871,9 +877,7 @@ footer .house-icon {
 }
 
 @media screen and (max-width: 875px) {
-    #homepage .navbar-nav,
     .navbar-default .navbar-nav {
-        margin-left: 1%;
         overflow-x: hidden !important;
     }
     #homepage .navbar-nav>li>a {
@@ -913,6 +917,9 @@ footer .house-icon {
     .navbar-inverse .navbar-collapse {
         background-color: #343434;
         color: #fff;
+    }
+    #homepage .navbar-nav>li {
+        display: block;
     }
     #homepage .navbar-nav>li>a {
         color: #fff;

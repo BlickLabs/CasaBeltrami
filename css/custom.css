@@ -133,6 +133,10 @@ body {
     margin-bottom: 0;
     height: 60px;
     text-align: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 .navbar-default .navbar-nav>li {
     font-weight: bold;
@@ -307,7 +311,6 @@ img.header-logo {
     background-size: cover;
     background-blend-mode: multiply;
 }
-
 .homepage-fixed-nav {
     background-color: rgba(255, 255, 255, 1) !important;
     position: fixed;
@@ -318,16 +321,27 @@ img.header-logo {
 /*************************
     QUIENES SOMOS
 *************************/
-.somos-content {
+#quienes-somos .somos-content {
     margin-top: 40px;
-    margin-bottom: 50px;
+}
+.somos-content {
+    text-align: center;
+    margin-top: 110px;
+    margin-bottom: 35px !important;
+}
+.somos-content .icon-features {
+    margin-top: 25px;
+}
+.somos-text {
+    text-align: left;
+    float: none;
 }
 #quienes-somos .somos-text {
-    margin-top: 30px
+    margin-top: 30px;
 }
 .somos-content h3 {
     font-family: Montserrat-Bold-2;
-    color: #111;
+    color: #4d4d4d;
     text-transform: uppercase;
     font-size: 1.1em;
 }
@@ -351,7 +365,7 @@ hr {
     line-height: 135%;
 }
 .somos-carousel {
-    
+    margin-top: 50px;
 }
 .icon-features a {
     color: #4d4d4d;
@@ -360,7 +374,6 @@ hr {
 /*************************
     DISENO DE EVENTOS
 *************************/
-
 #diseno-de-eventos .icon-features {
     padding-left: 0;
 }
@@ -380,7 +393,7 @@ hr {
     top: -220%;
 }
 .diseno-de-eventos-content {
-    margin-top: 70px;
+    margin-top: 100px;
     margin-bottom: 100px
 }
 .diseno-photos-row {
@@ -396,7 +409,7 @@ hr {
     text-align: center;
     font-size: 1.25em;
     color: #4d4d4d;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: 10%;
 }
 
@@ -544,7 +557,7 @@ hr {
 }
 #renta-de-salones .item p {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 #renta-de-salones img.arrow-left {

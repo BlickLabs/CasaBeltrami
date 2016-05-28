@@ -53,7 +53,7 @@ Helvetica, sans-serif   Body
 #homepage h2,
 #diseno-de-eventos h2,
 #galeria-de-eventos h2 {
-    font-size: 3.75em;
+    font-size: 60px;
     line-height: 0.9;
     margin-bottom: 20px
 }
@@ -244,19 +244,22 @@ img.header-logo {
     font-size: .7em;
     color: #4d4d4d;
     text-align: center;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-bottom: 15px;
 }
 .icon-features img {
-    height: 50px;
-    margin-bottom: 10px;
+    height: 43px;
+    margin-bottom: 5px;
+}
+.icon-features span {
+    display: block;
 }
 .homepage-features {
-    height: 80vh;
+    height: 70vh;
     color: #fff;
 }
 .homepage-features .container {
-    margin-top: 5%;
+    margin-top: 8%;
 }
 .homepage-features {
     text-align: center;
@@ -270,17 +273,19 @@ img.header-logo {
     text-align: right;
 }
 .homepage-features p {
-    font-size: 1.15em;
+    font-size: 21px;
     font-family: TimesLTStd-Italic;
+    line-height: 120%;
 }
 .homepage-features .btn-default {
     border-radius: 0;
     background-color: transparent;
     border-color: #f8dee7;
+    box-sizing: border-box !important;
     color: #fff;
     font-size: 1em;
     margin-top: 20px;
-    width: 200px
+    padding: 12px 35px;
 }
 .homepage-features .btn-default:hover {
     background-color: #f8dee7;
@@ -318,10 +323,12 @@ img.header-logo {
 }
 
 .homepage-fixed-nav {
+    background-color: rgba(255, 255, 255, 1) !important;
     position: fixed;
     width: 100%;
     top: 0;
 }
+
 /*************************
     QUIENES SOMOS
 *************************/
@@ -685,7 +692,7 @@ footer .btn-default:hover {
     margin-top: 10px;
 }
 .footer-quote .fa {
-    font-size: 1.3em;
+    font-size: 1.1em;
     margin-right: 5px;
 }
 .footer-logo {
@@ -707,7 +714,7 @@ footer .btn-default:hover {
 }
 .footer-contact .contact-title {
     font-size: 1.1em;
-    padding-right: 10%;
+    padding-right: 21%;
 }
 .footer-contact .contact-location {
     font-size: .8em;
@@ -736,8 +743,17 @@ footer .btn-default:hover {
 .footer-quote {
     width: 30%;
 }
+.footer-quote .follow {
+    margin-right: 8px;
+}
 .footer-logo-container {
     width: 35%;
+}
+footer .message-icon {
+    margin-left: 1%;
+}
+footer .message-icon img {
+    height: 15px
 }
 footer .phone-icon {
     margin-left: 2%;
@@ -785,12 +801,12 @@ footer .house-icon {
         margin-left: -5%;
     }
 }
-
+/*
 @media screen and (max-width: 1115px) {
     .homepage-features {
         height: 90vh;
     }
-}
+}*/
 @media screen and (max-width: 1085px) {
     .navbar-default {
         height: 50px;
@@ -805,6 +821,9 @@ footer .house-icon {
         text-align: center;
         margin-bottom: 30px;
         width: 100%;
+    }
+    .footer-contact .contact-title {
+        padding: 0;
     }
     .footer-contact-img {
         display: none;
@@ -1005,7 +1024,7 @@ footer .house-icon {
         font-size: 3em;
     }
     .footer-quote .fa {
-        display: block;
+        /*display: block;*/
         margin-bottom: 10px;
         margin-top: 10px;
     }
@@ -1028,6 +1047,14 @@ footer .house-icon {
 @media screen and (max-width: 430px) {
      .salones-img-links {
         padding-left: 20%;
+    }
+}
+@media screen and (max-width: 320px) {
+    .homepage-features {
+        height: 90vh;
+    }
+    .homepage-features .container {
+        margin-top: 13%;
     }
 }
 

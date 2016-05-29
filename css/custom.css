@@ -536,7 +536,8 @@ hr {
 }
 .lincantoBtn,
 .farfalaBtn, 
-.bambinosBtn {
+.bambinosBtn,
+.cotizaBtn {
     border-radius: 0;
     border-color: transparent;
     color: #fff;
@@ -550,6 +551,16 @@ hr {
 }
 .bambinosBtn {
     background-color:  #718cd1;
+}
+.cotizaBtn {
+    display: block;
+    background-color:  #f8dee7;
+    color: #4d4d4d;
+    margin: 30px auto 60px auto;
+}
+.cotizaBtn:hover {
+    background: #EFABC2;
+    border-color: #EFABC2;
 }
 .salones-buttons {
     text-align: center;
@@ -747,6 +758,101 @@ footer .phone-icon {
 }
 footer .house-icon {
     margin-left: 1%;
+}
+
+/*************************
+    COTIZA
+*************************/
+.selectpicker {
+    background: transparent;
+    padding-bottom: 13px;
+    padding-top: 13px;
+    font-size: 16px;
+}
+.form-control {
+    border-radius: 0px;
+    padding-bottom: 22.5px;
+    padding-top: 22.5px;
+    font-size: 16px;
+}
+.form-control:focus {
+    box-shadow: none;
+    outline: none;
+}
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active:hover:hover,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.disabled:hover:hover,
+.datepicker table tr td.active:focus,
+.datepicker table tr td.active:hover:focus,
+.datepicker table tr td.active.disabled:focus,
+.datepicker table tr td.active.disabled:hover:focus,
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover:active,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.active,
+.open .dropdown-toggle.datepicker table tr td.active:hover,
+.open .dropdown-toggle.datepicker table tr td.active.disabled,
+.open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
+    color: #4d4d4d !important;
+    background-color: #EFABC2 !important;
+    border-color: #EFABC2 !important;
+}
+.datepicker table tr td.day:hover,
+.datepicker table tr td.day.focused {
+    background: #EFABC2 !important;
+    cursor: pointer;
+}
+.datepicker thead tr:first-child th:hover,
+.datepicker tfoot tr th:hover {
+    background: #EFABC2 !important;
+}
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active:hover:hover,
+.datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active.disabled:hover:hover,
+.datepicker table tr td span.active:focus,
+.datepicker table tr td span.active:hover:focus,
+.datepicker table tr td span.active.disabled:focus,
+.datepicker table tr td span.active.disabled:hover:focus,
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover:active,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td span.active,
+.open .dropdown-toggle.datepicker table tr td span.active:hover,
+.open .dropdown-toggle.datepicker table tr td span.active.disabled,
+.open .dropdown-toggle.datepicker table tr td span.active.disabled:hover {
+    color: #666 !important;
+    background-color: #EFABC2 !important;
+    border-color: #EFABC2 !important;
+}
+.datepicker table tr td span:hover {
+    background: #EFABC2 !important; 
+}
+.date-outer-border{
+    padding: 25px 0px;
+    background-color: #f8dee7;
+    margin-top: 0px;
+}
+.margin-select {
+    margin-bottom: 15px;
+}
+.datepicker.datepicker-inline {
+    margin: auto !important;
+    font-size: 14px;
+}
+textarea.form-control {
+    resize: none;
 }
 /*************************
     MEDIA QUERIES

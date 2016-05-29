@@ -327,31 +327,31 @@ img.header-logo {
 }
 #homepage .floral,
 #diseno-de-eventos .floral {
-    background: url("../img/homepage/2.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background: url("../img/homepage/5.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
     background-blend-mode: multiply;
 }
 #homepage .renta {
-    background: url("../img/homepage/3.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background: url("../img/homepage/6.jpg") center center no-repeat rgba(0, 0, 0, .3);
     background-size: cover;
     background-blend-mode: multiply;
     overflow-x: hidden;
 }
 #diseno-de-eventos .mesas-de-quesos,
 #homepage .mesas-de-quesos {
-    background: url("../img/homepage/4.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background: url("../img/homepage/7.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
     background-blend-mode: multiply;
 }
 #diseno-de-eventos .renta-mobiliario,
 #homepage .renta-mobiliario {
-    background: url("../img/homepage/5.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background: url("../img/homepage/8.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
     background-blend-mode: multiply;
     overflow: hidden;
 }
 #homepage .galeria {
-    background: url("../img/homepage/6.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background: url("../img/homepage/9.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
     background-blend-mode: multiply;
 }

@@ -50,6 +50,15 @@ Helvetica, sans-serif   Body
     src: url(../fonts/TimesLTStd-Italic.otf);
 }
 
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
 #homepage h2,
 #diseno-de-eventos h2,
 #galeria-de-eventos h2 {

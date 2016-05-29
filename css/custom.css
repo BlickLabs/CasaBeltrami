@@ -189,12 +189,19 @@ body {
     width: 40%;
     vertical-align: middle;
 }
-
+.carousel-caption.always-visible > div {
+    margin-top: -140px;
+}
+.carousel-caption:not(.always-visible) > div {
+    margin-top: 180px;
+}
 .carousel-control {
     width: 7%;
     z-index: 2;
 }
-
+img.header-logo {
+    height: 140px;
+}
 .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev,
 .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
     font-size: 3em;
@@ -206,8 +213,7 @@ body {
 #homepage .glyphicon-chevron-right {
     height: 50px;
 }
-img.header-logo {
-    height: 140px;
+.carousel-caption.help img {
     margin-bottom: 40px;
 }
 .first-slide {
@@ -991,7 +997,7 @@ footer .house-icon {
         padding: 40px 25px;
     }
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 480px) {
     .carousel, .carousel .item, .carousel-inner > .item > .slide-img {
         height: 100vh;
     }

@@ -812,8 +812,11 @@ footer .house-icon {
     .footer-contact .col-xs-10 {
         width: 100%
     }
+    .somos-content {
+        margin-top: 80px;
+    }
     .somos-text {
-        margin-left: 10%;
+        margin: 0 10%;
     }  
     .diseno-de-eventos-content {
         text-align: center;
@@ -863,22 +866,6 @@ footer .house-icon {
     #homepage .navbar-nav>li>a {
         font-size: .65em;
     }
-    .somos-text {
-        margin-left: 5%;
-        margin-right: 5%;
-    }  
-    #galeria-de-eventos .somos-text,
-    #diseno-de-eventos .somos-text {
-        margin-left: 0;
-        margin-right: 0;
-    } 
-}
-@media screen and (max-width: 805px) {
-    #renta-de-salones .somos-text {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    
 }
 @media screen and (max-width: 767px) {
     footer .footer-contact i {
@@ -919,7 +906,7 @@ footer .house-icon {
        margin: 0;
     }
     .navbar-default .navbar-toggle {
-        border-color: #fff;
+        border: none;
     }
     .navbar-default .navbar-toggle .icon-bar {
         background-color: #fff;
@@ -940,6 +927,9 @@ footer .house-icon {
     }
     .icon-features {
         margin-bottom: 0;
+    }
+    #quienes-somos .somos-text {
+        margin-top: 0px;
     }
 }
 @media screen and (max-width: 680px) {

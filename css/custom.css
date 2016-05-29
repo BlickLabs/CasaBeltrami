@@ -174,6 +174,7 @@ body {
     bottom: 0 !important;
     left: 0 !important;
     right: 0 !important;
+    z-index: 1;
 }
 .carousel-caption::before {
     content: '';
@@ -191,6 +192,7 @@ body {
 
 .carousel-control {
     width: 7%;
+    z-index: 2;
 }
 
 .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev,
@@ -261,18 +263,29 @@ img.header-logo {
     color: #fff;
 }
 .homepage-features .container {
-    margin-top: 8%;
+    height: 100%;
+    width: 100% !important;
 }
-.homepage-features {
-    text-align: center;
-}
-.homepage-features-left h2,
-.homepage-features-left p {
+.homepage-features .container.left{
     text-align: left;
 }
-.homepage-features-right h2,
-.homepage-features-right p {
+.homepage-features .container.right{
     text-align: right;
+}
+.homepage-features .container::before {
+    display: inline-block;
+    position: relative;
+    content: ' ';
+    height: 100%;
+    margin-left: -1px;
+    vertical-align: middle;
+}
+.homepage-features .container > div {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    width: 35%;
+    margin: 0 150px;
 }
 .homepage-features p {
     font-size: 21px;
@@ -898,6 +911,13 @@ footer .house-icon {
         margin-left: 0;
         width: 100%;
     }
+    .homepage-features .container {
+        text-align: center !important;
+    }
+    .homepage-features .container > div {
+       width: 80%;
+       margin: 0;
+    }
     .navbar-default .navbar-toggle {
         border-color: #fff;
     }
@@ -915,6 +935,12 @@ footer .house-icon {
     #galeria-de-eventos h2 {
         width: 100%;
     }
+    .icon-features div{
+        margin-bottom: 20px !important;
+    }
+    .icon-features {
+        margin-bottom: 0;
+    }
 }
 @media screen and (max-width: 680px) {
     .video-row iframe {
@@ -930,6 +956,9 @@ footer .house-icon {
     }
 }
 @media screen and (max-width: 600px) {
+    img.header-logo {
+        height: 100px;
+    }
     #renta-de-salones .item {
         width: 100%;
     }
@@ -968,6 +997,9 @@ footer .house-icon {
         margin-bottom: 10px;
         margin-top: 10px;
     }
+    footer {
+        padding: 40px 25px;
+    }
 }
 @media screen and (max-width: 420px) {
     .carousel, .carousel .item, .carousel-inner > .item > .slide-img {
@@ -983,9 +1015,6 @@ footer .house-icon {
 @media screen and (max-width: 320px) {
     .homepage-features {
         height: 90vh;
-    }
-    .homepage-features .container {
-        margin-top: 13%;
     }
 }
 

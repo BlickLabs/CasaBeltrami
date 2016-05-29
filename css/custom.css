@@ -321,6 +321,10 @@ img.header-logo {
     background-color: #f8dee7;
     color:  #4d4d4d;
 }
+#diseno-de-eventos .homepage-features .container > div,
+#renta-de-salones .homepage-features .container > div {
+    margin-top: -120px;
+}
 #homepage .floral,
 #diseno-de-eventos .floral {
     background: url("../img/homepage/2.jpg") center center no-repeat rgba(0, 0, 0, .15);
@@ -509,22 +513,7 @@ hr {
 .farfala img,
 .bambinos img {
     height: 100px;
-    margin-left: -50%;
     margin-bottom: 20px;
-}
-.bambinos img {
-    position: absolute;
-    right: 0;
-}
-.farfala img {
-    margin-top: 10px;
-}
-.farfala p {
-    margin-top: -20px;
-}
-.bambinos p {
-    position: absolute;
-    top: 120px;
 }
 .salones-icon-row {
     position: relative;

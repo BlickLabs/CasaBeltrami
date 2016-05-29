@@ -170,11 +170,23 @@ body {
     width: 100%;
 }
 .carousel-caption {
-    right: 25%;
-    left: 25%;
-    padding-bottom: 30px;
-    top: 30%;
-    text-shadow: none;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+.carousel-caption::before {
+    content: '';
+    height: 100%;
+    width: 0 !important;
+    background: red;
+    display: inline-block;
+    vertical-align: middle;
+}
+.carousel-caption > div {
+    display: inline-block;
+    width: 40%;
+    vertical-align: middle;
 }
 
 .carousel-control {
@@ -539,19 +551,12 @@ hr {
 }
 #renta-de-salones .item {
     width: 95%;
+    margin: 0 auto;
+    overflow: hidden !important;
 }
 #renta-de-salones .item p {
     text-align: center;
     margin-top: 15px;
-}
-
-#renta-de-salones img.arrow-left {
-    position: absolute;
-    left: -120px;
-}
-#renta-de-salones img.arrow-right {
-    position: absolute;
-    right: -120px;
 }
 
 .video-row {
@@ -614,11 +619,6 @@ hr {
 }
 #galeria-de-eventos h2 {
     width: 150%;
-}
-
-#galeria-de-eventos .owl-prev,
-#galeria-de-eventos .owl-next {
-    top: 40%;
 }
 
 /*************************
@@ -842,19 +842,6 @@ footer .house-icon {
         width: 100%;
     }
 }
-@media screen and (max-width: 925px) {
-    .lincanto-carousel .container, 
-    .farfala-carousel, 
-    .bambinos-carousel {
-        padding-left: 0;
-    }
-    #renta-de-salones img.arrow-right {
-        right: -100px;
-    }
-    #renta-de-salones img.arrow-left {
-        left: -90px;
-    }
-}
 
 @media screen and (max-width: 875px) {
     .navbar-default .navbar-nav {
@@ -871,13 +858,7 @@ footer .house-icon {
     #diseno-de-eventos .somos-text {
         margin-left: 0;
         margin-right: 0;
-    }  
-    #renta-de-salones img.arrow-left {
-        left: 0;
-    }
-    #renta-de-salones img.arrow-right {
-        right: 0;
-    }
+    } 
 }
 @media screen and (max-width: 805px) {
     #renta-de-salones .somos-text {
@@ -940,15 +921,27 @@ footer .house-icon {
         width: 90vw !important;
     }
 }
+@media screen and (max-width: 876px) {
+    #renta-de-salones .owl-next {
+        right: 8% !important;
+    }
+    #renta-de-salones .owl-prev {
+        left: 8% !important;
+    }
+}
 @media screen and (max-width: 600px) {
     #renta-de-salones .item {
         width: 100%;
     }
     /*.lincanto-carousel .container, */
-    .farfala-carousel, 
-    .bambinos-carousel {
-        padding-left: 1%;
+    #renta-de-salones .owl-next {
+        right: 18% !important;
+        display: block !important;
     }
+    #renta-de-salones .owl-prev, .left.carousel-control {
+        display: none !important;
+    }
+
     .salones-top-row {
         margin-bottom: 0px;
     }
@@ -976,6 +969,17 @@ footer .house-icon {
         margin-top: 10px;
     }
 }
+@media screen and (max-width: 420px) {
+    .carousel, .carousel .item, .carousel-inner > .item > .slide-img {
+        height: 100vh;
+    }
+    .carousel-caption > div{
+        width: 80%;
+    }
+    .carousel-control {
+        width: 15%;
+    }
+}
 @media screen and (max-width: 320px) {
     .homepage-features {
         height: 90vh;
@@ -986,23 +990,56 @@ footer .house-icon {
 }
 
 /*CAROUSEL ARROWS*/
-.owl-next {
-    position: absolute;
-    top: 30%;
-    right: 7%;
+.owl-carrousel-container {
+    width: 85% !important;
+    margin: 0 auto;
 }
-.owl-prev {
+.owl-next, .owl-prev {
     position: absolute;
-    top: 30%;
-    left: 5%;
+    top: 0 !important;
+    width: auto !important;
+}
+#renta-de-salones .owl-next, #renta-de-salones .owl-prev{
+    height: 85%;
+}
+.owl-next, .owl-prev{
+    height: 100%;
+}
+.owl-next::before, .owl-prev::before {
+    content: '';
+    background: red;
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+}
+#renta-de-salones img.arrow-right {
+    right: -100% !important;
+}
+#renta-de-salones img.arrow-left {
+    left: -100% !important;
+}
+img.arrow-right {
+    right: 50% !important;
+}
+img.arrow-left {
+    left: 50% !important;
+}
+.owl-next{
+    right: 0 !important;
+}
+.owl-prev{
+    left: 0 !important;
 }
 
 /*Change PREV | NEXT to arrows for carousel*/
 img.arrow-right,
 img.arrow-left {
-    height: 50px;
+    height: 20%;
+    position: relative !important;
+    display: inline-block;
+    vertical-align: middle;
 }
-
 .video {
     max-width: 100%;
 }

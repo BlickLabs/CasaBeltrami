@@ -182,6 +182,9 @@ body {
     height: 3px;
     box-shadow: 0 0 3px #4d4d4d;
 }
+.navbar-default .navbar-toggle .icon-bar {
+    box-shadow: none;
+}
 /*************************
     HOMEPAGE 
 *************************/
@@ -1082,22 +1085,27 @@ textarea.form-control {
         background-color: transparent;
         color: #fff;
     }
-    #homepage .navbar-nav>li {
+    #navbar .navbar-nav>li {
         display: block;
         padding-right: 30px;
         padding-top: 5px;
         padding-bottom: 5px;
         margin: 0;
     }
-    #homepage .navbar-nav>li>a {
-        font-size: 18px;
-        line-height: 18px;
+    #navbar .navbar-nav>li>a {
+        font-size: 18px !important;
+        line-height: 18px !important;
         background: none;
-        color: #4d4d4d;
-        padding-right: 0;
+        font-weight: normal;
+        color: #777;
+        padding-right: 0 !important;
     }
-    #homepage .navbar-nav>li.active,
-    #homepage .navbar-nav>li:hover  {
+    #navbar .navbar-nav>li.active>a,
+    #navbar .navbar-nav>li:hover>a {
+        color: #4d4d4d;
+    }
+    #navbar .navbar-nav>li.active,
+    #navbar .navbar-nav>li:hover  {
         background: rgba(255, 255, 255, .74);
     }
     .carousel-caption {

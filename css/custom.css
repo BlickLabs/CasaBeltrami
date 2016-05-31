@@ -128,7 +128,14 @@ body {
 #homepage #navbar {
     text-align: center;
 }
-
+#navbar #navbar-logo {
+    display: none;
+    width: 80px;
+    margin: 25px 30px 10px 0 !important;
+}
+.desktop-hidden {
+    display: none;
+}
 #homepage .navbar-nav, .navbar-default .navbar-nav {
     display: inline-block;
     float: none !important;
@@ -164,7 +171,17 @@ body {
     background-color: rgba(255, 255, 255, .74);
     height: 100%;
 }
-
+.navbar-toggle:hover {
+    background: none !important;
+}
+.navbar-inverse .navbar-toggle {
+    margin-right: 8px;
+    border: none;
+}
+.navbar-toggle .icon-bar {
+    height: 3px;
+    box-shadow: 0 0 3px #4d4d4d;
+}
 /*************************
     HOMEPAGE 
 *************************/
@@ -356,7 +373,7 @@ img.header-logo {
     background-blend-mode: multiply;
 }
 .homepage-fixed-nav {
-    background-color: rgba(255, 255, 255, 1) !important;
+    background: white !important;
     position: fixed;
     width: 100%;
     top: 0;
@@ -984,21 +1001,104 @@ textarea.form-control {
     #homepage .navbar-wrapper {
         margin-top: 0;
     }
+    .homepage-fixed-nav {
+        background: none !important;
+    }
+    #navbar {
+        background: #F8DEE7;
+        width: 280px;
+        position: fixed;
+        right: -280px;
+        top: 0;
+        bottom: 0;
+        transition: right 0.3s;
+        text-align: right !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+    #navbar .footer-contact-img {
+        display: inline-block;
+    }
+    #navbar .white-text {
+        color: white;
+    }
+    #navbar .small-text {
+        font-size: 10.7px;
+    }
+    #navbar .contactanos-span,
+    #navbar .siguenos-span{
+        display: block;
+    }
+    #navbar .contactanos-span {
+        margin: 20px 0 14px 0;
+    }
+    #navbar .contact-info {
+        position: relative;
+        margin: 8px 0;
+    }
+    #navbar .contact-info img {
+        height: 18px;
+        position: absolute;
+        top: 2px;
+        right: 0;
+    }
+    #navbar .contact-info .message-icon {
+        height: 12px;
+        top: 7px;
+    }
+    #navbar .contact-info span {
+        display: inline-block;
+        margin-right: 25px;
+    }
+    .desktop-hidden {
+        display: block;
+    }
+    #navbar hr {
+        float: right;
+        margin-right: 30px;
+    }
+    #navbar div.desktop-hidden {
+        color: #4d4d4d;
+        margin: 0 30px 80px 30px;
+        clear: both;
+    }
+    #navbar .fa {
+        font-size: 30px;
+        margin: 8px 0 0 8px;
+    }
+    #navbar #navbar-logo {
+        display: inline-block;
+        margin: 0 auto;
+    }
+    #navbar.navbar-shown {
+        right: 0;
+    }
+    .navbar-nav {
+        display: block !important;
+        margin-bottom: 50px;
+    }
     #homepage .navbar-inverse,
     .navbar-inverse .navbar-collapse {
-        background-color: #343434;
+        background-color: transparent;
         color: #fff;
     }
     #homepage .navbar-nav>li {
         display: block;
+        padding-right: 30px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin: 0;
     }
     #homepage .navbar-nav>li>a {
-        color: #fff;
+        font-size: 18px;
+        line-height: 18px;
+        background: none;
+        color: #4d4d4d;
+        padding-right: 0;
     }
-    #homepage .navbar-nav>li>a:active,
-    #homepage .navbar-nav>li>a:hover,
-    #homepage .navbar-nav>li>a:focus {
-        color:  #4d4d4d;
+    #homepage .navbar-nav>li.active,
+    #homepage .navbar-nav>li:hover  {
+        background: rgba(255, 255, 255, .74);
     }
     .carousel-caption {
         top: 20%;
@@ -1024,7 +1124,6 @@ textarea.form-control {
     .navbar-default .navbar-toggle:focus, 
     .navbar-default .navbar-toggle:hover {
         background-color: rgba(255, 255, 255, .74);
-        background-color: #343434;
     }
     .navbar-default .navbar-collapse, .navbar-default .navbar-form {
         background-color: #f8dee7;
@@ -1067,7 +1166,7 @@ textarea.form-control {
         right: 18% !important;
         display: block !important;
     }
-    #renta-de-salones .owl-prev, .left.carousel-control {
+    .owl-prev, .left.carousel-control {
         display: none !important;
     }
 

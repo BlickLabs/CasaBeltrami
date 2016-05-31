@@ -12,19 +12,21 @@
 </head>
 <body id="homepage">
 
-<div class="navbar-wrapper">
+  <div class="navbar-wrapper">
     <!--<div class="container">-->
       <nav class="navbar navbar-inverse navbar-static-top ">
         <!--<div class="container col-md-8 col-md-offset-2">-->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
+        <div class="navbar-header">
+          <button id="navbar-trigger" type="button" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar">
+          <div>
+            <img src="img/icons/HomePage_icons-02.png" alt="Casa Beltrami Logo" id="navbar-logo">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Casa Beltrami</a></li>
               <li><a href="quienes-somos.html">Quiénes Somos</a></li>
@@ -33,12 +35,32 @@
               <li><a href="galeria-de-eventos.html">galería de eventos</a></li>
               <li><a href="cotiza.html">cotiza</a></li>
             </ul>
+            <hr class="desktop-hidden">
+            <div class="desktop-hidden">
+              <span class="siguenos-span">Siguenos en: </span>
+              <a href="#"><i class="fa fa-facebook-square white-text" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-instagram white-text" aria-hidden="true"></i></a>
+              <span class="contactanos-span white-text">CONTÁCTANOS</span>
+              <div class="contact-info">
+                <span class="small-text">
+                2291 307456 y 57</span>
+                <img src="img/icons/HomePage_icons-11.png" alt="contact icon"></img>
+              </div>
+              <div class="contact-info">
+                <span class="white-text small-text">info@casabeltrami.com</span>
+                <img class="message-icon" src="img/icons/HomePage_icons-12.png" alt="contact icon"></img>
+              </div>
+              <div class="contact-info">
+                <span class="small-text">Boulevard Miguel Alemán #875 esq. <br>Nicaragua. Boca del Río, Veracruz.</span>
+                <img src="img/icons/HomePage_icons-13.png" alt="contact icon"></img>
+              </div>  
+            </div>
           </div>
         </div>
       </nav>
     <!--</div> <!-- .container -->
   </div> <!-- .navbar-wrapper -->
-    
+  <div id="content-wrapper">
     
     <!-- Carousel
     ================================================== -->
@@ -273,7 +295,7 @@
       </div>
     </footer>
     
-   
+   </div>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
    <script src="js/bootstrap.min.js" type="text/javascript" ></script>
    
@@ -289,7 +311,12 @@
                 }
             // }
         });
-
+  $('#content-wrapper').click(function () {
+    $('#navbar').removeClass('navbar-shown');
+  });
+  $('#navbar-trigger').click(function () {
+    $('#navbar').addClass('navbar-shown');
+  });
    </script>
 </body>
 </html>

@@ -215,7 +215,7 @@ body {
 }
 .carousel-caption > div {
     display: inline-block;
-    width: 40%;
+    width: 60%;
     vertical-align: middle;
 }
 .carousel-caption.always-visible > div {

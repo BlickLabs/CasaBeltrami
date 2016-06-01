@@ -350,7 +350,7 @@ img.header-logo {
 }
 #homepage .floral,
 #diseno-de-eventos .floral {
-    background: url("../img/homepage/5.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background: url("../img/DisenoDeEventos/disenofloral.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
     background-blend-mode: multiply;
 }
@@ -362,11 +362,16 @@ img.header-logo {
 }
 #diseno-de-eventos .mesas-de-quesos,
 #homepage .mesas-de-quesos {
-    background: url("../img/homepage/7.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background: url("../img/DisenoDeEventos/mesasdepostres.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
     background-blend-mode: multiply;
 }
-#diseno-de-eventos .renta-mobiliario,
+#diseno-de-eventos .renta-mobiliario {
+    background: url("../img/DisenoDeEventos/mobiliario.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background-size: cover;
+    background-blend-mode: multiply;
+    overflow: hidden;
+}
 #homepage .renta-mobiliario {
     background: url("../img/homepage/8.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;

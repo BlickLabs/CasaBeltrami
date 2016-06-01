@@ -829,7 +829,7 @@ footer .house-icon {
     background-color: #EFABC2 !important;
     border-color: #EFABC2 !important;
 }
-.datepicker table tr td.day:hover,
+.datepicker table tr td.day:hover:not(.disabled),
 .datepicker table tr td.day.focused {
     background: #EFABC2 !important;
     cursor: pointer;
@@ -870,12 +870,21 @@ footer .house-icon {
     background-color: #f8dee7;
     margin-top: 0px;
 }
+.table-condensed .disabled:hover {
+    background: #333;
+}
 .margin-select {
     margin-bottom: 15px;
 }
 .datepicker.datepicker-inline {
+    background: rgba(255,255,255,0.7);
     margin: auto !important;
     font-size: 14px;
+    padding: 10px;
+    width: 80%;
+}
+.table-condensed {
+    width: 100%;
 }
 textarea.form-control {
     resize: none;

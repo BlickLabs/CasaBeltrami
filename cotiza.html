@@ -65,7 +65,7 @@
   </div> <!-- .navbar-wrapper -->
  <div id="content-wrapper">
    <div class="row somos-content">
-		<div class="container col-md-7 somos-text">
+		<div class="container col-md-8 somos-text">
 				<h3>cotiza<br><span><em>Llena los siguientes campos para solicitar información</em></span></h3>
 				<hr>
 		</div>
@@ -73,18 +73,18 @@
    	<div class="cotiza-content" style="padding-top: 20px;">
    		<form  id="formid" method="post" >
    			<div class="row no-padd-right">
-   				<div class="form-group  col-md-3 col-xs-12 col-md-offset-3">
+   				<div class="form-group col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-2">
    					<input type="text" name="name"  id="name" class="form-control MontserratL form_cotiza"  placeholder="Nombre">
    				</div>
-   				<div class="form-group col-md-3 col-xs-12">
+   				<div class="form-group col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0">
    					<input type="email" name="email" id="email" class="form-control MontserratL form_cotiza" placeholder="Correo Electrónico">
    				</div>
    			</div>
    			<div class="row no-padd-right"> 
-   				<div class="form-group  col-md-3 col-xs-12 col-md-offset-3">
+   				<div class="form-group col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-2">
    				  <input type="text" name="phone_number"  id="phone_number" class="form-control MontserratL form_cotiza"  placeholder="Teléfono">
    				</div>
-   					<div class="form-group col-md-3 col-xs-12 ">
+   					<div class="form-group col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0">
    						<select class="selectpicker col-md-12 col-xs-12 MontserratL combo_cotiza" id="type_event" name="type_event">
    							<option>Tipo de Evento</option>
    							<option value="Bautizo">Bautizo</option>
@@ -103,17 +103,17 @@
    					</div>
    				</div>
    				<div class="row no-padd-right">
-   					<div class="col-md-3 col-xs-12 col-md-offset-3">
+   					<div class="form-group col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-2">
    					<label class="event-title-date MontserratL nineteen grey texto_fecha" style="opacity: 0.6">Fecha del evento:</label>
    					</div>
    				</div>
-   				<div class="col-md-3 col-md-offset-3 col-xs-12 MontserratL select-no-padding-left2 calendario_cotiza">
+   				<div class="form-group col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-2">
    					<div id="datepicker" data-date="4/06/2016" class="MontserratL date-outer-border center-block">
    					</div>
    				</div>
    				<input type="hidden" id="date_event" name="date_event">
    				<div class="row no-padd-right">    
-   					<div class="form-group col-md-3 col-xs-12 select-no-padding-left second-div">
+   					<div class="form-group col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 select-no-padding-left second-div">
    						<select class="selectpicker col-md-12 col-xs-12 MontserratL margin-select combo_cotiza2" id="service" name="service" title="Servicio que Solicitas">
    							<option value="Renta de mobiliario">Renta de mobiliario</option>
    							<option value="Mesas de dulces y quesos">Mesas de dulces y quesos</option>
@@ -241,24 +241,27 @@
 								});
 						}
 				});
-				$('#datepicker').datepicker();
-				$('#datepicker').on("changeDate", function() {
-						$('#date_event').val(
-								$('#datepicker').datepicker('getFormattedDate')
-						);
-						$.fn.datepicker.dates['en'] = {
-								days: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado"],
-								daysShort: ["Dom", "Lun", "Mar", "Mier", "Jue", "Vie", "Sab"],
-								daysMin: ["D", "L", "M", "M", "J", "V", "S"],
-								months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-								monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-								today: "Hoy",
-								clear: "Limpiar",
-								format: "mm/dd/yyyy",
-								titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
-								weekStart: 1
-						};
+				$.fn.datepicker.dates['en'] = {
+							days: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado"],
+							daysShort: ["Dom", "Lun", "Mar", "Mier", "Jue", "Vie", "Sab"],
+							daysMin: ["D", "L", "M", "M", "J", "V", "S"],
+							months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+							monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+							today: "Hoy",
+							clear: "Limpiar",
+							format: "mm/dd/yyyy",
+							titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
+							weekStart: 1
+					};
+				$('#datepicker').datepicker({
+					startDate: new Date()
 				});
+				$('#datepicker').on("changeDate", function() {
+					$('#date_event').val(
+							$('#datepicker').datepicker('getFormattedDate')
+					);
+				});
+
 			  $('#content-wrapper').click(function () {
 			    $('#navbar').removeClass('navbar-shown');
 			  });

@@ -307,6 +307,9 @@ img.header-logo {
 .homepage-features .container.right{
     text-align: right;
 }
+.homepage-features .container.right > div {
+    width: 25%;
+}
 .homepage-features .container::before {
     display: inline-block;
     position: relative;
@@ -486,12 +489,8 @@ hr {
 .salones-top-row {
     margin-bottom: 100px;
 }
-#renta-de-salones .somos-text p {
-    padding-right: 5%;
-}
 .salones-img-links {
-    margin-left: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     margin-top: 30px;
     text-align: center;
     position: relative;
@@ -499,9 +498,12 @@ hr {
 .salones-img-links .salones-images {
     width: 250px;
     height: 250px;
-    margin-right: 30px;
+    margin: 0 15px;
     display: inline-block;
     text-decoration: none;
+}
+.salones-img-links .salones-images img {
+    margin-bottom: 10px;
 }
 .salones-img-links h4 {
     text-transform: uppercase;
@@ -513,6 +515,8 @@ hr {
     font-size: 1.1em;
     font-family: TimesLTStd-Italic;
     color: #4d4d4d;
+    margin: 0;
+    line-height: 105%;
 }
 .lincanto {
     background: url("../img/RentadeSalones/Lincanto.jpg") center center no-repeat rgba(0, 0, 0, .15);
@@ -609,6 +613,7 @@ hr {
 
 .video-row {
     margin-top: 90px;
+    margin-bottom: 90px !important;
 }
 
 /*************************
@@ -699,6 +704,9 @@ footer .btn-default:hover {
 }
 .footer-quote span {
     color: #808080;;
+}
+.footer-quote p {
+    width: 76%;
 }
 .footer-quote p,
 .footer-quote button {
@@ -892,9 +900,17 @@ textarea.form-control {
     .chair-icon {
         padding-left: 0;
     }
-    
 }
-
+@media screen and (max-width: 995px) {
+    .footer-quote p {
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 882px) {
+    .salones-img-links .salones-images:not(:last-child) {
+        margin-bottom: 130px;
+    }
+}
 @media screen and (max-width: 1200px) {
     .diseno-photos-row {
         padding-left: 8%;
@@ -962,9 +978,6 @@ textarea.form-control {
     .diseno-photos-row p {
         margin-left: 0;
     }
-    .salones-img-links .salones-images {
-        margin-bottom: 130px;
-    }
     .salones-top-row {
         width: 100%;
         margin-left: 0;
@@ -998,6 +1011,9 @@ textarea.form-control {
     }
 }
 @media screen and (max-width: 767px) {
+    .video-row {
+        margin-bottom: 50px !important;
+    }
     footer .footer-contact i {
         display: none;
     }
@@ -1006,6 +1022,9 @@ textarea.form-control {
     }
     .homepage-fixed-nav {
         background: none !important;
+    }
+    .somos-text {
+        text-align: justify;
     }
     #navbar {
         background: #F8DEE7;
@@ -1120,7 +1139,7 @@ textarea.form-control {
         text-align: center !important;
     }
     .homepage-features .container > div {
-       width: 80%;
+       width: 80% !important;
        margin: 0;
     }
     .navbar-default .navbar-toggle {

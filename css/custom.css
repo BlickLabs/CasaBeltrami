@@ -502,10 +502,10 @@ hr {
 }
 .salones-img-links .salones-images {
     width: 250px;
-    height: 250px;
     margin: 0 15px;
     display: inline-block;
     text-decoration: none;
+    vertical-align: top;
 }
 .salones-img-links .salones-images img {
     margin-bottom: 10px;
@@ -920,9 +920,9 @@ textarea.form-control {
         margin: 0 auto;
     }
 }
-@media screen and (max-width: 882px) {
+@media screen and (max-width: 851px) {
     .salones-img-links .salones-images:not(:last-child) {
-        margin-bottom: 130px;
+        margin-bottom: 60px;
     }
 }
 @media screen and (max-width: 1200px) {

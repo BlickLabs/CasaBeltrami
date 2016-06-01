@@ -1019,7 +1019,19 @@ textarea.form-control {
         font-size: .65em;
     }
 }
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 768px) {
+    .navbar-header {
+        float: right;
+    }
+    .navbar-toggle {
+        display: none;
+    }
+}
+@media screen and (max-width: 768px) {
+
+    .navbar-toggle {
+        display: inline-block;
+    }
     .video-row {
         margin-bottom: 50px !important;
     }

@@ -319,32 +319,26 @@
    <script>
     $(document).ready(function(){
       $('.owl-carousel').owlCarousel({
-          loop:true,
+            loop:true,
             margin:0,
-            responsiveClass:true,
+            autoplay:false,
+            navText: ["<img class='arrow-left' src='../img/icons/arrow-left-gray.png'> ","<img class='arrow-right' src='../img/icons/arrow-right-gray.png'> "],
             responsive:{
                 0:{
                     items:1,
-                    nav:true,
-                    navText:["<img class='arrow-left' src='../img/icons/arrow-left.png'> ","<img class='arrow-right' src='../img/icons/arrow-right.png'> "]
+                    navText:["<img class='arrow-left' src='../img/icons/arrow-left.png'> ","<img class='arrow-right' src='../img/icons/arrow-right.png'> "],
+                    nav: true
                 },
                 600:{
                     items:3,
-                    nav:true,
-                    navText:["<img class='arrow-left' src='../img/icons/arrow-left.png'> ","<img class='arrow-right' src='../img/icons/arrow-right.png'> "]
-                },
-                876:{
-                    nav:true,
-                    navText:["<img class='arrow-left' src='../img/icons/arrow-left-gray.png'> ","<img class='arrow-right' src='../img/icons/arrow-right-gray.png'> "] 
+                    nav: true
                 },
                 1000:{
                     items:4,
-                    nav:true,
-                    loop:true,
-                    navText:["<img class='arrow-left' src='../img/icons/arrow-left-gray.png'> ","<img class='arrow-right' src='../img/icons/arrow-right-gray.png'> "] 
+                    nav: true
                 }
             }    
-        })
+        });
 
         $(function() {
           $('a[href*="#"]:not([href="#"])').click(function() {

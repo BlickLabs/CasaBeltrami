@@ -495,17 +495,16 @@
       $('.owl-carousel').owlCarousel({
           loop:true,
           margin:0,
+          autoplay:false,
+          navText: ["<img class='arrow-left' src='../img/icons/arrow-left-gray.png'> ","<img class='arrow-right' src='../img/icons/arrow-right-gray.png'> "],
           responsive:{
               0:{
-                 items:1, 
-                 nav:true
+                 items:1,
+                 nav: true
               },
               678:{
                   items:3,
-                  nav:true
-              },
-              1000:{
-                nav:true
+                  nav: true
               }
           }
       });

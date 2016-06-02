@@ -312,11 +312,6 @@
                 }
             // }
         });
-    $('a[href*="#"]:not([href="#"]):not([href="#myCarousel"])').click(function() {
-      var top = $(this.hash).offset().top - 50.0;
-      $("body").scrollTop(top);
-      return false;
-    });
   $('#content-wrapper').click(function () {
     $('#navbar').removeClass('navbar-shown');
   });

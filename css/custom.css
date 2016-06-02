@@ -29,7 +29,9 @@ Helvetica, sans-serif   Body
 /*************************
     FONTS 
 *************************/
-
+html.general-html {
+    padding-top: 50px;
+}
 @font-face {
     font-family: Montserrat-Bold-2;
     src: url(../fonts/Montserrat-Bold-2.otf);
@@ -405,7 +407,7 @@ img.header-logo {
 }
 .somos-content {
     text-align: center;
-    margin-top: 110px;
+    margin-top: 60px;
     margin-bottom: 35px !important;
 }
 .galeria-icons-row a:hover {
@@ -445,9 +447,6 @@ hr {
     color: #4d4d4d;
     font-size: 17px;
     line-height: 135%;
-}
-#quienes-somos .somos-carousel {
-    margin-top: 50px;
 }
 .icon-features a {
     color: #4d4d4d;
@@ -1030,7 +1029,7 @@ textarea.form-control {
         padding-right: 0;
     }
     .somos-content {
-        margin-top: 80px;
+        margin-top: 30px;
     }
     .somos-text {
         margin: 0 10%;

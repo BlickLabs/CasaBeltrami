@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="general-html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -340,7 +340,7 @@
             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
             if (target.length) {
               $('html, body').animate({
-                scrollTop: target.offset().top - 50.0
+                scrollTop: target.offset().top
               }, 2000);
               return false;
             }

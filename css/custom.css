@@ -529,11 +529,18 @@ hr {
     background-position: center center;
     background-repeat: no-repeat;
 }
-.square-container {
+.square-container,
+.rectangle-container {
     position:relative;
     overflow:hidden;
+}
+.square-container {
     padding-bottom:100%;
 }
+.rectangle-container {
+    padding-bottom:70%;
+}
+.rectangle-container .square-image,
 .square-container .square-image {
     position: absolute;
     width: 100%;

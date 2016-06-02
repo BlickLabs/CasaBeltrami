@@ -523,18 +523,49 @@ hr {
     margin: 0;
     line-height: 105%;
 }
+.square-image {
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.square-container {
+    position:relative;
+    overflow:hidden;
+    padding-bottom:100%;
+}
+.square-container .square-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.lincanto-square,
+.farfala-square ,
+.bambinos-square {
+    width: 250px;
+    height: 250px;
+}
+.lincanto-square {
+    background-image: url("../img/RentadeSalones/cuadrolincanto.jpg");
+}
+.farfala-square {
+    background-image: url("../img/RentadeSalones/cuadrofarfala.jpg");
+}
+.bambinos-square {
+    background-image: url("../img/RentadeSalones/cuadrobambinos.jpg");
+}
 .lincanto {
-    background: url("../img/RentadeSalones/Lincanto.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background: url("../img/RentadeSalones/coverlincanto.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
     background-blend-mode: multiply;
 }
 .farfala {
-    background: url("../img/RentadeSalones/Farfala2.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background: url("../img/RentadeSalones/coverfarfala.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
     background-blend-mode: multiply;
 }
 .bambinos {
-    background: url("../img/RentadeSalones/Bambinos2.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background: url("../img/RentadeSalones/coverbambinos.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
     background-blend-mode: multiply;
 }

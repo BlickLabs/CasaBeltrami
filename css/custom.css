@@ -293,44 +293,52 @@ img.header-logo {
 .icon-features span {
     display: block;
 }
-.homepage-features {
+.features {
     height: 70vh;
     color: #fff;
 }
-.homepage-features .container {
+.features h2 {
+    margin-top: 0;
+}
+.features .container {
     height: 100%;
     width: 100% !important;
 }
-.homepage-features .container.left{
+.features .container.left{
     text-align: left;
 }
-.homepage-features .container.right{
+.features .container.right{
     text-align: right;
 }
-.homepage-features .container.right > div {
-    width: 25%;
-}
-.homepage-features .container::before {
+.features .container::before {
     display: inline-block;
     position: relative;
     content: ' ';
     height: 100%;
-    margin-left: -1px;
+    margin-left: -10px;
     vertical-align: middle;
 }
-.homepage-features .container > div {
+.features .container > div {
     display: inline-block;
     position: relative;
     vertical-align: middle;
-    width: 35%;
     margin: 0 150px;
 }
-.homepage-features p {
+.features p {
     font-size: 21px;
     font-family: TimesLTStd-Italic;
     line-height: 120%;
 }
-.homepage-features .btn-default {
+.features .container.right > div {
+    width: 25%;
+}
+.features .container.left > div {
+    width: 35%;
+}
+.features.large .container > div {
+    width: 60%;
+}
+.features .btn-default {
     border-radius: 0;
     background-color: transparent;
     border-color: #f8dee7;
@@ -340,12 +348,11 @@ img.header-logo {
     margin-top: 20px;
     padding: 12px 35px;
 }
-.homepage-features .btn-default:hover {
+.features .btn-default:hover {
     background-color: #f8dee7;
     color:  #4d4d4d;
 }
-#diseno-de-eventos .homepage-features .container > div,
-#renta-de-salones .homepage-features .container > div {
+.features.with-icon .container > div{
     margin-top: -120px;
 }
 #homepage .floral,
@@ -698,7 +705,7 @@ hr {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-#galeria-de-eventos .homepage-features {
+#galeria-de-eventos .features {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat; 
@@ -980,7 +987,7 @@ textarea.form-control {
 }
 /*
 @media screen and (max-width: 1115px) {
-    .homepage-features {
+    .features {
         height: 90vh;
     }
 }*/
@@ -1197,10 +1204,10 @@ textarea.form-control {
         margin-left: 0;
         width: 100%;
     }
-    .homepage-features .container {
+    .features .container {
         text-align: center !important;
     }
-    .homepage-features .container > div {
+    .features .container > div {
        width: 80% !important;
        margin: 0;
     }
@@ -1291,7 +1298,7 @@ textarea.form-control {
     }
 }
 @media screen and (max-width: 320px) {
-    .homepage-features {
+    .features {
         height: 90vh;
     }
 }
@@ -1359,7 +1366,7 @@ textarea.form-control {
         margin-bottom: 10px;
         margin-top: -20px;
     }
-    .homepage-features {
+    .features {
         height: 120vh;
     }
 }

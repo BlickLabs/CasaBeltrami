@@ -781,12 +781,20 @@ footer a:hover {
 .footer-contact {
     text-align: right;
 }
+.footer-contact div:not(.row) {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+.footer-contact > div {
+    display: block !important;
+}
 .footer-contact p {
     font-size: .9em;
 }
 .footer-contact .contact-title {
     font-size: 1.1em;
-    padding-right: 21%;
+    padding-right: 15%;
 }
 .footer-contact .contact-location {
     font-size: .8em;
@@ -813,19 +821,21 @@ footer a:hover {
     height: 20px
 }
 .footer-quote {
-    width: 30%;
+    padding-right: 5%;
+}
+.footer-quote,
+.footer-logo-container,
+.footer-contact {
+    width: 33.333%;
 }
 .footer-quote .follow {
     margin-right: 8px;
-}
-.footer-logo-container {
-    width: 35%;
 }
 footer .message-icon {
     margin-left: 1%;
 }
 footer .message-icon img {
-    height: 15px
+    height: 15px;
 }
 footer .phone-icon {
     margin-left: 2%;
@@ -1014,6 +1024,9 @@ textarea.form-control {
     }
     .footer-contact .col-xs-10 {
         width: 100%
+    }
+    .footer-quote {
+        padding-right: 0;
     }
     .somos-content {
         margin-top: 80px;

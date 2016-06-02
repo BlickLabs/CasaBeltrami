@@ -738,6 +738,11 @@ footer .btn-default:hover {
     background-color: #f8dee7;
     color:  #4d4d4d;
 }
+footer a,
+footer a:hover {
+    color: white;
+}
+
 .footer-quote span {
     color: #808080;;
 }

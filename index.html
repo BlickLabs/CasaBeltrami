@@ -312,7 +312,7 @@
                 }
             // }
         });
-    $('a[href*="#"]:not([href="#"])').click(function() {
+    $('a[href*="#"]:not([href="#"]):not([href="#myCarousel"])').click(function() {
       var top = $(this.hash).offset().top - 50.0;
       $("body").scrollTop(top);
       return false;

@@ -818,7 +818,7 @@ footer a:hover {
     transform: translate(-50%, -50%);
 }
 .footer-contact-img {
-    height: 20px
+    height: 20px;
 }
 .footer-quote {
     padding-right: 5%;
@@ -832,16 +832,17 @@ footer a:hover {
     margin-right: 8px;
 }
 footer .message-icon {
-    margin-left: 1%;
+    margin-right: 0;
 }
 footer .message-icon img {
     height: 15px;
 }
 footer .phone-icon {
-    margin-left: 2%;
+    margin-left: 5px;
+    margin-right: -5px;
 }
 footer .house-icon {
-    margin-left: 1%;
+    margin-right:0;
 }
 
 /*************************

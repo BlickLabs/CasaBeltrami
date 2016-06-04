@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Casa Beltrami | Home</title>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -302,16 +302,15 @@
    
    <script>
   // Fixed nav on scroll
-     $('#homepage').scroll(function () {
-            // if ($(window).width() > 767) {
-                if ($(this).scrollTop() > 70) {
-                  $('.navbar-inverse').addClass('homepage-fixed-nav');
-                } 
-                else {  
-                  $('.navbar-inverse').removeClass('homepage-fixed-nav');
-                }
-            // }
-        });
+   $(document).scroll(function () {
+    if ($(this).scrollTop() > 70) {
+      $('.navbar-inverse').addClass('homepage-fixed-nav');
+      console.log('holi');
+    } 
+    else {  
+      $('.navbar-inverse').removeClass('homepage-fixed-nav');
+    }
+  });
   $('#content-wrapper').click(function () {
     $('#navbar').removeClass('navbar-shown');
   });

@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en" class="general-html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Casa Beltrami | Renta de Salones</title>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -62,7 +62,7 @@
       </nav>
     <!--</div> <!-- .container -->
   </div> <!-- .navbar-wrapper -->
- <div id="content-wrapper">
+ <div id="content-wrapper" class="general">
   <!-- Text Content
     ================================================== -->
   <div class="row somos-content">
@@ -334,17 +334,14 @@
                 }
             }    
         });
-        $('a[href*="#"]:not([href="#"])').click(function() {
-          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-              $('html, body').animate({
-                scrollTop: target.offset().top
-              }, 2000);
-              return false;
-            }
-          }
+        $('a[href^="#"]').on('click',function (e) {
+          e.preventDefault();
+          var navbar = $(".navbar-default").height();
+          var target = this.hash;
+          var $target = $(target);
+          $('html, body').stop().animate({
+              'scrollTop': $target.offset().top - navbar
+          }, 900, 'swing');
         });
         $('#content-wrapper').click(function () {
           $('#navbar').removeClass('navbar-shown');

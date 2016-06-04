@@ -29,9 +29,6 @@ Helvetica, sans-serif   Body
 /*************************
     FONTS 
 *************************/
-html.general-html {
-    padding-top: 50px;
-}
 @font-face {
     font-family: Montserrat-Bold-2;
     src: url(../fonts/Montserrat-Bold-2.otf);
@@ -51,16 +48,18 @@ html.general-html {
     font-family: TimesLTStd-Italic;
     src: url(../fonts/TimesLTStd-Italic.otf);
 }
-
-html,body
-{
+body {
     width: 100%;
     height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
+    overflow-x: hidden;
+    font-size: 16px;
+    font-family: Montserrat-Regular;
 }
-
+#content-wrapper.general {
+    padding-top: 60px;
+}
 #homepage h2,
 #diseno-de-eventos h2,
 #galeria-de-eventos h2 {
@@ -72,12 +71,6 @@ html,body
 /*************************
     GENERAL 
 *************************/
-body {
-    font-size: 16px;
-    font-family: Montserrat-Regular;
-    margin: 0;
-    padding: 0;
-}
 .row {
     margin-left: 0;
     margin-right: 0;
@@ -151,16 +144,13 @@ body {
     margin-bottom: 0;
     height: 60px;
     text-align: center;
-    position: fixed;
+    position: fixed !important;
     top: 0;
     right: 0;
     left: 0;
 }
 .navbar-default .navbar-nav>li {
     font-weight: bold;
-/*    height: 60px;*/
-/*    margin-top: -5px;*/
-    
 }
 
 .navbar-default .navbar-nav>.active>a, 
@@ -459,7 +449,6 @@ hr {
     padding-left: 0;
 }
 .diseno-icon-row {
-    /*border: 3px solid red;*/
     position: relative;
     height: 50px;
 }
@@ -724,10 +713,8 @@ footer {
     padding: 70px 50px;
     background-color: #343434;
     color: #fff;
-    /*overflow-x: hidden;*/
 }
 footer .container {
-    /*margin-left: 20px;*/
     width: 100%;
 }
 footer .btn-default {
@@ -995,13 +982,10 @@ textarea.form-control {
         margin-left: -5%;
     }
 }
-/*
-@media screen and (max-width: 1115px) {
-    .features {
-        height: 90vh;
-    }
-}*/
 @media screen and (max-width: 1085px) {
+    #content-wrapper.general {
+        padding-top: 50px;
+    }
     .navbar-default {
         height: 50px;
         padding-top: 0;
@@ -1089,7 +1073,6 @@ textarea.form-control {
     }
 }
 @media screen and (max-width: 768px) {
-
     .navbar-toggle {
         display: inline-block;
     }
@@ -1185,6 +1168,10 @@ textarea.form-control {
     .navbar-inverse .navbar-collapse {
         background-color: transparent;
         color: #fff;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
     }
     #navbar .navbar-nav>li {
         display: block;
@@ -1262,7 +1249,6 @@ textarea.form-control {
     #renta-de-salones .item {
         width: 100%;
     }
-    /*.lincanto-carousel .container, */
     #renta-de-salones .owl-next {
         margin-right: 5% !important;
     }
@@ -1276,6 +1262,8 @@ textarea.form-control {
 @media screen and (max-width: 530px) {
     .lincanto img, .farfala img, .bambinos img {
         margin-left: 0;
+        max-width: 100%;
+        height: auto;
     }
 }
 @media screen and (max-width: 475px) {
@@ -1291,7 +1279,6 @@ textarea.form-control {
         font-size: 3em;
     }
     .footer-quote .fa {
-        /*display: block;*/
         margin-bottom: 10px;
         margin-top: 10px;
     }

@@ -599,6 +599,10 @@ hr {
     border-radius: 0;
     border-color: transparent;
     color: #fff;
+}
+.lincantoBtn,
+.farfalaBtn, 
+.bambinosBtn {
     width: 180px;
 }
 .lincantoBtn {
@@ -615,10 +619,13 @@ hr {
     background-color:  #f8dee7;
     color: #4d4d4d;
     margin: 30px auto 60px auto;
+    padding: 10px 40px;
 }
-.cotizaBtn:hover {
-    background: #EFABC2;
-    border-color: #EFABC2;
+.cotizaBtn:hover, .cotizaBtn:active, .cotizaBtn:focus {
+    background: #EFABC2 !important;
+    border-color: #EFABC2 !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 .salones-buttons {
     text-align: center;
@@ -840,8 +847,7 @@ footer .house-icon {
 }
 .form-control {
     border-radius: 0px;
-    padding-bottom: 22.5px;
-    padding-top: 22.5px;
+    padding: 22.5px;
     font-size: 16px;
 }
 .form-control:focus {
@@ -869,17 +875,21 @@ footer .house-icon {
 .open .dropdown-toggle.datepicker table tr td.active.disabled,
 .open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
     color: #4d4d4d !important;
-    background-color: #EFABC2 !important;
-    border-color: #EFABC2 !important;
+    background-color: #f8dee7 !important;
+    border-color: #f8dee7 !important;
 }
 .datepicker table tr td.day:hover:not(.disabled),
 .datepicker table tr td.day.focused {
-    background: #EFABC2 !important;
+    background: #f8dee7 !important;
     cursor: pointer;
 }
 .datepicker thead tr:first-child th:hover,
 .datepicker tfoot tr th:hover {
-    background: #EFABC2 !important;
+    background: #f8dee7 !important;
+}
+.datepicker th.next img,
+.datepicker th.prev img {
+    height: 100%;
 }
 .datepicker table tr td span.active:hover,
 .datepicker table tr td span.active:hover:hover,
@@ -902,11 +912,11 @@ footer .house-icon {
 .open .dropdown-toggle.datepicker table tr td span.active.disabled,
 .open .dropdown-toggle.datepicker table tr td span.active.disabled:hover {
     color: #666 !important;
-    background-color: #EFABC2 !important;
-    border-color: #EFABC2 !important;
+    background-color: #f8dee7 !important;
+    border-color: #f8dee7 !important;
 }
 .datepicker table tr td span:hover {
-    background: #EFABC2 !important; 
+    background: #f8dee7 !important; 
 }
 .date-outer-border{
     padding: 25px 0px;
@@ -924,7 +934,7 @@ footer .house-icon {
     margin: auto !important;
     font-size: 14px;
     padding: 10px;
-    width: 80%;
+    width: 90%;
 }
 .table-condensed {
     width: 100%;

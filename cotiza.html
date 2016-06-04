@@ -87,12 +87,12 @@
    				</div>
    					<div class="form-group col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0">
    						<select class="selectpicker col-md-12 col-xs-12 MontserratL combo_cotiza" id="type_event" name="type_event">
-   							<option value="" disabled selected>Tipo de Evento</option>
+   							<option value="" disabled selected>Tipo de evento</option>
    							<option value="Bautizo">Bautizo</option>
    							<option value="Baby Shower">Baby Shower</option>
    							<option value="Boda">Boda</option>
    							<option value="Comunión">Comunión</option>
-   							<option value="Iglesias">Iglesias</option>
+   							<option value="Iglesia">Iglesia</option>
    							<option value="Despedida de soltera">Despedida de soltera</option>
    							<option value="Evento empresarial">Evento empresarial</option>
    							<option value="Fiesta infantil">Fiesta infantil</option>
@@ -116,7 +116,7 @@
    				<div class="row no-padd-right">    
    					<div class="form-group col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 select-no-padding-left second-div">
    						<select class="selectpicker col-md-12 col-xs-12 MontserratL margin-select combo_cotiza2" id="service" name="service" title="Servicio que Solicitas">
-   							<option value="" disabled selected>Tipo de servicio</option>
+   							<option value="" disabled selected>Tipo de servicio que solicitas</option>
    							<option value="Renta de Salon Lincanto">Renta de Salón Lincanto</option>
    							<option value="Renta de Salon Farfala">Renta de Salón Farfala</option>
    							<option value="Renta de Salon Bambinos">Renta de Salón Bambinos</option>
@@ -128,7 +128,7 @@
                      <input type="text" name="persons" id="persons" class="form-control MontserratL form_cotiza2" placeholder="Número de personas">
    					</div>
    					<div class="form-group">
-   						<textarea type="text" name="msg" id="msg" class="form-control MontserratL no-resize form_cotiza2" placeholder="Agrega un mensaje" rows="6" cols="4"></textarea>
+   						<textarea type="text" name="msg" id="msg" class="form-control MontserratL no-resize form_cotiza2" placeholder="Cuéntanos más a detalle en qué te podemos ayudar. (Ej. Número de invitados, tipo de servicio, etc.)" rows="6" cols="4"></textarea>
    					</div>
    				</div>
    			</div>  
@@ -208,42 +208,42 @@
 					});
 				});
 				$("#formid").validate({
-						rules: {
-								name: { required: true, minlength: 2},
-								email: { required:true, email: true},
-								phone_number: { required:true},
-								date_event:{required:true},
-								type_event:{required:true},
-								service:{required:true},
-								persons: { required:true, minlength: 1},
-								msg: { required:true, minlength: 2 }
-						},
-						messages: {
-								name: "Debe introducir su nombre.",
-								email : "Debe introducir un email válido.",
-								phone_number : "El número de teléfono introducido no es correcto.",
-								date_event : "Debes seleccionar una opcion",
-								type_event : "Debes seleccionar una opcion",
-								service : "Debes seleccionar una opcion",
-								persons : "El campo Personas es obligatorio.",
-								msj : "El campo Mensaje es obligatorio.",
-						},
-						submitHandler: function(form){
-								var dataString = 'name='+$('#name').val()+'&email='+$('#email').val()+'&phone_number='+$('#phone_number').val()+
-												'&date_event='+$('#date_event').val()+ '&type_event='+$('#type_event').val()+ '&service='+$('#service').val()+
-												 '&persons='+$('#persons').val()+ '&persons='+$('#persons').val();
-								$.ajax({
-										type: "POST",
-										url:"model/contacto_mail.php",
-										data: dataString,
-										success: function(data){
-												$("#ok").html(data);
-												$("#ok").show();
-												$('.send-btn').hide();
-												document.getElementById('formid').reset();
-										}
-								});
-						}
+					rules: {
+						name: { required: true, minlength: 2},
+						email: { required:true, email: true},
+						phone_number: { required:true},
+						date_event:{required:false},
+						type_event:{required:false},
+						service:{required:false},
+						persons: { required:false, minlength: 1},
+						msg: { required:false, minlength: 2 }
+					},
+					messages: {
+						name: "Debe introducir su nombre.",
+						email : "Debe introducir un email válido.",
+						phone_number : "El número de teléfono introducido no es correcto.",
+						date_event : "Debes seleccionar una opcion",
+						type_event : "Debes seleccionar una opcion",
+						service : "Debes seleccionar una opcion",
+						persons : "El campo Personas es obligatorio.",
+						msj : "El campo Mensaje es obligatorio.",
+					},
+					submitHandler: function(form){
+						var dataString = 'name='+$('#name').val()+'&email='+$('#email').val()+'&phone_number='+$('#phone_number').val()+
+										'&date_event='+$('#date_event').val()+ '&type_event='+$('#type_event').val()+ '&service='+$('#service').val()+
+										 '&persons='+$('#persons').val()+ '&persons='+$('#persons').val();
+						$.ajax({
+								type: "POST",
+								url:"model/contacto_mail.php",
+								data: dataString,
+								success: function(data){
+										$("#ok").html(data);
+										$("#ok").show();
+										$('.send-btn').hide();
+										document.getElementById('formid').reset();
+								}
+						});
+					}
 				});
 				$.fn.datepicker.dates['en'] = {
 							days: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado"],
@@ -265,7 +265,8 @@
 							$('#datepicker').datepicker('getFormattedDate')
 					);
 				});
-
+				$('#datepicker .datepicker th.prev').html('<img src=\'img/icons/arrow-left-gray.png\'>');
+				$('#datepicker .datepicker th.next').html('<img src=\'img/icons/arrow-right-gray.png\'>');
 			  $('#content-wrapper').click(function () {
 			    $('#navbar').removeClass('navbar-shown');
 			  });

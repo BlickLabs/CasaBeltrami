@@ -57,6 +57,9 @@ body {
     font-size: 16px;
     font-family: Montserrat-Regular;
 }
+#content-wrapper {
+    overflow-x: hidden;
+}
 #content-wrapper.general {
     padding-top: 60px;
 }
@@ -1025,9 +1028,6 @@ textarea.form-control {
     .somos-content {
         margin-top: 30px;
     }
-    #quienes-somos .somos-content {
-        margin-bottom: 20px !important;
-    }
     .somos-text {
         margin: 0 10%;
     }  
@@ -1086,6 +1086,9 @@ textarea.form-control {
     }
 }
 @media screen and (max-width: 768px) {
+    #quienes-somos .somos-content {
+        margin-bottom: 20px !important;
+    }
     .navbar-toggle {
         display: inline-block;
     }
@@ -1257,16 +1260,16 @@ textarea.form-control {
     }
 }
 @media screen and (max-width: 600px) {
+    .slick-carousel-with-padding .slick-next {
+        right: 12% !important;
+    }
     img.header-logo {
         height: 100px;
     }
     #renta-de-salones .item {
         width: 100%;
     }
-    #renta-de-salones .owl-next {
-        margin-right: 5% !important;
-    }
-    .owl-prev, .left.carousel-control {
+    .slick-prev {
         display: none !important;
     }
     .salones-top-row {
@@ -1318,53 +1321,44 @@ textarea.form-control {
 }
 
 /*CAROUSEL ARROWS*/
-.owl-carrousel-container {
-    width: 85% !important;
-    display: block;
+.slick-prev, .slick-next {
+    z-index: 1;
+    width: auto;
+    height: 26%;
+}
+.slick-prev::before, .slick-next::before {
+    content: '';
+}
+.slick-next {
+    right: 1%;
+}
+.slick-prev {
+    left: 1%;
+}
+.slick-slide:focus {
+    outline: none;
+}
+.slick-carousel-with-padding .slick-prev {
+    left: 2%;
+}
+.slick-carousel-with-padding .slick-next {
+    right: 2%;
+}
+.slick-carousel-with-padding .slick-prev,
+.slick-carousel-with-padding .slick-next {
+    transform: translate(0, -80%);
+}
+.slick-carousel-with-padding .slick-list{
+    width: 85%;
     margin: 0 auto;
 }
-.owl-stage-outer {
-    z-index: 1 !important;
-    display: block;
+.slick-carousel-with-padding .slick-slide > div {
+    width: 96%;
+    margin: 0 auto;
 }
-.owl-controls {
-    position: absolute;
-    margin-top: 0;
-    width: 100%;
-    height: 100%;
-    top: 0 !important;
-    z-index: 3 !important;
-}
-.owl-nav {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-.owl-next, .owl-prev {
-    position: relative;
-    height: 100%;
-}
-.owl-next {
-    float:right;
-    margin-right: 1%;
-}
-.owl-prev {
-    float: left;
-    margin-left: 1%;
-}
-.arrow-right, .arrow-left {
-    position: relative;
-    height: 26%;
-    top: 37%;
-}
-#renta-de-salones .owl-next, #renta-de-salones .owl-prev {
-    height: 85%;
-}
-#renta-de-salones .owl-next {
-    margin-right: -5%;
-}
-#renta-de-salones .owl-prev {
-    margin-left: -5%;
+.slick-carousel-with-padding p {
+    margin-top: 15px;
+    text-align: center;
 }
 /*Change PREV | NEXT to arrows for carousel*/
 .video {

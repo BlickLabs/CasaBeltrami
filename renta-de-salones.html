@@ -312,7 +312,16 @@
    <script src="js/bootstrap.min.js" type="text/javascript" ></script>
    <script src="js/owl.carousel.min.js" type="text/javascript" ></script>
    <script>
-    $(document).ready(function(){
+    $(document).ready(function(){ 
+      var hash = window.location.hash,
+        navbar = $(".navbar-default").height();
+      if(window.location.hash) {
+        $('html, body').stop().animate({
+            'scrollTop': ($(hash).offset().top) - navbar
+        }, 1, 'swing', function () {
+          window.scrollTo(0, ($(hash).offset().top) - navbar);
+        });
+      }
       $('.owl-carousel').owlCarousel({
             loop:true,
             margin:0,
@@ -334,14 +343,16 @@
                 }
             }    
         });
-        $('a[href^="#"]').on('click',function (e) {
+        $('a[href^="#"]:not([href="#"])').on('click',function (e) {
           e.preventDefault();
-          var navbar = $(".navbar-default").height();
           var target = this.hash;
           var $target = $(target);
           $('html, body').stop().animate({
               'scrollTop': $target.offset().top - navbar
-          }, 900, 'swing');
+          }, 700, 'swing',function () {
+            window.location.hash = target;
+            window.scrollTo(0, ($target.offset().top) - navbar);
+          });
         });
         $('#content-wrapper').click(function () {
           $('#navbar').removeClass('navbar-shown');

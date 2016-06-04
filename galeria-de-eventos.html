@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Casa Beltrami | Galería de eventos</title>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -586,6 +586,15 @@
    
    <script>
     $(document).ready(function(){
+      var hash = window.location.hash,
+        navbar = $(".navbar-default").height();
+      if(window.location.hash) {
+        $('html, body').stop().animate({
+            'scrollTop': ($(hash).offset().top) - navbar
+        }, 1, 'swing', function () {
+          window.scrollTo(0, ($(hash).offset().top) - navbar);
+        });
+      }
       $('.owl-carousel').owlCarousel({
           loop:true,
           margin:0,
@@ -601,6 +610,17 @@
                   nav: true
               }
           }
+      });
+      $('a[href^="#"]:not([href="#"])').on('click',function (e) {
+        e.preventDefault();
+        var target = this.hash;
+        var $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top - navbar
+        }, 700, 'swing',function () {
+          window.location.hash = target;
+          window.scrollTo(0, ($target.offset().top) - navbar);
+        });
       });
       $('#content-wrapper').click(function () {
         $('#navbar').removeClass('navbar-shown');

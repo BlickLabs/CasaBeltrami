@@ -261,11 +261,33 @@
    <script src="js/bootstrap.min.js" type="text/javascript" ></script>
    <script src="js/owl.carousel.min.js" type="text/javascript" ></script>
    <script>
-    $('#content-wrapper').click(function () {
-      $('#navbar').removeClass('navbar-shown');
-    });
-    $('#navbar-trigger').click(function () {
-      $('#navbar').addClass('navbar-shown');
+   $(document).ready(function(){ 
+      var hash = window.location.hash,
+        navbar = $(".navbar-default").height();
+      if(window.location.hash) {
+        $('html, body').stop().animate({
+            'scrollTop': ($(hash).offset().top) - navbar
+        }, 1, 'swing', function () {
+          window.scrollTo(0, ($(hash).offset().top) - navbar);
+        });
+      }
+      $('a[href^="#"]:not([href="#"])').on('click',function (e) {
+        e.preventDefault();
+        var target = this.hash;
+        var $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top - navbar
+        }, 700, 'swing',function () {
+          window.location.hash = target;
+          window.scrollTo(0, ($target.offset().top) - navbar);
+        });
+      });
+      $('#content-wrapper').click(function () {
+        $('#navbar').removeClass('navbar-shown');
+      });
+      $('#navbar-trigger').click(function () {
+        $('#navbar').addClass('navbar-shown');
+      });
     });
    </script>
 </body>

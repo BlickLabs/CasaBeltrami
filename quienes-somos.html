@@ -7,7 +7,6 @@
     <title>Casa Beltrami | Quiénes Somos</title>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slick.css" type="text/css">
     <link rel="stylesheet" href="css/slick-theme.css" type="text/css">
     <link rel="stylesheet" href="css/custom.css" type="text/css">
@@ -67,7 +66,7 @@
  <div id="content-wrapper" class="general">
    <!-- Photo Slideshow
     ================================================== -->
-    <div class="slick-carousel">
+    <div class="slick-carousel waiting">
       <div>
           <div class="rectangle-container">
               <div class="square-image" style="background-image: url('img/QuienesSomos/1.jpg')"></div>
@@ -162,7 +161,6 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 
    <script src="js/bootstrap.min.js" type="text/javascript" ></script>
-   <script src="js/owl.carousel.min.js" type="text/javascript" ></script>
    <script src="js/slick.min.js" type="text/javascript" ></script>
    
    <script>
@@ -185,6 +183,7 @@
           }
         ]
       });
+      $('.slick-carousel').removeClass('waiting');
       $('#content-wrapper').click(function () {
         $('#navbar').removeClass('navbar-shown');
       });

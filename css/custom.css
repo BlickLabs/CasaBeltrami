@@ -1447,6 +1447,10 @@ textarea.form-control {
     margin-top: 15px;
     text-align: center;
 }
+.slick-carousel.waiting {
+    height: 250px;
+    opacity: 0;
+}
 /*Change PREV | NEXT to arrows for carousel*/
 .video {
     max-width: 100%;

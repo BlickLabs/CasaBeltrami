@@ -125,8 +125,8 @@ body {
 }
 #navbar #navbar-logo {
     display: none;
-    width: 80px;
-    margin: 25px 30px 10px 0 !important;
+    width: 75px;
+    margin: 25px 30px 20px 0 !important;
 }
 .desktop-hidden {
     display: none;
@@ -1179,6 +1179,7 @@ textarea.form-control {
         padding-top: 5px;
         padding-bottom: 5px;
         margin: 0;
+        width: 100%;
     }
     #navbar .navbar-nav>li>a {
         font-size: 18px !important;

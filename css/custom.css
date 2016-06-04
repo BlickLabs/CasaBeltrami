@@ -79,8 +79,64 @@ body {
 .right-text-fix {
     margin-left: -30%;
 }
-
-
+.square-features {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+    position: relative;
+}
+.square-features .features-images {
+    width: 250px;
+    margin: 0 15px;
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: top;
+}
+.square-features h4 {
+    text-transform: uppercase;
+    color: #111;
+    font-family: Montserrat-Bold-2;
+    font-size: 1.1em;
+    margin-top: 15px;
+}
+.square-features h4.normal {
+    text-transform: none;
+    color: #333;
+    font-family: Montserrat-Regular;
+    margin-top: 20px;
+}
+.square-features p {
+    font-size: 1.1em;
+    font-family: TimesLTStd-Italic;
+    color: #4d4d4d;
+    margin: 0;
+    line-height: 105%;
+}
+.square-image {
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 250px;
+}
+.square-container,
+.rectangle-container {
+    position:relative;
+    overflow:hidden;
+}
+.square-container {
+    padding-bottom:100%;
+}
+.rectangle-container {
+    padding-bottom:70%;
+}
+.rectangle-container .square-image,
+.square-container .square-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
 /*************************
     NAVIGATION 
 *************************/
@@ -488,64 +544,6 @@ hr {
 *************************/
 .salones-top-row {
     margin-bottom: 100px;
-}
-.salones-img-links {
-    margin-bottom: 30px;
-    margin-top: 30px;
-    text-align: center;
-    position: relative;
-}
-.salones-img-links .salones-images {
-    width: 250px;
-    margin: 0 15px;
-    display: inline-block;
-    text-decoration: none;
-    vertical-align: top;
-}
-.salones-img-links .salones-images img {
-    margin-bottom: 10px;
-}
-.salones-img-links h4 {
-    text-transform: uppercase;
-    color: #111;
-    font-family: Montserrat-Bold-2;
-    font-size: 1.1em;
-}
-.salones-img-links p {
-    font-size: 1.1em;
-    font-family: TimesLTStd-Italic;
-    color: #4d4d4d;
-    margin: 0;
-    line-height: 105%;
-}
-.square-image {
-    background-size: cover;
-    background-blend-mode: multiply;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-.square-container,
-.rectangle-container {
-    position:relative;
-    overflow:hidden;
-}
-.square-container {
-    padding-bottom:100%;
-}
-.rectangle-container {
-    padding-bottom:70%;
-}
-.rectangle-container .square-image,
-.square-container .square-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-.lincanto-square,
-.farfala-square ,
-.bambinos-square {
-    width: 250px;
-    height: 250px;
 }
 .lincanto-square {
     background-image: url("../img/RentadeSalones/cuadrolincanto.jpg");
@@ -961,7 +959,7 @@ textarea.form-control {
     }
 }
 @media screen and (max-width: 851px) {
-    .salones-img-links .salones-images:not(:last-child) {
+    .square-features .features-images:not(:last-child) {
         margin-bottom: 60px;
     }
 }

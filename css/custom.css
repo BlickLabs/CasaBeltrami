@@ -88,6 +88,10 @@ body {
     text-align: center;
     position: relative;
 }
+.features-images.trigger {
+    cursor: pointer !important;
+    cursor: hand !important;
+}
 .square-features .features-images {
     width: 250px;
     margin: 0 15px;
@@ -947,6 +951,83 @@ footer .house-icon {
 textarea.form-control {
     resize: none;
 }
+
+
+/*************************
+    MODAL DIALOGS
+*************************/
+.modal.fade {
+    display:block;
+    z-index: -1;
+}
+.modal.fade.in {
+    z-index: 10000;
+}
+.modal-dialog {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+.modal-dialog::before {
+    height: 100%;
+    display: inline-block;
+    content: ' ';
+    width: 0;
+    vertical-align: middle;
+}
+.modal-content {
+    display: inline-block; 
+    vertical-align: middle;
+}
+.modal-content.gallery {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    width: 90%;
+}
+.modal-content.gallery .rectangle-container {
+    padding-bottom: 50%;
+}
+.modal-content.gallery .modal-body {
+    width: 100%;
+}
+.modal-content.gallery .slick-carousel {
+    background-color: white;
+    border-radius: 6px;
+    padding: 20px;
+}
+.modal-content.gallery .description {
+    font-family: TimesLTStd-Italic;
+    color: white;
+    font-size: 20px;
+    margin: 20px 0 0 0;
+    padding: 0;
+}
+.modal-content.gallery .square-image {
+    /*margin: 20px;*/
+}
+.modal-content.gallery .close-modal {
+    color: white !important;
+    opacity: 1;
+    border: none;
+    box-shadow: none;
+    font-weight: normal;
+    text-align: right;
+    cursor: pointer;
+    cursor: hand;
+}
+.modal-content.gallery .slick-prev {
+    left: 3%;
+}
+.modal-content.gallery .slick-next {
+    right: 3%;
+}
+.modal-content.gallery .slick-prev,
+.modal-content.gallery .slick-next {
+    height: 10%;
+}
 /*************************
     MEDIA QUERIES
 *************************/
@@ -1086,6 +1167,12 @@ textarea.form-control {
     }
 }
 @media screen and (max-width: 768px) {
+    .modal-content.gallery .slick-prev {
+        left: 10%;
+    }
+    .modal-content.gallery .slick-next {
+        right: 10%;
+    }
     #quienes-somos .somos-content {
         margin-bottom: 20px !important;
     }

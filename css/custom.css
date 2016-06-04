@@ -614,14 +614,41 @@ hr {
 .bambinosBtn {
     width: 180px;
 }
+.lincantoBtn:hover,
+.lincantoBtn:active,
+.lincantoBtn:focus,
+.farfalaBtn:hover,
+.farfalaBtn:active,
+.farfalaBtn:focus,
+.bambinosBtn:hover,
+.bambinosBtn:active,
+.bambinosBtn:focus {
+    color: white !important;
+}
 .lincantoBtn {
     background-color:  #ab7ca7;
+}
+.lincantoBtn:hover,
+.lincantoBtn:active,
+.lincantoBtn:focus {
+    background-color:  #905A8B !important;
 }
 .farfalaBtn {
     background-color:  #fccf8c;
 }
+.farfalaBtn:hover,
+.farfalaBtn:active,
+.farfalaBtn:focus {
+    background-color:  #FFC36A !important;
+}
 .bambinosBtn {
     background-color:  #718cd1;
+}
+.bambinosBtn:hover,
+.bambinosBtn:active,
+.bambinosBtn:focus {
+    background-color:  #466ED4 !important;
+    color: white !important;
 }
 .cotizaBtn {
     display: block;
@@ -741,9 +768,14 @@ footer .btn-default {
     border-color: #808080;
     width: 170px;
 }
-footer .btn-default:hover {
-    background-color: #f8dee7;
-    color:  #4d4d4d;
+footer .btn-default:hover,
+footer .btn-default:active,
+footer .btn-default:focus,
+.features .btn-default:hover,
+.features .btn-default:active,
+.features .btn-default:focus {
+    background-color: #f8dee7 !important;
+    color:  #4d4d4d !important;
 }
 footer a,
 footer a:hover {

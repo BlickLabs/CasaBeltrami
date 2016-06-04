@@ -569,12 +569,12 @@ hr {
     background-blend-mode: multiply;
 }
 .farfala {
-    background: url("../img/RentadeSalones/coverfarfala.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background: url("../img/RentadeSalones/coverfarfala.jpg") center center no-repeat rgba(0, 0, 0, .45);
     background-size: cover;
     background-blend-mode: multiply;
 }
 .bambinos {
-    background: url("../img/RentadeSalones/coverbambinos.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background: url("../img/RentadeSalones/coverbambinos.jpg") center center no-repeat rgba(0, 0, 0, .30);
     background-size: cover;
     background-blend-mode: multiply;
 }

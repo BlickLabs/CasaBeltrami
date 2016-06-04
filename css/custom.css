@@ -450,6 +450,7 @@ img.header-logo {
 *************************/
 #quienes-somos .somos-content {
     margin-top: 40px;
+    margin-bottom: 40px !important;
 }
 .somos-content {
     text-align: center;
@@ -468,6 +469,7 @@ img.header-logo {
 }
 #quienes-somos .somos-text {
     margin-top: 30px;
+    margin-bottom: 40px;
 }
 .somos-content h3 {
     font-family: Montserrat-Bold-2;
@@ -1022,6 +1024,9 @@ textarea.form-control {
     }
     .somos-content {
         margin-top: 30px;
+    }
+    #quienes-somos .somos-content {
+        margin-bottom: 20px !important;
     }
     .somos-text {
         margin: 0 10%;

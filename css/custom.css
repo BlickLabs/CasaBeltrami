@@ -88,7 +88,7 @@ body {
     text-align: center;
     position: relative;
 }
-.features-images.trigger {
+div.trigger {
     cursor: pointer !important;
     cursor: hand !important;
 }
@@ -1448,7 +1448,7 @@ textarea.form-control {
     text-align: center;
 }
 .slick-carousel.waiting {
-    height: 250px;
+    height: 250px !important;
     opacity: 0;
 }
 /*Change PREV | NEXT to arrows for carousel*/

@@ -3,7 +3,7 @@
 include "config.php";
     if (isset($_GET['d'])):
         $stmt = $mysqli->prepare("DELETE content,content_party_room FROM content 
-            INNER JOIN content_dron_categoryparty_room ON content.id_content = content_party_room.id_content
+            INNER JOIN content_party_room ON content.id_content = content_party_room.id_content
             WHERE content.id_content=?");
         $stmt->bind_param('s', $id);  
         $id = $_GET['d'];

@@ -94,27 +94,25 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-                                            
-                                            <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Subir Imagenes</span></a></li>
-                                            <li>
-                                                <a class="dropmenu" href="Home.php"><i class="icon-tags"></i><span >Galería por Salones</span></a>
+                        <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Subir Imagenes</span></a></li>
+                        <li>
+                            <a class="dropmenu" href="Home.php"><i class="icon-tags"></i><span >Galería por Salones</span></a>
 							<ul>
-                                                            <li><a class="submenu" href="Lincantos_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">L’incanto</span></a></li>
-                                                            <li><a class="submenu" href="Farfalas_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Farfala</span></a></li>
-                                                            <li><a class="submenu" href="Bambinos_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Bambino</span></a></li>
+                                <li><a class="submenu" href="Lincantos_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">L’incanto</span></a></li>
+                                <li><a class="submenu" href="Farfalas_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Farfala</span></a></li>
+                                <li><a class="submenu" href="Bambinos_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Bambino</span></a></li>
+							</ul>	
+                        </li>
+                        <li>
+                            <a class="dropmenu" href="gallery_by_service.php"><i class="icon-tags"></i><span >Galería por Servicios</span></a>
+							<ul>
+		                        <li><a class="submenu" href="Lincantos_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">L’incanto</span></a></li>
+		                        <li><a class="submenu" href="Farfalas_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Farfala</span></a></li>
+		                        <li><a class="submenu" href="Bambinos_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Bambino</span></a></li>
 								
 							</ul>	
-                                            </li>
-                                            <li>
-                                                <a class="dropmenu" href="gallery_by_service.php"><i class="icon-tags"></i><span >Galería por Servicios</span></a>
-							<ul>
-                                                            <li><a class="submenu" href="Lincantos_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">L’incanto</span></a></li>
-                                                            <li><a class="submenu" href="Farfalas_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Farfala</span></a></li>
-                                                            <li><a class="submenu" href="Bambinos_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Bambino</span></a></li>
-								
-							</ul>	
-                                            </li>
-                                            <li><a href="gallery_by_event.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Eventos</span></a></li>
+                    </li>
+                    <li><a href="gallery_by_event.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Eventos</span></a></li>
                                             
 					</ul>
 				</div>
@@ -139,19 +137,19 @@
 				</li>
 				<li><a href="#">Galería</a></li>
 			</ul>
-                        <?php
+ <?php
                             include "config.php";
                             error_reporting(E_ALL);
-                            $res = $mysqli->query("SELECT id_drone,name_drone FROM drones");
+                            $res = $mysqli->query("SELECT id_party_room,party_room_name FROM party_room");
                             $mysqli->close();
                             while ($row = $res->fetch_assoc()){
-                                $id_pr=$row['id_drone'];
+                                $id_pr=$row['id_party_room'];
                                 
                         ?>
                         <div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header" data-original-title>
-						<h2><i class="halflings-icon white picture"></i><span class="break">&nbsp;<?php echo $row['name_drone'];?></span></h2>
+						<h2><i class="halflings-icon white picture"></i><span class="break">&nbsp;<?php echo $row['party_room_name'];?></span></h2>
 						<div class="box-icon">
 						
 							<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
@@ -163,7 +161,7 @@
                                                     <?php
                                                         include "config.php";
                                                         error_reporting(E_ALL);
-                                                        $res2 = $mysqli2->query("SELECT DISTINCT c.id_content,c.tittle,c.route FROM content_dron_category AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content  WHERE cpr.id_drone ='" . $id_pr . "'");
+                                                        $res2 = $mysqli2->query("SELECT DISTINCT c.id_content,c.tittle,c.route,c.description FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content  WHERE cpr.id_party_room ='" . $id_pr . "'");
                                                          $mysqli2->close();
                                                          while ($row2 = $res2->fetch_assoc()){
                                                              $path= 'php/album/' . $row2['route'];

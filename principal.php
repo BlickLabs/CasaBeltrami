@@ -36,6 +36,7 @@
         <link rel="stylesheet" href="css_lightbox/lightbox.min.css"> 
         <link rel="stylesheet" type="text/css" href="css_template/style_common.css" />
         <link rel="stylesheet" type="text/css" href="css_template/style1.css" />
+	<link rel="shortcut icon" href="favicon.png">
 	<link id="base-style-responsive" href="css_template/style-responsive.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	<!-- end: CSS -->

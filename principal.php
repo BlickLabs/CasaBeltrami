@@ -106,9 +106,9 @@
                         <li>
                             <a class="dropmenu" href="gallery_by_service.php"><i class="icon-tags"></i><span >Galería por Servicios</span></a>
 							<ul>
-		                        <li><a class="submenu" href="Lincantos_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">L’incanto</span></a></li>
-		                        <li><a class="submenu" href="Farfalas_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Farfala</span></a></li>
-		                        <li><a class="submenu" href="Bambinos_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Bambino</span></a></li>
+		                        <li><a class="submenu" href="floral_design_gallery.phpp"><i class="icon-tags"></i><span class="hidden-tablet">Diseño floral</span></a></li>
+		                        <li><a class="submenu" href="tables_sweets_cheeses.php.php"><i class="icon-tags"></i><span class="hidden-tablet">Mesas de postres y quesos</span></a></li>
+		                        <li><a class="submenu" href="rent_furniture_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Renta de mobiliario</span></a></li>
 								
 							</ul>	
                     </li>

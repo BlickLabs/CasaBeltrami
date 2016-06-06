@@ -39,7 +39,6 @@
 	<link id="base-style-responsive" href="css_template/style-responsive.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	<!-- end: CSS -->
-	<link rel="shortcut icon" href="images/logo_gris.png">
 	
 		
 		
@@ -93,14 +92,32 @@
 				
 			<!-- start: Main Menu -->
 			<div id="sidebar-left" class="span2">
-                            <div class="nav-collapse sidebar-nav">
-                                    <ul class="nav nav-tabs nav-stacked main-menu">
-                                        <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Subir Imagenes</span></a></li>
-                                        <li><a href="drones_gallery.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Galería Por Drones</span></a></li>
-                                        <li><a href="categories_gallery.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Galería Por Categorías</span></a></li>
-                                    </ul>
-				</div>   
-			    </div>
+				<div class="nav-collapse sidebar-nav">
+					<ul class="nav nav-tabs nav-stacked main-menu">
+                                            
+                                            <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Subir Imagenes</span></a></li>
+                                            <li>
+                                                <a class="dropmenu" href="Home.php"><i class="icon-tags"></i><span >Galería por Salones</span></a>
+							<ul>
+                                                            <li><a class="submenu" href="Lincantos_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">L’incanto</span></a></li>
+                                                            <li><a class="submenu" href="Farfalas_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Farfala</span></a></li>
+                                                            <li><a class="submenu" href="Bambinos_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Bambino</span></a></li>
+								
+							</ul>	
+                                            </li>
+                                            <li>
+                                                <a class="dropmenu" href="gallery_by_service.php"><i class="icon-tags"></i><span >Galería por Servicios</span></a>
+							<ul>
+                                                            <li><a class="submenu" href="Lincantos_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">L’incanto</span></a></li>
+                                                            <li><a class="submenu" href="Farfalas_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Farfala</span></a></li>
+                                                            <li><a class="submenu" href="Bambinos_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Bambino</span></a></li>
+								
+							</ul>	
+                                            </li>
+                                            <li><a href="gallery_by_event.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Eventos</span></a></li>
+                                            
+					</ul>
+				</div>
 			</div>
 			<!-- end: Main Menu -->
 			<noscript>

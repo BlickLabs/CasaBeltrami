@@ -30,7 +30,7 @@ CREATE DATABASE IF NOT EXISTS CasaBeltrami;
 use CasaBeltrami;
 
 CREATE TABLE IF NOT EXISTS `content` (
-  `id_content` int(11) AUTO_INCREMENT,
+  `id_content` int(11) NOT NULL,
   `tittle` varchar(45) NOT NULL,
   `route` text,
   `url` varchar(45) DEFAULT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `content` (
   `status` boolean NOT NULL,
   `creation_date` date NOT NULL,
   `modification_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `content`
@@ -59,30 +59,30 @@ CREATE TABLE IF NOT EXISTS `content` (
 --
 
 CREATE TABLE IF NOT EXISTS `content_decoration` (
-  `id` int(11) AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_content` int(11) NOT NULL,
   `id_decoration` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
 --
 -- Estructura de tabla para la tabla `content_event`
 --
 
 CREATE TABLE IF NOT EXISTS `content_event` (
-  `id` int(11) AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_content` int(11) NOT NULL,
   `id_event` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
 --
 -- Estructura de tabla para la tabla `content_event`
 --
 
 CREATE TABLE IF NOT EXISTS `content_sub_service` (
-  `id` int(11) AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_content` int(11) NOT NULL,
   `id_sub_service` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
 
 -- --------------------------------------------------------

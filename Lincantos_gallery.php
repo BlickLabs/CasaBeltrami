@@ -136,21 +136,22 @@
                                         <a href="principal.php">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><a href="#">Galería</a></li>
+				<li><a href="#">Galería Salón L’incanto</a></li>
 			</ul>
- <?php
+                        <?php
                             include "config.php";
                             error_reporting(E_ALL);
-                            $res = $mysqli->query("SELECT id_party_room,party_room_name FROM party_room");
+                            $id_salon=1;
+                            $res = $mysqli->query("SELECT id_decoration,name_decoration FROM decorations where id_party=$id_salon");
                             $mysqli->close();
                             while ($row = $res->fetch_assoc()){
-                                $id_pr=$row['id_party_room'];
+                                $id_pr=$row['id_decoration'];
                                 
                         ?>
                         <div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header" data-original-title>
-						<h2><i class="halflings-icon white picture"></i><span class="break">&nbsp;<?php echo $row['party_room_name'];?></span></h2>
+						<h2><i class="halflings-icon white picture"></i><span class="break">&nbsp;<?php echo $row['name_decoration'];?></span></h2>
 						<div class="box-icon">
 						
 							<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
@@ -162,7 +163,7 @@
                                                     <?php
                                                         include "config.php";
                                                         error_reporting(E_ALL);
-                                                        $res2 = $mysqli2->query("SELECT DISTINCT c.id_content,c.tittle,c.route,c.description FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content  WHERE cpr.id_party_room ='" . $id_pr . "'");
+                                                        $res2 = $mysqli2->query("SELECT DISTINCT c.id_content,c.tittle,c.route,c.description FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content  WHERE cpr.id_event ='" . $id_pr . "'");
                                                          $mysqli2->close();
                                                          while ($row2 = $res2->fetch_assoc()){
                                                              $path= 'php/album/' . $row2['route'];
@@ -194,7 +195,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                    </div>  
+                                                    </div> 
                                                    
 						<?php	}	?>
 					        </div>

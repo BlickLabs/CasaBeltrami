@@ -11,4 +11,10 @@ $mysqli = new mysqli("localhost", "root", "abc123", "CasaBeltrami");
     if ($mysqli3->connect_errno) {
         echo "Failed to connect to MySQL: " . $mysqli3->connect_error;   
     }
+
+$mysqli->set_charset("utf8");
+
+$mysqli2->set_charset("utf8");
+
+$mysqli3->set_charset("utf8");
 ?>

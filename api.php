@@ -103,52 +103,58 @@ if (isset($_GET["search"])) {
             echo "Es necesario especificar el parametro id.";
         }
     } else if ($search == "subservices") {
-        $result = $mysqli->query("SELECT id_service,name_service FROM services");
+
+        $result = $mysqli->query("SELECT id_service, name_service FROM services");
+        $response['services'] = array();
+        $i = 0;
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
             $id = $row['id_service'];
-            $response ['services'] = array(
+            $response ['services'][$i] = array(
                 'id_service' => $id,
                 'service_name' => $row['name_service'],
                 'subservices' => array(),
             );
             $result2 = $mysqli2->query("SELECT id_sub_service, name_sub_service FROM sub_services WHERE id_service ='" . $id ."'");
-            while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-                $decoration = array(
-                    'id_subservice' => $row['id_sub_service'],
-                    'subservice_name' => $row['name_sub_service'],
-                   
+            while ($row2 = $result2->fetch_array(MYSQLI_ASSOC)) {
+                $subservice = array(
+                    'id_subservice' => $row2['id_sub_service'],
+                    'subservice_name' => $row2['name_sub_service']
                 );
-                array_push($response['services']['subservices'], $decoration);
+                array_push($response['services'][$i]['subservices'], $subservice);
             }
+            $i++;
         }
         JSONResponse($response['services']);
     } else if ($search == "events") {
-        $result = $mysqli->query("SELECT id_party_room,party_room_name FROM party_room");
+        $result = $mysqli->query("SELECT id_event, name_event FROM events");
+        $response['events'] = array();
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-            $response ['events'] = array(
+            array_push($response['events'],array(
                 'id_event' => $row['id_event'],
                 'event_name' => $row['name_event']
-            );
+            ));
         }
         JSONResponse($response['events']);
     } else if($search == "decorations") {
         $result = $mysqli->query("SELECT id_party_room,party_room_name FROM party_room");
+        $response['partyRooms'] = array();
+        $i = 0;
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
             $id = $row['id_party_room'];
-            $response ['partyRooms'] = array(
+            $response ['partyRooms'][$i] = array(
                 'id_party_room' => $id,
                 'room_name' => $row['party_room_name'],
                 'decorations' => array(),
             );
-            $result2 = $mysqli2->query("SELECT id_decoration, name_decoration FROM decorations WHERE id_decoration ='" . $id ."'");
-            while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
+            $result2 = $mysqli2->query("SELECT id_decoration, name_decoration FROM decorations WHERE id_party ='" . $id ."'");
+            while ($row2 = $result2->fetch_array(MYSQLI_ASSOC)) {
                 $decoration = array(
-                    'id_decoration' => $row['id_decoration'],
-                    'decoration_name' => $row['name_decoration'],
-                   
+                    'id_decoration' => $row2['id_decoration'],
+                    'decoration_name' => $row2['name_decoration']
                 );
-                array_push($response['partyRooms']['decorations'], $decoration);
+                array_push($response['partyRooms'][$i]['decorations'], $decoration);
             }
+            $i++;
         }
         JSONResponse($response['partyRooms']);
     } else {

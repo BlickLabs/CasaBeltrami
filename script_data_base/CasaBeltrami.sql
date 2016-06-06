@@ -122,7 +122,7 @@ INSERT INTO `decorations` (`id_decoration`, `name_decoration`, `id_party`) VALUE
 (15, 'Eventos', 1),
 (16, 'Exteriores', 1),
 (17, 'Juegos interiores', 1),
-(18, 'Baños y cocina', 1),
+(18, 'Baños y cocina', 1);
 
 -- --------------------------------------------------------
 

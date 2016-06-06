@@ -11,7 +11,7 @@
     $mysqli->close(); //cerramos la conexió
     $num_row = mysqli_num_rows($res);
     $row = mysqli_fetch_array($res);
-    $myuser=$row3['nombre'];
+    $myuser=$row['nombre'];
 ?>
 
 <!DOCTYPE html>

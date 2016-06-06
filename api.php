@@ -35,7 +35,7 @@ if (isset($_GET["search"])) {
                 );
             }
 
-            $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.description,d.name_decoration FROM content_decoration AS cd LEFT JOIN content AS c ON c.id_content = cd.id_content LEFT JOIN decorations AS d ON d.id_decoration = cd.id_decoration WHERE cd.id_decoration ='" . $id ."'");
+            $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.description,d.name_decoration FROM content_decoration AS cd LEFT JOIN content AS c ON c.id_content = cd.id_content LEFT JOIN decorations AS d ON d.id_decoration = cd.id_decoration WHERE cd.id_decoration =". $id ." AND c.status = true");
             while ($row2 = $result2->fetch_array(MYSQLI_ASSOC)) {
                 $description = mysqli_real_escape_string($mysqli2,$row2['description']);
                 $path=mysqli_real_escape_string($mysqli2,'php/album/' . $row2['route']);
@@ -64,7 +64,7 @@ if (isset($_GET["search"])) {
                     'images' => array()
                 );
             }
-            $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.description,ss.name_sub_service FROM content_sub_service AS css LEFT JOIN content AS c ON c.id_content = css.id_content LEFT JOIN sub_services AS ss ON ss.id_sub_service = css.id_sub_service WHERE css.id_sub_service ='" . $id ."'");
+            $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.description,ss.name_sub_service FROM content_sub_service AS css LEFT JOIN content AS c ON c.id_content = css.id_content LEFT JOIN sub_services AS ss ON ss.id_sub_service = css.id_sub_service WHERE css.id_sub_service =". $id ." AND c.status = true");
             while ($row2 = $result2->fetch_array(MYSQLI_ASSOC)) {
                 $description = mysqli_real_escape_string($mysqli2,$row2['description']);
                 $path=mysqli_real_escape_string($mysqli2,'php/album/' . $row2['route']);
@@ -84,7 +84,7 @@ if (isset($_GET["search"])) {
         if (isset($_GET["id"])) {
             $id = mysqli_real_escape_string($mysqli,$_GET["id"]);
             $response = array();
-            $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.description,e.name_event FROM content_event AS ce LEFT JOIN content AS c ON c.id_content = ce.id_content LEFT JOIN events AS e ON e.id_event = ce.id_event WHERE ce.id_event ='" . $id . "'");
+            $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.description,e.name_event FROM content_event AS ce LEFT JOIN content AS c ON c.id_content = ce.id_content LEFT JOIN events AS e ON e.id_event = ce.id_event WHERE ce.id_event =". $id ." AND c.status = true");
             $response['events'] = array(
                 'id_event' => $id,
                 'images' => array(),
@@ -94,7 +94,7 @@ if (isset($_GET["search"])) {
                 $path=mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
                 $partialImage = array(
                     'path' =>  $path,
-                    'tittle' => $row['tittle'],
+                    'tittle' => $row4['tittle'],
                     'description' => $description,
                     'event' => $row['name_event']
                 );

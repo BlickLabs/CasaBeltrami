@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `content` (
   `route` text,
   `url` varchar(45) DEFAULT NULL,
   `description` text,
-  `status` varchar(10) NOT NULL,
+  `status` boolean NOT NULL,
   `creation_date` date NOT NULL,
   `modification_date` date DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
@@ -105,24 +105,21 @@ CREATE TABLE IF NOT EXISTS `decorations` (
 --
 
 INSERT INTO `decorations` (`id_decoration`, `name_decoration`, `id_party`) VALUES
-(1, 'Fachada', 1),
-(2, 'Eventos', 1),
-(3, 'Interiores', 1),
-(4, 'Exteriores', 1),
-(5, 'Cuarto de la novia', 1),
-(6, 'Baños', 1),
-(7, 'Cocina', 1),
-(8, 'Planos', 1),
-(9, 'Fachada', 2),
-(10, 'Eventos', 2),
-(11, 'Interiores', 2),
-(12, 'Exteriores', 2),
-(13, 'Baños y cocina', 2),
-(14, 'Fachada', 1),
-(15, 'Eventos', 1),
-(16, 'Exteriores', 1),
-(17, 'Juegos interiores', 1),
-(18, 'Baños y cocina', 1);
+(1, 'El salón', 1),
+(2, 'Exteriores', 1),
+(3, 'Cuarto de la novia', 1),
+(4, 'Galería de evetos', 1),
+(5, 'Baños', 1),
+(6, 'Cocinas', 1),
+(7, 'Extras', 1),
+(7, 'El salón', 2),
+(8, 'Exteriores', 2),
+(9, 'Baños y cocina', 2),
+(10, 'Galería de eventos', 2),
+(11, 'El salón', 3),
+(12, 'Juegos interiores', 3),
+(13, 'Juegos exteriores', 3),
+(14, 'Galería de eventos', 3);
 
 -- --------------------------------------------------------
 
@@ -188,9 +185,9 @@ CREATE TABLE IF NOT EXISTS `services` (
 --
 
 INSERT INTO `services` (`id_service`, `name_service`) VALUES
-(1, 'Renta de mobiliario'),
-(2, 'Mesas de dulces y quesos'),
-(3, 'Diseño floral');
+(1, 'Diseño floral'),
+(2, 'Mesas de postres y quesos'),
+(3, 'Renta de mobiliario');
 
 -- --------------------------------------------------------
 
@@ -209,17 +206,15 @@ CREATE TABLE IF NOT EXISTS `sub_services` (
 --
 
 INSERT INTO `sub_services` (`id_sub_service`, `name_sub_service`, `id_service`) VALUES
-(1, 'Mesas', 1),
-(2, 'Sillas', 1),
-(3, 'Mantelería', 1),
-(4, 'Mesa de postres', 2),
-(5, 'Mesa de quesos', 2),
-(6, 'Carrito de dulces', 2),
-(7, 'Carrito de hospital', 2),
-(8, 'Decoración floral', 3),
-(9, 'Centros de mesa', 3),
-(10, 'Arreglos florales', 3),
-(11, 'Ramos de novia', 3);
+(1, 'Centros de mesa', 1),
+(2, 'Decoración floral', 1),
+(3, 'Otros', 1),
+(4, 'Mesas de postres', 2),
+(5, 'Mesas de quesos', 2),
+(6, 'Otros', 2),
+(7, 'Mesas', 3),
+(8, 'Sillas', 3),
+(9, 'Mantelería', 3);
 
 -- --------------------------------------------------------
 

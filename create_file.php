@@ -163,7 +163,7 @@
 
             <div class="control-group  col-md-12 mar-top41" >
             	<h3>¿Qué tipo de foto vas a subir?</h3>
-            	<input style="opacity:1" id="type_1" type="radio" name="picture_type" value="salon"> <label for="type_1">Foto de salón</label>
+            	<input style="opacity:1" checked id="type_1" type="radio" name="picture_type" value="salon"> <label for="type_1">Foto de salón</label>
             	<input style="opacity:1" id="type_2" type="radio" name="picture_type" value="servicio"> <label for="type_2">Foto de servicio</label>
             	<input style="opacity:1" id="type_3" type="radio" name="picture_type" value="evento"> <label for="type_3">Foto de evento</label>
             </div>
@@ -181,7 +181,7 @@
 		<label class="control-label" for="focusedInput">Descripción:</label>
 		    <div class="controls">
                         <textarea class="input-xlarge focused" type="text" name="desc"
-                                  id="desc"> </textarea>
+                                  id="desc" rows="8" style="resize:none"> </textarea>
 		    </div>
 	    </div>
             
@@ -189,8 +189,8 @@
             <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="selectError">Estatus:</label>
 		<div class="controls">
-                <input style="opacity:1" id="status_1" type="radio" name="picture_status" value="activo"> <label for="status_1">Activo</label>
-            	<input style="opacity:1" id="status_2" type="radio" name="picture_status" value="inactivo"> <label for="status_2">Inactivo</label>
+                <input style="opacity:1" id="status_1" type="radio" name="picture_status" value="true" checked> <label for="status_1">Activo</label>
+            	<input style="opacity:1" id="status_2" type="radio" name="picture_status" value="false"> <label for="status_2">Inactivo</label>
 		</div>
             </div>
            
@@ -284,6 +284,72 @@
 		<script src="js_template/custom.js"></script>
                 <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
                 <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script>
+    	function callEvents() {
+	    	$.ajax({
+	    	    url: "api.php",
+	    	    data: { search:"events" },
+	    	    context: document.body,
+	    	    success: function(json){
+	    	    	var response = jQuery.parseJSON(json);
+	    	    	$('#category').find('option').remove();
+	    	    	$('#category').find('optgroup').remove();
+	    	    	response.forEach(function (elem) {
+	    	    		$('#category').append('<option value="' + elem['id_event'] + '">' + elem['event_name'] + '</option>');
+	    	    	});
+		    	}
+		    });
+	    }
+	    function callDecorations() {
+	    	$.ajax({
+	    	    url: "api.php",
+	    	    data: { search:"decorations" },
+	    	    context: document.body,
+	    	    success: function(json){
+	    	    	var response = jQuery.parseJSON(json);
+	    	    	$('#category').find('option').remove();
+	    	    	$('#category').find('optgroup').remove();
+	    	    	response.forEach(function (group) {
+	    	    		$('#category').append('<optgroup label="' + group['room_name'] + '">');
+	    	    		group['decorations'].forEach(function (elem) {
+	    	    			$('#category').append('<option value="' + elem['id_decoration'] + '">' + elem['decoration_name'] + '</option>');
+	    	    		});
+	    	    		$('#category').append('</optgroup>');
+	    	    	});
+	    	    }
+		    });
+	    }
+	    function callSubservices() {
+	    	$.ajax({
+	    	    url: "api.php",
+	    	    data: { search:"subservices" },
+	    	    context: document.body,
+	    	    success: function(json){
+	    	    	var response = jQuery.parseJSON(json);
+	    	    	$('#category').find('option').remove();
+	    	    	$('#category').find('optgroup').remove();
+	    	    	response.forEach(function (group) {
+	    	    		$('#category').append('<optgroup label="' + group['service_name'] + '">');
+	    	    		group['subservices'].forEach(function (elem) {
+	    	    			$('#category').append('<option value="' + elem['id_subservice'] + '">' + elem['subservice_name'] + '</option>');
+	    	    		});
+	    	    		$('#category').append('</optgroup>');
+	    	    	});
+		    	}
+		    });
+	    }
+	    callDecorations();
+	    $('[name="picture_type"').change(function () {
+	    	var type = $(this).val();
+	    	if (type == 'evento') {
+	    		callEvents();
+	    	} else if (type == 'servicio') {
+	    		callSubservices();
+	    	} else {
+	    		callDecorations();
+	    	}
+	    });
+    </script>
 	<!-- end: JavaScript-->
 	
 </body>

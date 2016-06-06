@@ -19,7 +19,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Galería por eventos</title>
+	<title>Añadir nueva foto</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -128,107 +128,94 @@
 			
 			<!-- start: Content -->
 			<div id="content" class="span10">
-			
-						
-			<ul class="breadcrumb">
+                            <ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-                                        <a href="Home.php">Home</a> 
+					<a href="index.php">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><a href="#">Galería Por Eventos</a></li>
+                                <li><a href="images.php">Añadir Nueva Imagen</a></li>
 			</ul>
-                        <?php
-                            include "config.php";
-                            error_reporting(E_ALL);
-                            $res = $mysqli->query("SELECT id_event,name_event FROM events");
-                            $mysqli->close();
-                            while ($row = $res->fetch_assoc()){
-                                $id_pr=$row['id_event'];
-                                
-                        ?>
-                        <div class="row-fluid sortable">
-				<div class="box span12">
-					<div class="box-header" data-original-title>
-						<h2><i class="halflings-icon white picture"></i><span class="break">&nbsp;<?php echo $row['name_event'];?></span></h2>
-						<div class="box-icon">
-						
-							<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
-							
-						</div>
-					</div>
-					<div class="box-content">
-						<div class="masonry-gallery">
-                                                    <?php
-                                                        include "config.php";
-                                                        error_reporting(E_ALL);
-                                                        $res2 = $mysqli2->query("SELECT DISTINCT c.id_content,c.tittle,c.route,c.description FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content  WHERE cpr.id_event ='" . $id_pr . "'");
-                                                         $mysqli2->close();
-                                                         while ($row2 = $res2->fetch_assoc()){
-                                                             $path= 'php/album/' . $row2['route'];
-                                                    ?>
-                                                        
-							 <div class="masonry-thumb view view-first">
-                                                             <img class="example-image" src="<?php echo $path= 'php/album/' . $row2['route'];?>" />
-                                                             <div class="mask">
-                                                                 <h2><?php echo $row2['tittle']?></h2>
-                                                                       <p><?php $row2['id_content']?></p>
-                                                                       <a button type="button" href="#<?php echo $row2['id_content'] ?>" data-toggle="modal" class="btn btn-danger"  > <i class="icon-trash"></i> Eliminar</a>
-                                                                       <a button type="button" href="<?php echo $path= 'php/album/' . $row2['route'];?>" class="example-image-link btn btn-primary"  data-lightbox="example-set" ><i class="icon-zoom-in"></i> Zoom</a>
-                                                                       <a class="btn btn-lg btn-success mar-toptable" href="update_photo.php?u=<?php echo $row2['id_content'] ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
-                                                            </div>
-                                                         <div class="modal fade" id="<?php echo $row2['id_content'] ?>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" >
-                                                                <div class="modal-dialog">
-                                                                    <div class="modal-content">
-                                                                        <div class="modal-header">
-                                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                                                <h4 class="modal-title" id="myModalLabel">Atención</h4>
-                                                                        </div>
-                                                                        <div class="modal-body">
-                                                                            <h3>¿Estas seguro de eliminar el contenido?</h3>
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="icon-ban-circle"></i>&nbsp;Cerrar</button>
-                                                                            <a href="Delete_Photo.php?d=<?php echo $row2['id_content'] ?>&f=<?php echo $row2['route'] ?>"><button type="button" class="btn btn-success"><i class="icon-ok"></i>Aceptar</button></a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                    </div> 
-                                                   
-						<?php	}	?>
-					        </div>
-					
-				</div><!--/span-->
-			
-			</div><!--/row-->
-                    </div><!--/.fluid-container-->
-                                       <?php }
-                           
-                               
-                                
-                        ?>    
 
+<h1 style="text-align: center">LLENA LOS SIGUIENTES CAMPOS</h1>
+<p><br/></p>
+
+<div class="panel panel-default">
+    
+    <div class="panel-body">
+        
+        <form  id="subida" class="form-horizontal">
+            
+             <div class="control-group col-sm-5 mar-top40">
+		<label class="control-label" for="focusedInput">Titulo De la Imagen: </label>
+		    <div class="controls">
+                        <input class="input-xlarge focused" type="text" id="title" name="title" pattern="[^'\x22]+"
+                               title="este campo no acepta caracteres especiales, solo letras" >
+		    </div>
+	    </div>
+            
+            <div class="control-group col-sm-5 mar-top41">
+                <label class="control-label">Seleccionar Archivo:</label>
+                <div class="controls">
+                    <input type="file" id="foto" name="foto">
+                </div>
+            </div>
+
+            <div class="control-group  col-md-12 mar-top41" >
+            	<h3>¿Qué tipo de foto vas a subir?</h3>
+            	<input style="opacity:1" id="type_1" type="radio" name="picture_type" value="salon"> <label for="type_1">Foto de salón</label>
+            	<input style="opacity:1" id="type_2" type="radio" name="picture_type" value="servicio"> <label for="type_2">Foto de servicio</label>
+            	<input style="opacity:1" id="type_3" type="radio" name="picture_type" value="evento"> <label for="type_3">Foto de evento</label>
+            </div>
+            <div class="control-group  col-sm-5 mar-top41" >
+		<label class="control-label" for="selectError">Categoría:</label>
+                <div class="controls" >
+                    <select class="selectpicker" id="category" name="category" >
+                        <optgroup label="" >
+                            <option value="0"></option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+                   <div class="control-group col-sm-5 mar-top41">
+		<label class="control-label" for="focusedInput">Descripción:</label>
+		    <div class="controls">
+                        <textarea class="input-xlarge focused" type="text" name="desc"
+                                  id="desc"> </textarea>
+		    </div>
+	    </div>
+            
+            
+            <div class="control-group col-sm-5 mar-top41">
+		<label class="control-label" for="selectError">Estatus:</label>
+		<div class="controls">
+                <input style="opacity:1" id="status_1" type="radio" name="picture_status" value="activo"> <label for="status_1">Activo</label>
+            	<input style="opacity:1" id="status_2" type="radio" name="picture_status" value="inactivo"> <label for="status_2">Inactivo</label>
+		</div>
+            </div>
+           
+            
+            <div class="form-group">
+                <input type="hidden" type="text" class="form-control" name="creation_date" id="creation_date" value="<?php echo date("Y/m/d") ?>">
+            </div>
+            <center>
+                <a href="images.php" class="btn btn-primary btn-md mar-right"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span><i class="icon-arrow-left"></i>&nbsp; Regresar</a>
+                <button type="submit"  class="btn btn-success "><i class="icon-save"></i>&nbsp; Guardar</button>
+            </center>
+                
+            
+            
+        </form>
+    </div>
+</div>
+
+                        </div><!--/.fluid-container-->
 	
 			<!-- end: Content -->
 		</div><!--/#content.span10-->
 		</div><!--/fluid-row-->
 		
-	<div class="modal hide fade" id="myModal">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal">×</button>
-			<h3>Settings</h3>
-		</div>
-		<div class="modal-body">
-			<p>Here settings can be configured...</p>
-		</div>
-		<div class="modal-footer">
-			<a href="#" class="btn" data-dismiss="modal">Close</a>
-			<a href="#" class="btn btn-primary">Save changes</a>
-		</div>
-	</div>
 	
-	<div class="clearfix"></div>
 	
 	<footer>
 
@@ -295,7 +282,8 @@
 		<script src="js_template/retina.js"></script>
 
 		<script src="js_template/custom.js"></script>
-                  <script src="js_lighbox/lightbox.js"></script>
+                <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+                <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
 	<!-- end: JavaScript-->
 	
 </body>

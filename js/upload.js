@@ -1,8 +1,7 @@
 $(function () {
     $('#subida').submit(function () {
 
-       var comprobar = $('#title').val().length* $('#foto').val().length*$('#drone').val().length*$('#category').val().length*$('#creation_date').val().length;	
-        
+       var comprobar = $('#title').val().length* $('#foto').val().length*$('#desc').val().length;	
         
         if (comprobar > 0) {
 
@@ -27,12 +26,10 @@ $(function () {
                 data: archivos,
                 processData: false,
                 beforeSend: function () {
-
                     $('#cargando').show(300);
 
                 },
                 success: function (data) {
-
                     $('#cargando').hide(900);
                     $(location).attr('href', 'images.php');
                    

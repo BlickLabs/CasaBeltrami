@@ -26,6 +26,9 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `content`
 --
 
+CREATE DATABASE IF NOT EXISTS CasaBeltrami;
+use CasaBeltrami;
+
 CREATE TABLE IF NOT EXISTS `content` (
   `id_content` int(11) NOT NULL,
   `tittle` varchar(45) NOT NULL,

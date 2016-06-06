@@ -131,7 +131,7 @@
                             <ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-					<a href="index.php">Home</a> 
+					<a href="principal.php">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
                                 <li><a href="images.php">Añadir Nueva Imagen</a></li>
@@ -231,6 +231,7 @@
 		<script src="js_template/jquery-1.9.1.min.js"></script>
 	<script src="js_template/jquery-migrate-1.0.0.min.js"></script>
 	
+		<script src="js/upload.js"></script>
 		<script src="js_template/jquery-ui-1.10.0.custom.min.js"></script>
 	
 		<script src="js_template/jquery.ui.touch-punch.js"></script>
@@ -285,6 +286,7 @@
                 <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
                 <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
     <script>
+    $(document).ready(function () {
     	function callEvents() {
 	    	$.ajax({
 	    	    url: "api.php",
@@ -349,6 +351,7 @@
 	    		callDecorations();
 	    	}
 	    });
+	});
     </script>
 	<!-- end: JavaScript-->
 	

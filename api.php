@@ -102,6 +102,55 @@ if (isset($_GET["search"])) {
         } else {
             echo "Es necesario especificar el parametro id.";
         }
+    } else if ($search == "subservices") {
+        $result = $mysqli->query("SELECT id_service,name_service FROM services");
+        while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+            $id = $row['id_service'];
+            $response ['services'] = array(
+                'id_service' => $id,
+                'service_name' => $row['name_service'],
+                'subservices' => array(),
+            );
+            $result2 = $mysqli2->query("SELECT id_sub_service, name_sub_service FROM sub_services WHERE id_service ='" . $id ."'");
+            while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
+                $decoration = array(
+                    'id_subservice' => $row['id_sub_service'],
+                    'subservice_name' => $row['name_sub_service'],
+                   
+                );
+                array_push($response['services']['subservices'], $decoration);
+            }
+        }
+        JSONResponse($response['services']);
+    } else if ($search == "events") {
+        $result = $mysqli->query("SELECT id_party_room,party_room_name FROM party_room");
+        while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+            $response ['events'] = array(
+                'id_event' => $row['id_event'],
+                'event_name' => $row['name_event']
+            );
+        }
+        JSONResponse($response['events']);
+    } else if($search == "decorations") {
+        $result = $mysqli->query("SELECT id_party_room,party_room_name FROM party_room");
+        while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+            $id = $row['id_party_room'];
+            $response ['partyRooms'] = array(
+                'id_party_room' => $id,
+                'room_name' => $row['party_room_name'],
+                'decorations' => array(),
+            );
+            $result2 = $mysqli2->query("SELECT id_decoration, name_decoration FROM decorations WHERE id_decoration ='" . $id ."'");
+            while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
+                $decoration = array(
+                    'id_decoration' => $row['id_decoration'],
+                    'decoration_name' => $row['name_decoration'],
+                   
+                );
+                array_push($response['partyRooms']['decorations'], $decoration);
+            }
+        }
+        JSONResponse($response['partyRooms']);
     } else {
         echo "Valor invalido de paramretro search";
     }

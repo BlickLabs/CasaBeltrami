@@ -52,25 +52,41 @@ CREATE TABLE IF NOT EXISTS `content` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `content_party_room`
+-- Estructura de tabla para la tabla `content_decoration`
 --
 
-CREATE TABLE IF NOT EXISTS `content_party_room` (
+CREATE TABLE IF NOT EXISTS `content_decoration` (
   `id` int(11) NOT NULL,
   `id_content` int(11) NOT NULL,
-  `id_party_room` int(11) NOT NULL,
-  `id_decoration` int(11) NOT NULL,
-  `id_service` tinyint(1) DEFAULT NULL,
-  `id_sub_service` int(11) NOT NULL,
+  `id_decoration` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Estructura de tabla para la tabla `content_event`
+--
+
+CREATE TABLE IF NOT EXISTS `content_event` (
+  `id` int(11) NOT NULL,
+  `id_content` int(11) NOT NULL,
   `id_event` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Estructura de tabla para la tabla `content_event`
+--
+
+CREATE TABLE IF NOT EXISTS `content_sub_service` (
+  `id` int(11) NOT NULL,
+  `id_content` int(11) NOT NULL,
+  `id_sub_service` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `content_party_room`
 --
 
-INSERT INTO `content_party_room` (`id`, `id_content`, `id_party_room`, `id_decoration`, `id_service`, `id_sub_service`, `id_event`) VALUES
-(1, 6, 1, 1, NULL, 2, 3);
+INSERT INTO `content_decoration` (`id`, `id_content`, `id_decoration`, `id_decoration`) VALUES
+(1, 6, 1);
 
 -- --------------------------------------------------------
 
@@ -236,9 +252,21 @@ ALTER TABLE `content`
   ADD PRIMARY KEY (`id_content`);
 
 --
--- Indices de la tabla `content_party_room`
+-- Indices de la tabla `content_decoration`
 --
-ALTER TABLE `content_party_room`
+ALTER TABLE `content_decoration`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `content_event`
+--
+ALTER TABLE `content_event`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `content_sub_service`
+--
+ALTER TABLE `content_sub_service`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -283,7 +311,7 @@ ALTER TABLE `content`
 --
 -- AUTO_INCREMENT de la tabla `content_party_room`
 --
-ALTER TABLE `content_party_room`
+ALTER TABLE `content_decoration`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `decorations`

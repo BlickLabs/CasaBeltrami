@@ -24,7 +24,7 @@ if (isset($_GET["search"])) {
         if (isset($_GET["id"])) {
             $id = mysqli_real_escape_string($mysqli,$_GET["id"]);
             $result = $mysqli->query("SELECT d.id_decoration, d.name_decoration, pr.id_party_room,pr.party_room_name FROM decorations as d LEFT JOIN party_room AS pr ON d.id_party = pr.id_party_room WHERE d.id_decoration = '" . $id . "'");
-            $response = array();
+            $response['decorations'] = array();
             while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
                 $response['decorations'] = array(
                     'id_party_room' => $row['id_party_room'],
@@ -56,7 +56,7 @@ if (isset($_GET["search"])) {
         if (isset($_GET["id"])) {
             $id = mysqli_real_escape_string($mysqli,$_GET["id"]);
             $result = $mysqli->query("SELECT id_sub_service,name_sub_service FROM sub_services WHERE id_sub_service = '" . $id . "'");
-            $response = array();
+            $response['sub_services'] = array();
             while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
                 $response['sub_services'] = array(
                     'id_sub_service' => $row['id_sub_service'],
@@ -70,7 +70,7 @@ if (isset($_GET["search"])) {
                 $path=mysqli_real_escape_string($mysqli2,'php/album/' . $row2['route']);
                 $partialImage = array(
                     'path' =>  $path,
-                    'tittle' => $row2['tittle'],
+                    'title' => $row2['tittle'],
                     'description' => $description,
                     'sub_service' => $row2['name_sub_service'],
                 );
@@ -94,7 +94,7 @@ if (isset($_GET["search"])) {
                 $path=mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
                 $partialImage = array(
                     'path' =>  $path,
-                    'tittle' => $row4['tittle'],
+                    'title' => $row4['tittle'],
                     'description' => $description,
                     'event' => $row['name_event']
                 );

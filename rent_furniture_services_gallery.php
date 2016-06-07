@@ -141,7 +141,7 @@
                         <?php
                             include "config.php";
                             error_reporting(E_ALL);
-                            $res = $mysqli->query("SELECT id_sub_service,name_sub_service FROM sub_services where id_service=1");
+                            $res = $mysqli->query("SELECT id_sub_service,name_sub_service FROM sub_services where id_service=3");
                             $mysqli->close();
                             while ($row = $res->fetch_assoc()){
                                 $id_pr=$row['id_sub_service'];
@@ -162,7 +162,7 @@
                                                     <?php
                                                         include "config.php";
                                                         error_reporting(E_ALL);
-                                                        $res2 = $mysqli2->query("SELECT DISTINCT c.id_content,c.tittle,c.route,c.description FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content  WHERE cpr.id_sub_service ='" . $id_pr . "'");
+                                                        $res2 = $mysqli2->query("SELECT DISTINCT c.id_content,c.tittle,c.route,c.description FROM content_sub_service AS css LEFT JOIN content AS c ON c.id_content = css.id_content  WHERE css.id_sub_service ='" . $id_pr . "'");
                                                          $mysqli2->close();
                                                          while ($row2 = $res2->fetch_assoc()){
                                                              $path= 'php/album/' . $row2['route'];

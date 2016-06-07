@@ -117,7 +117,7 @@
 							<ul>
                                 <li><a class="submenu" href="Lincantos_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">L’incanto</span></a></li>
                                 <li><a class="submenu" href="Farfalas_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Farfala</span></a></li>
-                                <li><a class="submenu" href="Bambinos_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Bambino</span></a></li>
+                                <li><a class="submenu" href="Bambinos_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Bambinos</span></a></li>
 							</ul>	
                         </li>
                         <li>
@@ -167,8 +167,8 @@
 <!--                        <th style="text-align: center">ID</th>-->
                         <th style="text-align: center">Titulo</th>
                         <th style="text-align: center">Imagen</th>
-                        <th style="text-align: center"> Estatus</th>
-                        
+                        <th style="text-align: center">Estatus</th>
+                        <th style="text-align: center">Última modificación</th>
                        
                     </tr>
                 </thead>
@@ -187,7 +187,9 @@
                                         echo $row['status'] ? 'Activo':'Inactivo';
                                  ?>
                             </td>
-                           
+                           <td style="text-align: center;padding-top: 70px" width="5%"><?php 
+                                        echo $row['modification_date'] ?$row['modification_date']:$row['creation_date'];
+                                 ?></td>
                             
                             
                             

@@ -6,19 +6,24 @@
       header("Location: admin.php");
   }
   $mail = $_SESSION['user_name'];
-  $query3 = "SELECT nombre FROM Users WHERE user='$mail'";
-  $res3 = mysqli_query($mysqli3, $query3);
-  $mysqli3->close(); //cerramos la conexió
+  $image = $_GET['u'];
+  echo($image);
+  $query3 = "SELECT * FROM content WHERE id_content='$image'";
+  $res3 = mysqli_query($mysqli, $query3);
+  $query2 = "SELECT nombre FROM Users WHERE user='$mail'";
+  $res = mysqli_query($mysqli, $query2);
+  $mysqli->close(); //cerramos la conexió
+  $num_row = mysqli_num_rows($res);
   $num_row3 = mysqli_num_rows($res3);
+  $row = mysqli_fetch_array($res);
   $row3 = mysqli_fetch_array($res3);
-  $myuser=$row3['nombre'];
   ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- start: Meta -->
     <meta charset="utf-8">
-    <title>Añadir nueva foto</title>
+    <title>Editar Datos de Imagen</title>
     <meta name="description" content="Bootstrap Metro Dashboard">
     <meta name="author" content="Dennis Ji">
     <meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -30,13 +35,21 @@
     <link id="bootstrap-style" href="css_template/bootstrap.min.css" rel="stylesheet">
     <link href="css_template/bootstrap-responsive.min.css" rel="stylesheet">
     <link id="base-style" href="css_template/admin.css" rel="stylesheet">
-    <link rel="stylesheet" href="css_lightbox/lightbox.min.css">
-    <link rel="stylesheet" type="text/css" href="css_template/style_common.css" />
-    <link rel="stylesheet" type="text/css" href="css_template/style1.css" />
-    <link rel="shortcut icon" href="favicon.png">
     <link id="base-style-responsive" href="css_template/style-responsive.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
     <!-- end: CSS -->
+    <link rel="shortcut icon" href="images/logo_gris.png">
+    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <link id="ie-style" href="css_template/ie.css" rel="stylesheet">
+    <![endif]-->
+    <!--[if IE 9]>
+    <link id="ie9style" href="css_template/ie9.css" rel="stylesheet">
+    <![endif]-->
+    <!-- start: Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- end: Favicon -->
   </head>
   <body>
     <!-- start: Header -->
@@ -48,9 +61,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="index.html">
+          <a class="brand" href="principal.php">
             <span>
-              <h2><img src="img/icons/Logo-no-text.png" style="height: 60px"></h2>
+              <h2><img src="images/logo_blanco.png" style="height: 60px"></h2>
             </span>
           </a>
           <!-- start: Header Menu -->
@@ -60,7 +73,7 @@
               <li class="dropdown">
                 <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                 <i class="halflings-icon white user"></i>
-                <?php echo $myuser ?>
+                <?php echo $row['nombre']; ?>
                 <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
@@ -131,15 +144,19 @@
                   <label class="control-label" for="focusedInput">Titulo De la Imagen: </label>
                   <div class="controls">
                     <input class="input-xlarge focused" type="text" id="title" name="title" pattern="[^'\x22]+"
-                      title="este campo no acepta caracteres especiales, solo letras" >
+                      title="este campo no acepta caracteres especiales, solo letras"
+                      value="<?php echo $row3['tittle']; ?>">
                   </div>
                 </div>
+                <!--
                 <div class="control-group col-sm-5 mar-top41">
                   <label class="control-label">Seleccionar Archivo:</label>
                   <div class="controls">
                     <input type="file" id="foto" name="foto">
                   </div>
                 </div>
+                -->
+                <!--
                 <div class="control-group  col-md-12 mar-top41" >
                   <h3>¿Qué tipo de foto vas a subir?</h3>
                   <input style="opacity:1" checked id="type_1" type="radio" name="picture_type" value="salon"> <label for="type_1">Foto de salón</label>
@@ -156,18 +173,32 @@
                     </select>
                   </div>
                 </div>
+                -->
                 <div class="control-group col-sm-5 mar-top41">
                   <label class="control-label" for="focusedInput">Descripción:</label>
                   <div class="controls">
-                    <textarea class="input-xlarge focused" type="text" name="desc"
-                      id="desc" rows="8" style="resize:none"> </textarea>
+                    <textarea class="input-xlarge focused" type="text" id="desc" name="desc"
+                      id="desc" rows="8" style="resize:none">
+                        <?php echo $row3['description']; ?>"
+                      </textarea>
                   </div>
                 </div>
                 <div class="control-group col-sm-5 mar-top41">
                   <label class="control-label" for="selectError">Estatus:</label>
                   <div class="controls">
-                    <input style="opacity:1" id="status_1" type="radio" name="picture_status" value="true" checked> <label for="status_1">Activo</label>
-                    <input style="opacity:1" id="status_2" type="radio" name="picture_status" value="false"> <label for="status_2">Inactivo</label>
+                    <?php
+                    if ($row3['description'] == 0) {
+                    ?>
+                      <input style="opacity:1" id="status_1" type="radio" name="picture_status" value="true" checked> <label for="status_1">Activo</label>
+                      <input style="opacity:1" id="status_2" type="radio" name="picture_status" value="false"> <label for="status_2">Inactivo</label>
+                    <?php
+                    } else {
+                    ?>
+                      <input style="opacity:1" id="status_1" type="radio" name="picture_status" value="false" checked> <label for="status_1">Activo</label>
+                      <input style="opacity:1" id="status_2" type="radio" name="picture_status" value="true"> <label for="status_2">Inactivo</label>
+                    <?php
+                    }
+                    ?>
                   </div>
                 </div>
                 <div class="form-group">
@@ -186,7 +217,6 @@
       </div>
       <!--/#content.span10-->
     </div>
-    <!--/fluid-row-->
     <footer>
       <p>
         <span style="text-align:left;float:left">&copy; 2016 <a >Blick</a></span>
@@ -195,7 +225,6 @@
     <!-- start: JavaScript-->
     <script src="js_template/jquery-1.9.1.min.js"></script>
     <script src="js_template/jquery-migrate-1.0.0.min.js"></script>
-    <script src="js/upload.js"></script>
     <script src="js_template/jquery-ui-1.10.0.custom.min.js"></script>
     <script src="js_template/jquery.ui.touch-punch.js"></script>
     <script src="js_template/modernizr.js"></script>
@@ -224,8 +253,7 @@
     <script src="js_template/counter.js"></script>
     <script src="js_template/retina.js"></script>
     <script src="js_template/custom.js"></script>
-    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
-    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <!-- end: JavaScript-->
     <script>
       $(document).ready(function () {
       	function callEvents() {
@@ -294,6 +322,5 @@
        });
       });
     </script>
-    <!-- end: JavaScript-->
   </body>
 </html>

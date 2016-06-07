@@ -7,17 +7,41 @@
   }
   $mail = $_SESSION['user_name'];
   $image = $_GET['u'];
-  echo($image);
-  $query3 = "SELECT * FROM content WHERE id_content='$image'";
-  $res3 = mysqli_query($mysqli, $query3);
+  $type = "";
+  $typeID = "";
+  $query = "SELECT * FROM content WHERE id_content='$image'";
+  $res = mysqli_query($mysqli, $query);
   $query2 = "SELECT nombre FROM Users WHERE user='$mail'";
-  $res = mysqli_query($mysqli, $query2);
+  $res2 = mysqli_query($mysqli, $query2);
+  $query3 = "SELECT id, id_decoration FROM content_decoration WHERE id_content = $image";
+  $res3 = mysqli_query($mysqli, $query3);
+  if (mysqli_num_rows($res3) > 0) {
+    $type = "salon";
+    $typeID = mysqli_fetch_array($res3)['id_decoration'];
+  } else {
+    $query3 = "SELECT id, id_sub_service FROM content_sub_service WHERE id_content = $image";
+    $res3 = mysqli_query($mysqli, $query3);
+
+    if (mysqli_num_rows($res3) > 0) {
+      $type = "servicio";
+      $typeID = mysqli_fetch_array($res3)['id_sub_service'];
+    } else {
+      $query3 = "SELECT id, id_event FROM content_event WHERE id_content = $image";
+      $res3 = mysqli_query($mysqli, $query3);
+      if (mysqli_num_rows($res3) > 0) {
+        $type = "evento";
+        $typeID = mysqli_fetch_array($res3)['id_event'];
+      } else {
+        header("Location: principal.php");
+      }
+    }
+  }
   $mysqli->close(); //cerramos la conexió
   $num_row = mysqli_num_rows($res);
-  $num_row3 = mysqli_num_rows($res3);
+  $num_row2 = mysqli_num_rows($res2);
   $row = mysqli_fetch_array($res);
-  $row3 = mysqli_fetch_array($res3);
-  ?>
+  $row2 = mysqli_fetch_array($res2);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -63,7 +87,7 @@
           </a>
           <a class="brand" href="principal.php">
             <span>
-              <h2><img src="images/logo_blanco.png" style="height: 60px"></h2>
+              <h2><img src="img/icons/Logo-no-text.png" style="height: 60px"></h2>
             </span>
           </a>
           <!-- start: Header Menu -->
@@ -73,7 +97,7 @@
               <li class="dropdown">
                 <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                 <i class="halflings-icon white user"></i>
-                <?php echo $row['nombre']; ?>
+                <?php echo $row2['nombre']; ?>
                 <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
@@ -141,30 +165,21 @@
             <div class="panel-body">
               <form  id="subida" class="form-horizontal">
                 <input type="hidden" name="id_hidden" id="id_hidden" value="<?php echo $_GET['u']; ?>">
+                <input type="hidden" name="type_hidden" id="type_hidden" value="<?php echo $type; ?>">
                 <div class="control-group col-sm-5 mar-top40">
                   <label class="control-label" for="focusedInput">Titulo De la Imagen: </label>
                   <div class="controls">
                     <input class="input-xlarge focused" type="text" id="title" name="title" pattern="[^'\x22]+"
                       title="este campo no acepta caracteres especiales, solo letras"
-                      value="<?php echo $row3['tittle']; ?>">
+                      value="<?php echo $row['tittle']; ?>">
                   </div>
-                </div>
-                <!--
-                <div class="control-group col-sm-5 mar-top41">
-                  <label class="control-label">Seleccionar Archivo:</label>
-                  <div class="controls">
-                    <input type="file" id="foto" name="foto">
-                  </div>
-                </div>
-                -->
-                <!--
-                <div class="control-group  col-md-12 mar-top41" >
-                  <h3>¿Qué tipo de foto vas a subir?</h3>
-                  <input style="opacity:1" checked id="type_1" type="radio" name="picture_type" value="salon"> <label for="type_1">Foto de salón</label>
-                  <input style="opacity:1" id="type_2" type="radio" name="picture_type" value="servicio"> <label for="type_2">Foto de servicio</label>
-                  <input style="opacity:1" id="type_3" type="radio" name="picture_type" value="evento"> <label for="type_3">Foto de evento</label>
                 </div>
                 <div class="control-group  col-sm-5 mar-top41" >
+                  <h3>¿Qué tipo de foto es?</h3>
+                  <input style="opacity:1" id="type_1" type="radio" name="picture_type" value="salon" <?php if($type=="salon") echo "checked"?>> <label for="type_1">Foto de salón</label>
+                  <input style="opacity:1" id="type_2" type="radio" name="picture_type" value="servicio" <?php if($type=="servicio") echo "checked"?>> <label for="type_2">Foto de servicio</label>
+                  <input style="opacity:1" id="type_3" type="radio" name="picture_type" value="evento" <?php if($type=="evento") echo "checked"?>> <label for="type_3">Foto de evento</label>
+                  <br><br>
                   <label class="control-label" for="selectError">Categoría:</label>
                   <div class="controls" >
                     <select class="selectpicker" id="category" name="category" >
@@ -174,36 +189,23 @@
                     </select>
                   </div>
                 </div>
-                -->
                 <div class="control-group col-sm-5 mar-top41">
                   <label class="control-label" for="focusedInput">Descripción:</label>
                   <div class="controls">
                     <textarea class="input-xlarge focused" type="text" id="desc" name="desc"
-                      id="desc" rows="8" style="resize:none">
-                        <?php echo $row3['description']; ?>"
-                      </textarea>
+                      id="desc" rows="8" style="resize:none"><?php echo $row['description']; ?></textarea>
                   </div>
                 </div>
+
                 <div class="control-group col-sm-5 mar-top41">
                   <label class="control-label" for="selectError">Estatus:</label>
                   <div class="controls">
-                    <?php
-                    if ($row3['description'] == 0) {
-                    ?>
-                      <input style="opacity:1" id="status_1" type="radio" name="picture_status" value="true" checked> <label for="status_1">Activo</label>
-                      <input style="opacity:1" id="status_2" type="radio" name="picture_status" value="false"> <label for="status_2">Inactivo</label>
-                    <?php
-                    } else {
-                    ?>
-                      <input style="opacity:1" id="status_1" type="radio" name="picture_status" value="false" checked> <label for="status_1">Activo</label>
-                      <input style="opacity:1" id="status_2" type="radio" name="picture_status" value="true"> <label for="status_2">Inactivo</label>
-                    <?php
-                    }
-                    ?>
+                      <input style="opacity:1" id="status_1" type="radio" name="picture_status" value="true" <?php if ($row['status'] == 1) echo "checked"; ?>> <label for="status_1">Activo</label>
+                      <input style="opacity:1" id="status_2" type="radio" name="picture_status" value="false" <?php if ($row['status'] == 0) echo "checked"; ?>> <label for="status_2">Inactivo</label>
                   </div>
                 </div>
+
                 <div class="form-group">
-                  <input type="hidden" type="text" class="form-control" name="creation_date" id="creation_date" value="<?php echo date("Y/m/d") ?>">
                 </div>
                 <center>
                   <a href="images.php" class="btn btn-primary btn-md mar-right"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span><i class="icon-arrow-left"></i>&nbsp; Regresar</a>
@@ -257,7 +259,7 @@
     <!-- end: JavaScript-->
     <script>
       $(document).ready(function () {
-      	function callEvents() {
+      	function callEvents(selectedID) {
        	$.ajax({
        	    url: "api.php",
        	    data: { search:"events" },
@@ -267,12 +269,16 @@
        	    	$('#category').find('option').remove();
        	    	$('#category').find('optgroup').remove();
        	    	response.forEach(function (elem) {
-       	    		$('#category').append('<option value="' + elem['id_event'] + '">' + elem['event_name'] + '</option>');
+                if (selectedID == elem['id_event']) {
+                  $('#category').append('<option value="' + elem['id_event'] + '" selected>' + elem['event_name'] + '</option>');
+                } else {
+                  $('#category').append('<option value="' + elem['id_event'] + '">' + elem['event_name'] + '</option>');
+                }
        	    	});
         	}
         });
        }
-       function callDecorations() {
+       function callDecorations(selectedID) {
        	$.ajax({
        	    url: "api.php",
        	    data: { search:"decorations" },
@@ -284,14 +290,19 @@
        	    	response.forEach(function (group) {
        	    		$('#category').append('<optgroup label="' + group['room_name'] + '">');
        	    		group['decorations'].forEach(function (elem) {
-       	    			$('#category').append('<option value="' + elem['id_decoration'] + '">' + elem['decoration_name'] + '</option>');
+                  if (selectedID == elem['id_decoration']) {
+                    $('#category').append('<option value="' + elem['id_'] + '" selected>' + elem['decoration_name'] + '</option>');
+                  } else {
+                    $('#category').append('<option value="' + elem['id_decoration'] + '">' + elem['decoration_name'] + '</option>');
+                  }
        	    		});
        	    		$('#category').append('</optgroup>');
        	    	});
        	    }
         });
        }
-       function callSubservices() {
+       function callSubservices(selectedID) {
+        console.log(selectedID);
        	$.ajax({
        	    url: "api.php",
        	    data: { search:"subservices" },
@@ -303,14 +314,24 @@
        	    	response.forEach(function (group) {
        	    		$('#category').append('<optgroup label="' + group['service_name'] + '">');
        	    		group['subservices'].forEach(function (elem) {
-       	    			$('#category').append('<option value="' + elem['id_subservice'] + '">' + elem['subservice_name'] + '</option>');
+       	    			if (selectedID == elem['id_subservice']) {
+                    $('#category').append('<option value="' + elem['id_subservice'] + '" selected="true">' + elem['subservice_name'] + '</option>');
+                  } else {
+                    $('#category').append('<option value="' + elem['id_subservice'] + '">' + elem['subservice_name'] + '</option>');
+                  }
        	    		});
        	    		$('#category').append('</optgroup>');
        	    	});
         	}
         });
        }
-       callDecorations();
+       <?php if($type=="salon") {?>
+        callDecorations(<?php echo $typeID; ?>);
+       <?php } else if($type=="servicio") {?>
+        callSubservices(<?php echo $typeID; ?>);
+       <?php } else { ?>
+        callEvents(<?php echo $typeID; ?>);
+       <?php } ?>
        $('[name="picture_type"').change(function () {
        	var type = $(this).val();
        	if (type == 'evento') {
@@ -335,9 +356,6 @@
       			var datos = formulario.serialize();
 
       			var url = 'php/Update.php';
-            console.log("Antes de hacer el ajax")
-
-
 
       			$.ajax({
 
@@ -353,7 +371,6 @@
       					$('#cargando').hide(300);
 
       					$('#subida')[0].reset();
-                console.log(data);
 
       					return false;
       				}

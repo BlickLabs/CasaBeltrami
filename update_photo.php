@@ -140,6 +140,7 @@
           <div class="panel panel-default">
             <div class="panel-body">
               <form  id="subida" class="form-horizontal">
+                <input type="hidden" name="id_hidden" id="id_hidden" value="<?php echo $_GET['u']; ?>">
                 <div class="control-group col-sm-5 mar-top40">
                   <label class="control-label" for="focusedInput">Titulo De la Imagen: </label>
                   <div class="controls">
@@ -320,6 +321,55 @@
        		callDecorations();
        	}
        });
+      });
+      $(function(){
+
+      	$('#subida').submit(function(){
+
+      		var comprobar = $('#title').val().length *$('#desc').val().length*$('#id_hidden').val();
+
+      		if(comprobar>0){
+
+      			var formulario = $('#subida');
+
+      			var datos = formulario.serialize();
+
+      			var url = 'php/Update.php';
+            console.log("Antes de hacer el ajax")
+
+
+
+      			$.ajax({
+
+      				url: url+'?'+datos,
+      				type: 'POST',
+      				beforeSend : function (){
+
+      					$('#cargando').show(300);
+
+      				},
+      				success: function(data){
+
+      					$('#cargando').hide(300);
+
+      					$('#subida')[0].reset();
+                console.log(data);
+
+      					return false;
+      				}
+
+      			});
+
+      			return false;
+
+      		}else{
+
+      			alert('Selecciona una foto para subir e ingrese su descripcion');
+
+      			return false;
+
+      		}
+      	});
       });
     </script>
   </body>

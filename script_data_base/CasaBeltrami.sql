@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `content` (
   `status` boolean NOT NULL,
   `creation_date` date NOT NULL,
   `modification_date` date DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `content`
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `content_decoration` (
   `id` int(11) NOT NULL,
   `id_content` int(11) NOT NULL,
   `id_decoration` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 --
 -- Estructura de tabla para la tabla `content_event`
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `content_event` (
   `id` int(11) NOT NULL,
   `id_content` int(11) NOT NULL,
   `id_event` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 --
 -- Estructura de tabla para la tabla `content_event`
@@ -82,14 +82,7 @@ CREATE TABLE IF NOT EXISTS `content_sub_service` (
   `id` int(11) NOT NULL,
   `id_content` int(11) NOT NULL,
   `id_sub_service` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `content_party_room`
---
-
-INSERT INTO `content_decoration` (`id`, `id_content`, `id_decoration`, `id_decoration`) VALUES
-(1, 6, 1);
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -101,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `decorations` (
   `id_decoration` int(11) NOT NULL,
   `name_decoration` varchar(45) NOT NULL,
   `id_party` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `decorations`
@@ -115,14 +108,14 @@ INSERT INTO `decorations` (`id_decoration`, `name_decoration`, `id_party`) VALUE
 (5, 'Baños', 1),
 (6, 'Cocinas', 1),
 (7, 'Extras', 1),
-(7, 'El salón', 2),
-(8, 'Exteriores', 2),
-(9, 'Baños y cocina', 2),
-(10, 'Galería de eventos', 2),
-(11, 'El salón', 3),
-(12, 'Juegos interiores', 3),
-(13, 'Juegos exteriores', 3),
-(14, 'Galería de eventos', 3);
+(8, 'El salón', 2),
+(9, 'Exteriores', 2),
+(10, 'Baños y cocina', 2),
+(11, 'Galería de eventos', 2),
+(12, 'El salón', 3),
+(13, 'Juegos interiores', 3),
+(14, 'Juegos exteriores', 3),
+(15, 'Galería de eventos', 3);
 
 -- --------------------------------------------------------
 
@@ -181,7 +174,7 @@ INSERT INTO `party_room` (`id_party_room`, `party_room_name`) VALUES
 CREATE TABLE IF NOT EXISTS `services` (
   `id_service` int(11) NOT NULL,
   `name_service` varchar(25) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `services`
@@ -202,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `sub_services` (
   `id_sub_service` int(11) NOT NULL,
   `name_sub_service` varchar(20) NOT NULL,
   `id_service` tinyint(2) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `sub_services`
@@ -310,12 +303,18 @@ ALTER TABLE `content`
 -- AUTO_INCREMENT de la tabla `content_party_room`
 --
 ALTER TABLE `content_decoration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
+--
+ALTER TABLE `content_sub_service`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
+--
+ALTER TABLE `content_event`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
 --
 -- AUTO_INCREMENT de la tabla `decorations`
 --
 ALTER TABLE `decorations`
-  MODIFY `id_decoration` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+  MODIFY `id_decoration` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT de la tabla `events`
 --
@@ -330,12 +329,12 @@ ALTER TABLE `party_room`
 -- AUTO_INCREMENT de la tabla `services`
 --
 ALTER TABLE `services`
-  MODIFY `id_service` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id_service` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `sub_services`
 --
 ALTER TABLE `sub_services`
-  MODIFY `id_sub_service` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+  MODIFY `id_sub_service` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

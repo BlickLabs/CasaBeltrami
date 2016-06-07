@@ -41,7 +41,7 @@ if (isset($_GET["search"])) {
                 $path=mysqli_real_escape_string($mysqli2,'php/album/' . $row2['route']);
                 $partialImage = array(
                     'path' =>  $path,
-                    'tittle' => $row2['tittle'],
+                    'title' => $row2['tittle'],
                     'description' => $description,
                     'decoration' => $row2['name_decoration'],
                    

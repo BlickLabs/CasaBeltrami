@@ -27,13 +27,11 @@ $(function () {
                 processData: false,
                 beforeSend: function () {
                     $('#cargando').show(300);
-
                 },
                 success: function (data) {
+                    console.log(data);
                     $('#cargando').hide(900);
                     $(location).attr('href', 'images.php');
-                   
-
                     return false;
                 }
 

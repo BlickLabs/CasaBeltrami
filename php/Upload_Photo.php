@@ -7,27 +7,30 @@
     $st = $_GET['picture_status'];
     $type = $_GET['picture_type'];
     $id = $_GET['category'];
-    $cd = date();
-    $cd = date('Y-m-d', $cd);
+    $cd = date_create();
+    $cd = date_format($cd, 'Y-m-d');
     $foto = trim($_FILES['foto']['name']);
-    $ingresar = mysqli_query($mysqli, "INSERT INTO content (tittle,route,description,status,creation_date)"
-                             . "VALUES('$title','$foto','$sd','$st','$cd')");
+    $query1 = "INSERT INTO content (tittle,route,description,status,creation_date) VALUES('$title','$foto','$sd',$st,'$cd')";
+    $ingresar = mysqli_query($mysqli, $query1);
     move_uploaded_file($_FILES['foto']['tmp_name'], 'album/' . $foto);
     $id_img = mysqli_insert_id($mysqli); //obtenemos el id del ultimo insert realizado
-    $mysqli->close(); //cerramos la conexió del primer query
-    $query = "";
+    // $mysqli->close(); //cerramos la conexió del primer query
+    $query2 = "";
     if ($type == "salon") {
-        $query = "INSERT INTO content_decoration (id_content,id_decoration) 
-                VALUES ('".$id_img."','".$id."')";
+        $query2 = "INSERT INTO content_decoration (id_content,id_decoration) 
+                VALUES (".$id_img.",".$id.")";
+                echo $query2;
     } else if ($type == "servicio") {
-        $query = "INSERT INTO content_sub_service (id_content,id_sub_service) 
-                VALUES ('".$id_img."','".$id."')";
+        $query2 = "INSERT INTO content_sub_service (id_content,id_sub_service) 
+                VALUES (".$id_img.",".$id.")";
+                echo $query2;
     } else if ($type == "evento") {
-        $query = "INSERT INTO content_event (id_content,id_event) 
-                VALUES ('".$id_img."','".$id."')";
+        $query2 = "INSERT INTO content_event (id_content,id_event) 
+                VALUES (".$id_img.",".$id.")";
+                echo $query2;
     } else {
         echo "no";
     }
-    mysqli_query($mysqli2,$query);
-    $mysqli2->close();
+    mysqli_query($mysqli,$query2);
+    $mysqli->close();
 ?>

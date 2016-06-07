@@ -123,8 +123,8 @@
                         <li>
                             <a class="dropmenu" href="#"><i class="icon-tags"></i><span >Galería por Servicios</span></a>
 							<ul>
-		                        <li><a class="submenu" href="floral_design_gallery.phpp"><i class="icon-tags"></i><span class="hidden-tablet">Diseño floral</span></a></li>
-		                        <li><a class="submenu" href="tables_sweets_cheeses.php.php"><i class="icon-tags"></i><span class="hidden-tablet">Mesas de postres y quesos</span></a></li>
+		                        <li><a class="submenu" href="floral_design_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Diseño floral</span></a></li>
+		                        <li><a class="submenu" href="tables_sweets_cheeses_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Mesas de postres y quesos</span></a></li>
 		                        <li><a class="submenu" href="rent_furniture_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Renta de mobiliario</span></a></li>
 								
 							</ul>	
@@ -184,11 +184,7 @@
                             <td width="10%"><img class="grayscale center-block" src="<?php echo 'php/album/' . $row['route'];?>" style="width: 250px;"></td>
                             <td style="text-align: center;padding-top: 70px" width="5%">
                                 <?php 
-                                        if ($row['status']=='true'){
-                                            echo 'Activo';
-                                        }elseif($row['status']=='false') {
-                                            echo 'Inactivo';
-                                        }    
+                                        echo $row['status'] ? 'Activo':'Inactivo';
                                  ?>
                             </td>
                            

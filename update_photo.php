@@ -292,7 +292,7 @@
        	    		$('#category').append('<optgroup label="' + group['room_name'] + '">');
        	    		group['decorations'].forEach(function (elem) {
                   if (selectedID == elem['id_decoration']) {
-                    $('#category').append('<option value="' + elem['id_'] + '" selected>' + elem['decoration_name'] + '</option>');
+                    $('#category').append('<option value="' + elem['id_decoration'] + '" selected>' + elem['decoration_name'] + '</option>');
                   } else {
                     $('#category').append('<option value="' + elem['id_decoration'] + '">' + elem['decoration_name'] + '</option>');
                   }
@@ -368,8 +368,9 @@
 
       				},
       				success: function(data){
-                window.location = "principal.php";
-      					return false;
+                console.log(data);
+           //      window.location = "principal.php";
+      					// return false;
       				}
 
       			});

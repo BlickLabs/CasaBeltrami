@@ -397,6 +397,7 @@ a.brand span {
 
 #sidebar-left {
 	background: #1C2B36;
+	z-index: 1;
 }
 
 .sidebar-nav > ul{
@@ -410,6 +411,10 @@ a.brand span {
 	margin: 0px;
 	display: none;
 	background: rgba(0,0,0,.25);
+}
+
+.nav-tabs.nav-stacked>li>a:hover, .nav-tabs.nav-stacked>li>a:focus {
+	background: rgba(0,0,0,.25) !important;
 }
 
 .nav-tabs.nav-stacked > li > a,

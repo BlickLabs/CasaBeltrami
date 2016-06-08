@@ -12,7 +12,7 @@
     $idCategory = $_GET['category'];
     $md = date_create();
     $md = date_format($md, 'Y-m-d');
-    $query1 = "UPDATE content SET tittle='$title', description='$desc', modification_date='$md' WHERE id_content='$id'";
+    $query1 = "UPDATE content SET tittle='$title', description='$desc', modification_date='$md', status='$st' WHERE id_content='$id'";
     $query2 = "";
     $query3 = "";
     mysqli_query($mysqli,$query1);

@@ -368,9 +368,8 @@
 
       				},
       				success: function(data){
-                console.log(data);
-           //      window.location = "principal.php";
-      					// return false;
+                window.location = "principal.php";
+      					return false;
       				}
 
       			});

@@ -1,7 +1,8 @@
 $(function () {
     $('#subida').submit(function () {
+        $('#cargando').modal('show');
 
-       var comprobar = $('#title').val().length* $('#foto').val().length*$('#desc').val().length;	
+       var comprobar = $('#title').val().length* $('#foto').val().length*$('#desc').val().length;   
         
         if (comprobar > 0) {
 
@@ -25,14 +26,14 @@ $(function () {
                 contentType: false,
                 data: archivos,
                 processData: false,
-                beforeSend: function () {
-                    $('#cargando').show(300);
-                },
                 success: function (data) {
-                    // console.log(data);
-                    $('#cargando').hide(900);
-                    $(location).attr('href', 'images.php');
-                    return false;
+                    $('#cargando h3').text('Imagen subida correctamente.');
+                    setTimeout(function () {
+                        $(location).attr('href', 'images.php');
+                    }, 800);
+                },
+                error: function(data) {
+                    $('#cargando h3').text('Ocurrio un error. Intentalo de nuevo.');
                 }
 
             });

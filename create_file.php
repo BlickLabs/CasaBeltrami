@@ -40,6 +40,15 @@
   </head>
   <body>
     <!-- start: Header -->
+      <div id="cargando" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body" style="text-align: center;padding:20px">
+              <h3>Subiendo imagen...</h3>
+            </div>
+          </div>
+        </div>
+      </div>
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -175,7 +184,7 @@
                 </div>
                 <center>
                   <a href="images.php" class="btn btn-primary btn-md mar-right"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span><i class="icon-arrow-left"></i>&nbsp; Regresar</a>
-                  <button type="submit"  class="btn btn-success "><i class="icon-save"></i>&nbsp; Guardar</button>
+                  <button type="submit" class="btn btn-success "><i class="icon-save"></i>&nbsp; Guardar</button>
                 </center>
               </form>
             </div>

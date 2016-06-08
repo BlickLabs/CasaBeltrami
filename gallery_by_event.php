@@ -189,7 +189,7 @@
                                                                         </div>
                                                                         <div class="modal-footer">
                                                                             <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="icon-ban-circle"></i>&nbsp;Cerrar</button>
-                                                                            <a href="Delete_Photo.php?d=<?php echo $row2['id_content'] ?>&f=<?php echo $row2['route'] ?>"><button type="button" class="btn btn-success"><i class="icon-ok"></i>Aceptar</button></a>
+                                                                            <a href="Delete_Photo.php?id=<?php echo $row2['id_content'] ?>&type=event"><button type="button" class="btn btn-success"><i class="icon-ok"></i>Aceptar</button></a>
                                                                         </div>
                                                                     </div>
                                                                 </div>

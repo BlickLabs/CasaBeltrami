@@ -144,7 +144,7 @@
                   </div>
                 </div>
                 <div class="control-group col-sm-5 mar-top41">
-                  <label class="control-label">Seleccionar Archivo:</label>
+                  <label class="control-label">Seleccionar Archivo (max. 2MB):</label>
                   <div class="controls">
                     <input type="file" id="foto" name="foto">
                   </div>

@@ -2596,6 +2596,8 @@ footer {
 	-webkit-border-radius: 0px;
 	   -moz-border-radius: 0px;
 	      	border-radius: 0px;
+	position: relative;
+	z-index: 1;
 }
 
 /* Sparkline stats

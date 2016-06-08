@@ -14,9 +14,8 @@
         $num_row = mysqli_num_rows($result);
         $row = mysqli_fetch_array($result);
         if ($num_row >= 1) {
-            echo 'true';
             $_SESSION['user_name'] = $row['user'];
-            header("Location:principal.php");
+            header("Location: principal.php");
         } else {
            $result='<div class="alert alert-error">Lo sentimos! Usuario y/o constraseña son invalidos</div>';
         }

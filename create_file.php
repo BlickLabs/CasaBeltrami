@@ -166,8 +166,8 @@
                 <div class="control-group col-sm-5 mar-top41">
                   <label class="control-label" for="selectError">Estatus:</label>
                   <div class="controls">
-                    <input style="opacity:1" id="status_1" type="radio" name="picture_status" value="true" checked> <label for="status_1">Activo</label>
-                    <input style="opacity:1" id="status_2" type="radio" name="picture_status" value="false"> <label for="status_2">Inactivo</label>
+                    <input style="opacity:1" id="status_1" type="radio" name="picture_status" value="1" checked> <label for="status_1">Activo</label>
+                    <input style="opacity:1" id="status_2" type="radio" name="picture_status" value="0"> <label for="status_2">Inactivo</label>
                   </div>
                 </div>
                 <div class="form-group">

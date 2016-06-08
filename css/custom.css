@@ -410,7 +410,6 @@ img.header-logo {
 .features.with-icon .container > div{
     margin-top: -120px;
 }
-#homepage .floral,
 #diseno-de-eventos .floral {
     background: url("../img/DisenoDeEventos/disenofloral.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
@@ -422,9 +421,19 @@ img.header-logo {
     background-blend-mode: multiply;
     overflow-x: hidden;
 }
-#diseno-de-eventos .mesas-de-quesos,
-#homepage .mesas-de-quesos {
+#homepage .floral {
+    background: url("../img/homepage/5.jpg") center center no-repeat rgba(0, 0, 0, .3);
+    background-size: cover;
+    background-blend-mode: multiply;
+    overflow-x: hidden;
+}
+#diseno-de-eventos .mesas-de-quesos {
     background: url("../img/DisenoDeEventos/mesasdepostres.jpg") center center no-repeat rgba(0, 0, 0, .15);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+#homepage .mesas-de-quesos {
+    background: url("../img/homepage/7.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
     background-blend-mode: multiply;
 }

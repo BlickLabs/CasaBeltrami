@@ -189,7 +189,7 @@
     <!--/fluid-row-->
     <footer>
       <p>
-        <span style="text-align:left;float:left">&copy; 2016 <a >Blick</a></span>
+        <span style="text-align:left;float:left">&copy; 2016 <a href="http://blick.mx/">Blick</a></span>
       </p>
     </footer>
     <!-- start: JavaScript-->

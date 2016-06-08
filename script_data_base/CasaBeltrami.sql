@@ -230,7 +230,7 @@ CREATE TABLE IF NOT EXISTS `Users` (
 --
 
 INSERT INTO `Users` (`id`, `nombre`, `user`, `password`) VALUES
-(0, 'Castro Esparza Jose Antonio', 'tonoescom@gmail.com', '2011301308');
+(0, 'Administrador', 'test@blick.mx', 'BlickCasaBeltrami');
 
 --
 -- Índices para tablas volcadas

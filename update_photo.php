@@ -166,6 +166,7 @@
               <form  id="subida" class="form-horizontal">
                 <input type="hidden" name="id_hidden" id="id_hidden" value="<?php echo $_GET['u']; ?>">
                 <input type="hidden" name="type_hidden" id="type_hidden" value="<?php echo $type; ?>">
+                <input type="hidden" name="type_id_hidden" id="type_id_hidden" value="<?php echo $typeID; ?>">
                 <div class="control-group col-sm-5 mar-top40">
                   <label class="control-label" for="focusedInput">Titulo De la Imagen: </label>
                   <div class="controls">
@@ -367,11 +368,7 @@
 
       				},
       				success: function(data){
-
-      					$('#cargando').hide(300);
-
-      					$('#subida')[0].reset();
-
+                window.location = "principal.php";
       					return false;
       				}
 

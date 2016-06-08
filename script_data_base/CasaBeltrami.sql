@@ -133,17 +133,17 @@ CREATE TABLE IF NOT EXISTS `events` (
 --
 
 INSERT INTO `events` (`id_event`, `name_event`) VALUES
-(1, 'Bautizo'),
-(2, 'Baby Shower'),
-(3, 'Boda'),
+(1, 'Baby Shower'),
+(2, 'Bautizo'),
+(3, 'Fiesta infantil'),
 (4, 'Comunión'),
-(5, 'Iglesias'),
+(5, 'XV años'),
 (6, 'Despedida de soltera'),
-(7, 'Evento empresarial'),
-(8, 'Fiesta infantil'),
-(9, 'Fiesta privada'),
-(10, 'Graduación'),
-(11, 'XV años');
+(7, 'Iglesias'),
+(8, 'Boda'),
+(9, 'Graduación'),
+(10, 'Evento empresarial'),
+(11, 'Fiesta privada');
 
 -- --------------------------------------------------------
 

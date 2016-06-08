@@ -201,8 +201,8 @@
                 <div class="control-group col-sm-5 mar-top41">
                   <label class="control-label" for="selectError">Estatus:</label>
                   <div class="controls">
-                      <input style="opacity:1" id="status_1" type="radio" name="picture_status" value="true" <?php if ($row['status'] == 1) echo "checked"; ?>> <label for="status_1">Activo</label>
-                      <input style="opacity:1" id="status_2" type="radio" name="picture_status" value="false" <?php if ($row['status'] == 0) echo "checked"; ?>> <label for="status_2">Inactivo</label>
+                      <input style="opacity:1" id="status_1" type="radio" name="picture_status" value="1" <?php if ($row['status'] == 1) echo "checked"; ?>> <label for="status_1">Activo</label>
+                      <input style="opacity:1" id="status_2" type="radio" name="picture_status" value="0" <?php if ($row['status'] == 0) echo "checked"; ?>> <label for="status_2">Inactivo</label>
                   </div>
                 </div>
 

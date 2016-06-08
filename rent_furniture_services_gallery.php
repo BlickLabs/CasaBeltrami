@@ -231,12 +231,9 @@
 	<div class="clearfix"></div>
 	
 	<footer>
-
-		<p>
-			<span style="text-align:left;float:left">&copy; 2016 <a >Blick</a></span>
-			
-		</p>
-
+	<p>
+        <span style="text-align:left;float:left">&copy; 2016 <a href="http://blick.mx/">Blick</a></span>
+      </p>
 	</footer>
 	
 	<!-- start: JavaScript-->

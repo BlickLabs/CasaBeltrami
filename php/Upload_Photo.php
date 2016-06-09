@@ -18,7 +18,6 @@
         }
         $query1 = "INSERT INTO content (tittle,route,description,status,creation_date) VALUES('$title','$filename','$sd',$st,'$cd')";
         $ingresar = mysqli_query($mysqli, $query1);
-        try {
         move_uploaded_file($_FILES['foto']['tmp_name'], 'album/' . $filename);
         $id_img = mysqli_insert_id($mysqli); //obtenemos el id del ultimo insert realizado
         // $mysqli->close(); //cerramos la conexió del primer query

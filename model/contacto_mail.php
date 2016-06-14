@@ -17,7 +17,7 @@ $detalles = $_POST['details'];
 /* Desarrollo */
 $api_key = 'key-eb656047b090ea091ef7c5d2fbd83dc5';
 // $send_to = '';
-$send_to = 'sanchezpineda03@gmail.com';
+$send_to = 'info@casabeltrami.com';
 
 // if ($services == 'Renta de Salon Lincanto' || $services == 'Renta de Salon Farfala') {
 //     $send_to = 'info@salonlincanto.com';

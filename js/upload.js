@@ -33,7 +33,7 @@ $(function () {
                     }, 800);
                 },
                 error: function(data) {
-                    $('#cargando h3').text('Ocurrio un error. Intentalo de nuevo.');
+                    $('#cargando h3').text('Ocurrio un error: ' + $.parseJSON(data.responseText).message);
                 }
 
             });

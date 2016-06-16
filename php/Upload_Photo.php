@@ -11,7 +11,29 @@
     $cd = date_format($cd, 'Y-m-d');
     $foto = trim($_FILES['foto']['name']);
     $filename = "";
-    if ($_FILES['foto']['size'] <= 2097152) {
+    $phpFileUploadErrors = array(
+        0 => 'There is no error, the file uploaded with success',
+        1 => 'The uploaded file exceeds the upload_max_filesize directive in php.ini',
+        2 => 'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form',
+        3 => 'The uploaded file was only partially uploaded',
+        4 => 'No file was uploaded',
+        6 => 'Missing a temporary folder',
+        7 => 'Failed to write file to disk.',
+        8 => 'A PHP extension stopped the file upload.',
+    );
+    if ($_FILES["foto"]["error"]) {
+        header('HTTP/1.1 500 Internal Server Error');
+        header('Content-Type: application/json; charset=UTF-8');
+        if ($_FILES["foto"]["error"] == 1 || $_FILES["foto"]["error"] == 2) {
+            die(json_encode(array('message' => 'Archivo demasiado grande', 'code' => 1)));
+        } else {
+            die(json_encode(array('message' => $phpFileUploadErrors[$_FILES["foto"]["error"]], 'code' => $_FILES["foto"]["error"])));
+        }
+    } else if ($_FILES['foto']['size'] > 2097152) {
+        header('HTTP/1.1 500 Internal Server Error');
+        header('Content-Type: application/json; charset=UTF-8');
+        die(json_encode(array('message' => 'Archivo demasiado grande', 'code' => 1)));
+    } else {
         while (true) {
             $filename = uniqid(rand()) . '.' .pathinfo($foto, PATHINFO_EXTENSION);
             if (!file_exists('album/' . $filename)) break;
@@ -39,9 +61,5 @@
         }
         mysqli_query($mysqli,$query2);
         $mysqli->close();
-    } else {
-        header('HTTP/1.1 500 Internal Server Error');
-        header('Content-Type: application/json; charset=UTF-8');
-        die(json_encode(array('message' => 'ERROR', 'code' => 1337)));
     }
 ?>

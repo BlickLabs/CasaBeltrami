@@ -1037,7 +1037,7 @@ textarea.form-control {
 .modal-content.gallery .slick-carousel {
     background-color: white;
     border-radius: 6px;
-    padding: 20px;
+    padding: 10px;
 }
 .modal-content.gallery .description {
     font-family: TimesLTStd-Italic;

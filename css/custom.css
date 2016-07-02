@@ -1069,9 +1069,37 @@ textarea.form-control {
 .modal-content.gallery .slick-next {
     height: 10%;
 }
+
+/*************************
+    RESPONSIVE TEXTS
+*************************/
+
+.show-on-mobile {
+    display: none;
+}
+
 /*************************
     MEDIA QUERIES
 *************************/
+@media screen and (max-width: 700px) and (orientation: landscape),
+screen and (max-height: 800px) and (orientation: portrait) {
+    span.show-on-mobile {
+        display: inline;
+    }
+    .show-on-mobile {
+        display: block;
+    }
+    .show-on-desktop {
+        display: none;
+    }
+    .features.with-icon img {
+        height: 90px;
+    }
+    .features.with-icon .container > div {
+        margin-top: -100px;
+    }
+}
+
 @media screen and (min-width: 1085px) {
     .navbar-default .navbar-nav>li {
         height: 60px;

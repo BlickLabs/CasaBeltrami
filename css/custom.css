@@ -1261,7 +1261,10 @@ screen and (max-height: 800px) and (orientation: portrait) {
         background: none !important;
     }
     .somos-text {
-        text-align: justify;
+        text-align: center;
+    }
+    .somos-text hr {
+        margin-left: auto;
     }
     #navbar {
         background: #F8DEE7;

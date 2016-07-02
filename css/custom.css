@@ -436,6 +436,7 @@ img.header-logo {
     background: url("../img/homepage/7.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
     background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, .35);
 }
 #diseno-de-eventos .renta-mobiliario {
     background: url("../img/DisenoDeEventos/mobiliario.jpg") center center no-repeat rgba(0, 0, 0, .15);
@@ -447,12 +448,14 @@ img.header-logo {
     background: url("../img/homepage/8.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
     background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, .35);
     overflow: hidden;
 }
 #homepage .galeria {
     background: url("../img/homepage/9.jpg") center center no-repeat rgba(0, 0, 0, .15);
     background-size: cover;
     background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, .35);
 }
 .homepage-fixed-nav {
     background: white !important;
